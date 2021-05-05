@@ -10,18 +10,29 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       822,         34]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       962,         37]
-CellTagsIndexPosition[       919,         34]
+NotebookDataLength[      1506,         48]
+NotebookOptionsPosition[       978,         32]
+NotebookOutlinePosition[      1374,         48]
+CellTagsIndexPosition[      1331,         45]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], " "}]], "Input",ExpressionU\
+UID->"fe1c37a8-be75-46f6-8620-9fcc9b586214"],
+
+Cell[BoxData[
+ RowBox[{"<<", " ", "package.wl"}]], "Input",ExpressionUUID->"8b5a72e6-4f53-497f-9d92-1389f0a4be70"],
+
+Cell[BoxData[
+ RowBox[{"ShowExercise1", "[", "]"}]], "Input",ExpressionUUID->"93c0f5ff-1c75-47c9-8cf6-94c17578cf98"]
 },
-WindowSize->{1904, 989},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+WindowSize->{1440, 798},
+WindowMargins->{{8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (December 12, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"4493c9d0-bee2-44c0-8c0a-a7bff13e2917"
 ]
@@ -36,9 +47,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 180, 4, 30, "Input",ExpressionUUID->"fe1c37a8-be75-46f6-8620-9fcc9b586214"],
+Cell[741, 26, 114, 1, 30, "Input",ExpressionUUID->"8b5a72e6-4f53-497f-9d92-1389f0a4be70"],
+Cell[858, 29, 116, 1, 30, "Input",ExpressionUUID->"93c0f5ff-1c75-47c9-8cf6-94c17578cf98"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
