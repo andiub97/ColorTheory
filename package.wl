@@ -20,10 +20,18 @@ Begin["`Private`"]
 ShowExercise1[] := DynamicModule[
 	{risposta},
 		Column[{
-			InputField[Dynamic[risposta], Number, FieldSize->10, ContinuousAction->True],
-			Dynamic@If[risposta == 1, "giusto!", "sbagliato"]
+			RandomChoice[coloriGiusti],
+			InputField[Dynamic[risposta], Number, FieldSize->10],
+			Dynamic@If[risposta == 2, "giusto!", "sbagliato"]
 		}]
 ]
+
+primari = {Yellow, Blue, Red}
+secondari = {Darker[Green], Purple, Orange}
+secondari2 = {Yellow, Darker[Green], Blue, Purple, Red, Orange, Yellow}
+terziari = Map[Blend, Partition[secondari2, 2, 1]]
+coloriGiusti = RotateRight[Riffle[Drop[secondari2,-1],terz],2]
+
 End[]
 (* inserire protect *)
 EndPackage[]
