@@ -19,7 +19,7 @@ IttenWheel::usage= "IttenWheel[] stampa la ruota dei colori di Itten, con colori
 ShowExercise1::usage = "ShowExercise[] restituisce il primo esercizio all'utente (identificazione delle classi dei colori)"
 Paintings::usage = "Paintings[] crea un'area grafica contenente, in una riga, la parte interna del cerchio di Itten (colori primari e secondari). I settori colorati possono essere cliccati per visualizzare dei famosi dipinti di quel colore. Con un secondo click sullo stesso colore si nascondono le immagini. Posizionando il mouse sull'immagine verr\[AGrave] mostrato titolo e autore tramite tooltip"
 
-ShowExercise2::usage = "Restituisce il secondo esercizio: riordinamento dei 6 colori primari e secondari nella successione dei colori dell'arcobaleno"
+ShowExercise3::usage = "Restituisce il terzo esercizio: riordinamento dei 6 colori primari e secondari nella successione dei colori dell'arcobaleno"
 Arcobaleno::usage = "Creazione dell'animazione di un arcobaleno che viene eseguita automaticamente una sola volta. Input: True (default) o False (arco colorato con una scala di grigi)"
 
 Begin["`Private`"]
@@ -418,7 +418,7 @@ Arcobaleno[color_:True]:=
 (*funzione ausiliaria che controlla la correttezza della risposta dell'utente per l'esercizio 2 (arcobaleno).
 Parametri: indici=lista degli indici inseriti dall'utente, coloriRand=lista dei colori ordinati casualmente
 per una particolare istanza di esercizio.*)
-CheckEs2[indici_, coloriRand_]:=
+CheckEs3[indici_, coloriRand_]:=
 	If[
 	(*si controlla se almeno una cella di input \[EGrave] lasciata vuota e se almeno un indice non \[EGrave] intero*)
 		MemberQ[indici, ""] || !ArrayQ[indici,_,IntegerQ] || !AllTrue[indici,Positive] || Max[indici]> 6,
@@ -428,7 +428,7 @@ CheckEs2[indici_, coloriRand_]:=
 		MatchQ[RotateLeft[Drop[secondari2,1],3], coloriRand[[indici]] ]		
 	]
 (*funzione ausiliaria. prepara i sei dischi colorati per l'esercizio 3*)
-CreatePaletteEs2[colori_]:=
+CreatePaletteEs3[colori_]:=
 		GraphicsRow[
 				Graphics/@Table[
 							{Style[Disk[], colori[[i]]], Style[Text[i], Bold, FontSize->14, White]}
@@ -436,7 +436,7 @@ CreatePaletteEs2[colori_]:=
 			]
 		
 	(*funzione ausiliaria. restituisce la lista degli indici che corrispondono all'ordine corretto dei colori per creare l'arcobaleno*)
-ShowSolutionEs2[colori_]:=
+ShowSolutionEs3[colori_]:=
 	Flatten[{
 	(*restituisce la posizione del colore indicato all'interno della lista di colori con ordine randomico*)
 		Position[colori,Red],
@@ -447,13 +447,13 @@ ShowSolutionEs2[colori_]:=
 		Position[colori,Purple]
 	}]
 
-(*esercizio 2: riordinamento dei 6 colori primari e secondari *)
-ShowExercise2[] := DynamicModule[
+(*esercizio 3: riordinamento dei 6 colori primari e secondari *)
+ShowExercise3[] := DynamicModule[
 	{ rainbowCol, randCol, palette, animazione, primo,secondo,terzo,quarto,quinto,sesto, risposta},
 	(*colori dell'arcobaleno*)
 	rainbowCol=RotateLeft[Drop[secondari2,1],3];
 	randCol = RandomSample[rainbowCol];	(*riordino casuale dei colori*)
-	palette = CreatePaletteEs2[randCol]; (*creazione dischi colorati*)
+	palette = CreatePaletteEs3[randCol]; (*creazione dischi colorati*)
 	animazione="";
 	risposta="";
 	primo=secondo=terzo=quarto=quinto=sesto="";
@@ -476,14 +476,14 @@ ShowExercise2[] := DynamicModule[
 		(*bottone invia risposta*)
 			Button[Style["Invia",FontSize->12],
 					(*controllo la correttezza della risposta, creo l'animazione*)
-					risposta=CheckEs2[{primo,secondo,terzo,quarto,quinto,sesto}, randCol]; animazione=Arcobaleno[risposta]],
+					risposta=CheckEs3[{primo,secondo,terzo,quarto,quinto,sesto}, randCol]; animazione=Arcobaleno[risposta]],
 					(*bottone di pulizia: cancello le celle di input, il risultato della risposta e l'animazione*)
 			Button[cleanImage, primo = ""; secondo=""; terzo=""; quarto=""; quinto=""; sesto=""; risposta=""; animazione=""],
 			(*creazione di un nuovo esercizio: pulizia delle variabili, nuovo riordinamento dei colori*)
 			Button[Style["Nuovo esercizio",FontSize->12], randCol = RandomSample[rainbowCol]; 
-					primo = ""; secondo=""; terzo=""; quarto=""; quinto=""; sesto="";risposta="";palette=CreatePaletteEs2[randCol];animazione=""],
+					primo = ""; secondo=""; terzo=""; quarto=""; quinto=""; sesto="";risposta="";palette=CreatePaletteEs3[randCol];animazione=""],
 					(*mostra soluzione dell'esercizio corrente*)
-			Button[Style["Mostra soluzione",FontSize->12],{primo,secondo,terzo,quarto,quinto,sesto}= ShowSolutionEs2[randCol]; animazione=""]
+			Button[Style["Mostra soluzione",FontSize->12],{primo,secondo,terzo,quarto,quinto,sesto}= ShowSolutionEs3[randCol]; animazione=""]
 		}]	
 	}]
 	
