@@ -18,8 +18,9 @@ IttenWheel::usage= "IttenWheel[] stampa la ruota dei colori di Itten, con colori
 					"
 ShowExercise1::usage = "ShowExercise1[] restituisce il primo esercizio all'utente (identificazione delle classi dei colori)"
 Paintings::usage = "Paintings[] crea un'area grafica contenente, in una riga, la parte interna del cerchio di Itten (colori primari e secondari). I settori colorati possono essere cliccati per visualizzare dei famosi dipinti di quel colore. Con un secondo click sullo stesso colore si nascondono le immagini. Posizionando il mouse sull'immagine verr\[AGrave] mostrato titolo e autore tramite tooltip"
-ShowExercise2::usage = "ShowExercise2[] restituisce il secondo esercizio all'utente (identificazione dei colori che compongono colori secondari e terziari). L'utente dovr\[AGrave] inserire i numeri corrispondenti ai due colori che compongono il colore di sfondo del riquadro principale nelle due caselle di testo centrali. Una volta scritti i numeri basta premere invio per sapere se la risposta \[EGrave] corretta o no.
-						Ci sono inoltre i pulsanti per la pulizia delle caselle di testo(Pulisci caselle), il pulsante per conoscere la risposta corretta, che apparir\[AGrave] nelle due caselle di testo del riquadro principale e il pulsante per richiedere un nuovo esercizio. Non manca inoltre la possibilit\[AGrave] di mostrare la ruota di Itten per facilitare l'esercizio. "
+ShowExercise2::usage = "ShowExercise2[] restituisce il secondo esercizio all'utente (identificazione dei colori che compongono colori secondari e terziari). L'utente dovr\[AGrave] inserire i numeri corrispondenti ai due colori che compongono il colore di sfondo del riquadro principale nelle due caselle di testo centrali. Una volta scritti i numeri basta premere invio per sapere se la risposta dell'utente \[EGrave] corretta o no.
+						Ci sono inoltre i pulsanti per cancellare i numeri presenti nelle caselle di testo(Pulisci caselle), il pulsante per conoscere la risposta corretta, che apparir\[AGrave] nelle due caselle di testo del riquadro principale(Mostra risposta) e il pulsante per richiedere un nuovo esercizio(Nuovo esercizio), in tal caso il riquadro cambier\[AGrave] colore e le celle nel caso contenessero numeri, questi verrebbero cancellati. 
+						Non manca inoltre la possibilit\[AGrave] di mostrare la ruota di Itten per facilitare l'esercizio."
 ShowExercise3::usage = "Restituisce il terzo esercizio: riordinamento dei 6 colori primari e secondari nella successione dei colori dell'arcobaleno"
 Arcobaleno::usage = "Creazione dell'animazione di un arcobaleno che viene eseguita automaticamente una sola volta. Input: True (default) o False (arco colorato con una scala di grigi)"
 
@@ -32,12 +33,14 @@ secondari = {Darker[Green], Purple, Orange}
 secondari2 = {Yellow, Darker[Green], Blue, Purple, Red, Orange, Yellow}
 terziari = Map[Blend, Partition[secondari2, 2, 1]]
 coloriGiusti = RotateRight[Riffle[Drop[secondari2,-1],terziari],2]
+(*colori composti sono una lista di tuple, ciascuna contenente un colore secondario o terziario della ruota di Itten, preceduti dai numeri dei rispettivi colori che lo compongono. Questa scelta di implementazione \[EGrave] stata fatta per facilitare il recupero
+	dei colori primari e secondari che formano ciascun colore non primario.*)
 coloriComposti = {
    {5, 1, coloriGiusti[[1]]},
    {1, 3, coloriGiusti[[2]]},
    {3, 5, coloriGiusti[[12]]},
    {7, 5, coloriGiusti[[10]]},
-   {9, 5 , coloriGiusti[[9]]},
+   {9, 5, coloriGiusti[[9]]},
    {9, 7, coloriGiusti[[8]]},
    {9, 11, coloriGiusti[[6]]},
    {9, 1, coloriGiusti[[5]]},
@@ -159,46 +162,61 @@ ShowExercise1[] := DynamicModule[
 
 
 
-CheckAnswer1[risposta1_, risposta2_, colore_] := 
-  If[ContainsExactly[Take[colore, 2], {risposta1, risposta2}], "Corretto", "Sbagliato"];
+(*Questa funzione prende come parametri le due risposte dell'utente e la tripla presa dalla lista di coloriComposti. Viene effettuata la chiamata a ContainsExactly per verificare che i due colori proposti dall'utente siano contenuti
+	nella lista formata dai due colori che compongono il colore dell'esercizio. Attraverso l'if nel caso ci sia corrispondenza si restituir\[AGrave] la stringa "Corretto", "Sbagliato" altrimenti.*)
+CheckAnswer2[risposta1_, risposta2_, tuplaColore_] := 
+  If[ContainsExactly[Take[tuplaColore, 2], {risposta1, risposta2}], "Corretto", "Sbagliato"];
 
-ShowAnswer1[colore_] :=
-  Take[colore, 2];
-  
+(*La funzione prende in input una tupla di coloriComposti e restituisce una lista con i colori che formano il colore composto, ovvero la risposta corretta dell'esercizio 2.*)
+GetAnswer2[tuplaColore_] :=
+  Take[tuplaColore, 2];
+ 
+ (*Esercizio 2: dato un colore secondario o terziario, dire da quali colori \[EGrave] composto.*)
   ShowExercise2[] := DynamicModule[{ 
+  (*dichiarazione delle variabili di risposta dell'utente, dichiarazione della variabile che ospiter\[AGrave] la tupla di coloriComposti scelta a random, della variabile che assumer\[AGrave] il valore del colore composto della tuplaRandom,ovvero l'ultimo,
+      delle variabili utilizzate per la ruota di Itten, e la dichiarazione e definizione della variabile indicazione che mostra la consegna prima che l'utente risponda ed esito poi.*)
     	risposta1,
     	risposta2,
-    	consegna = "Che tipo di colore \[EGrave] questo?",
-    	triplaRandom,
+    	indicazione = "Quali sono i colori che compongono questo colore?",
+    	tuplaRandom,
     	coloreRandom,
-    	esito,
     	showhide, i, toshow, listaOggetti
     }, 
+    (*Le variabili non inizializzate in precedenza vengono inizializzate*)
    	risposta1 = Null;
    	risposta2 = Null;
-   	triplaRandom = RandomChoice[coloriComposti];
-   	coloreRandom = Last[triplaRandom];
+   	tuplaRandom = RandomChoice[coloriComposti];
+   	coloreRandom = Last[tuplaRandom];
    	showhide = {"Nascondi il cerchio di Itten", 
      "Mostra il cerchio di Itten"};
-   		i = 1;(*indice per il numero di click*)(*lista degli oggetti grafici da mostrare sulla destra dell'esrcizio: area vuota e cerchio di itten\[Rule]per mostrare e nascondere il "suggerimento" del cerchio*)
+     (*indice per il numero di click*)
+   		i = 1;
+   (*lista degli oggetti grafici da mostrare sulla destra dell'esercizio: area vuota e cerchio di itten\[Rule]per mostrare e nascondere il "suggerimento" del cerchio*)
    listaOggetti = {Graphics[ImageSize -> {300, 400}], 
    Show[IttenWheel[ImageSize -> Medium], ImageSize -> {300, 400}, ImageMargins -> {{40, 400}, {2, 2}}]}; toshow = listaOggetti[[1]];
    	Row[{
      	Row[{
+     		(*Quadrato colorato*)
        	Row[{
          	Column[{
+         		(*If dinamico che mostra l'indicazione con il valore di consegna se una delle due risposte non \[EGrave] stata data e non si \[EGrave] cliccato invio, e l'invocazione della funzione CheckAnswer2 nel caso si sia data la risposta.*)
          		Dynamic@If[(risposta1 == Null || risposta2 == Null), 
-         		Style[consegna = "Quali sono i colori che compongono questo colore? ", FontSize -> 25, White],Style[consegna = "Corretto", FontSize -> 40, White ], 
-         		Style[consegna = CheckAnswer1[risposta1, risposta2, triplaRandom], FontSize -> 40, White ]],
+         		Style[indicazione= "Quali sono i colori che compongono questo colore? ", FontSize -> 25, White], Style["Corretto!", FontSize->40, White ],
+         		Style[indicazione = CheckAnswer2[risposta1, risposta2, tuplaRandom], FontSize -> 40, White ]],
+         		(*Riga che ospita le due input field da riempire con la risposta dell'utente allineate in basso al centro del quadrato dell'esercizio*)
            		Row[{
              			InputField[Dynamic[risposta1], FieldSize -> 10], InputField[Dynamic[risposta2], FieldSize -> 10]
              		}, Alignment -> Center]
            	  }, Spacings -> 15] 
-           }, Background -> Dynamic@coloreRandom, 
+           }, 
+           (*Il colore di cui bisogna indicare i colori che lo compongono \[EGrave] il colore di sfondo.*)
+           Background -> Dynamic@coloreRandom, 
            ImageSize -> {450, 450}, Alignment -> Center, Frame -> True, FrameMargins -> 80],
+           (*Colonna con i bottoni da premere per richiedere un nuovo esercizio, che sceglie una nuova tupla di colori da indovinare e il colore dell'esercizio, cancella eventuali stringhe o numeri presenti e riporta il valore dell'indicazione 
+               a quello di consegna; il bottone per mostrare la risposta all'utente assegnando i due colori presenti nella tupla precedentemente scelta a caso; il bottone per cancellare il contenute delle caselle di testo. *)
        		Column[{
-       			Button["Nuovo esercizio", triplaRandom = RandomChoice[coloriComposti]; coloreRandom = Last[triplaRandom]; risposta1 = Null; risposta2 = Null; consegna = "Quali sono i colori che compongono questo colore?"],
-       			Button["Mostra risposta", risposta1 = Part[ShowAnswer1[triplaRandom], 1]; risposta2 = Part[ShowAnswer1[triplaRandom], 2]],
+       			Button["Nuovo esercizio", tuplaRandom = RandomChoice[coloriComposti]; coloreRandom = Last[tuplaRandom]; risposta1 = Null; risposta2 = Null; indicazione = "Quali sono i colori che compongono questo colore?"],
+       			Button["Mostra risposta", risposta1 = Part[GetAnswer2[tuplaRandom], 1]; risposta2 = Part[GetAnswer2[tuplaRandom], 2]],
        			Button["Pulisci caselle", risposta1 = Null; risposta2 = Null]
          		}]
        	}, Alignment -> Right, ImageSize -> {550, 600}, Background -> RGBColor["#f2f7ff"]],
