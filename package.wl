@@ -36,14 +36,23 @@ coloriGiusti = RotateRight[Riffle[Drop[secondari2,-1],terziari],2]
 (*colori composti sono una lista di tuple, ciascuna contenente un colore secondario o terziario della ruota di Itten, preceduti dai numeri dei rispettivi colori che lo compongono. Questa scelta di implementazione \[EGrave] stata fatta per facilitare il recupero
 	dei colori primari e secondari che formano ciascun colore non primario.*)
 coloriComposti = {
+	(*rosso, giallo, arancio*)
    {5, 1, coloriGiusti[[1]]},
+	(*giallo, arancio, arancio-giallo*)
    {1, 3, coloriGiusti[[2]]},
+	(*arancio, rosso, arancio-rosso*)
    {3, 5, coloriGiusti[[12]]},
+	(*viola, rosso, viola-rosso*)
    {7, 5, coloriGiusti[[10]]},
+	(*blu, rosso, viola*)
    {9, 5, coloriGiusti[[9]]},
+	(*blu, viola, blu-viola*)
    {9, 7, coloriGiusti[[8]]},
+	(*blu, verde, grigio*)
    {9, 11, coloriGiusti[[6]]},
+	(*blu, giallo, verde*)
    {9, 1, coloriGiusti[[5]]},
+	(*verde, giallo, verde chiaro*)
    {11, 1, coloriGiusti[[4]]}
    };
 
