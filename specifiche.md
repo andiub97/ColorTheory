@@ -3,16 +3,10 @@
 
 **Primo esercizio**  
 Riconoscimento primari, secondari, terziari
-1. Dato un colore qualsiasi, l'utente deve riconoscere se è un colore primario, secondario o terziario. Input testuale di tre tipi: (Primario | Secondario | Terziario);
-2. Dato un colore secondario o terziario, l'utente deve riconoscere da quali colori è formato.
+1. Dato un colore qualsiasi, l'utente deve riconoscere se è un colore primario, secondario o terziario. Input tramite bottoni di tre tipi: (Primario | Secondario | Terziario);
 
 **Secondo esercizio**  
-Proposta 1: *Riconoscimento complementari*.   
-Viene presentato all'utente un colore, questo deve inserire il numero del colore complementare.  
-Proposta 2: *Riordinamento del gradiente*.  
-Viene presentato un gradiente disordinato. L'utente deve riordinarlo dal più chiaro al più scuro.
+2. Riordinamento dei colori primari e secondari come l'arcobaleno. I colori sono numerati e l'input è testuale (numero intero tra 1 e 6).
 
-Da chiarire:
-* Possiamo evitare di fare il cerchio di Itten in Mathematica e invece inserire un'immagine?
-* Per l'esercizio al punto 2, l'input è testuale (ad ogni colore è associato un numero, l'utente inserisce i numeri che compongono il colore) o basato su bottoni?
-* Scegliere tra proposta 1 e proposta 2.
+**Terzo esercizio**  
+3. Dato un colore secondario o terziario, l'utente deve riconoscere da quali colori è formato.

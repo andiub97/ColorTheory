@@ -1,0 +1,3034 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    136945,       3026]
+NotebookOptionsPosition[    135798,       3000]
+NotebookOutlinePosition[    136231,       3017]
+CellTagsIndexPosition[    136188,       3014]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CheckAnswer", "[", 
+     RowBox[{"risposta_", ",", " ", "colore_"}], "]"}], " ", ":=", " ", 
+    "\[IndentingNewLine]", "  ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"risposta", " ", "\[Equal]", " ", "\"\<Primario\>\""}], " ", "&&",
+        " ", 
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"primari", ",", " ", "colore"}], "]"}]}], ")"}], " ", "||", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"risposta", " ", "\[Equal]", " ", "\"\<Secondario\>\""}], " ", 
+       "&&", " ", 
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"secondari", ",", " ", "colore"}], "]"}]}], ")"}], " ", "||", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"risposta", " ", "\[Equal]", " ", "\"\<Terziario\>\""}], " ", "&&",
+        " ", 
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"terziari", ",", " ", "colore"}], "]"}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ShowAnswer", "[", "colore_", "]"}], " ", ":=", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Which", "[", 
+     RowBox[{
+      RowBox[{"MemberQ", "[", 
+       RowBox[{"primari", ",", " ", "colore"}], "]"}], ",", " ", 
+      "\"\<Primario\>\"", ",", " ", 
+      RowBox[{"MemberQ", "[", 
+       RowBox[{"secondari", ",", " ", "colore"}], "]"}], ",", " ", 
+      "\"\<Secondario\>\"", ",", " ", 
+      RowBox[{"MemberQ", "[", 
+       RowBox[{"terziari", ",", " ", "colore"}], "]"}], ",", " ", 
+      "\"\<Terziario\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"primari", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"Yellow", ",", " ", "Blue", ",", " ", "Red"}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"secondari", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Darker", "[", "Green", "]"}], ",", " ", "Purple", ",", " ", 
+     "Orange"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"secondari2", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"Yellow", ",", " ", 
+     RowBox[{"Darker", "[", "Green", "]"}], ",", " ", "Blue", ",", " ", 
+     "Purple", ",", " ", "Red", ",", " ", "Orange", ",", " ", "Yellow"}], 
+    "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"terziari", " ", "=", " ", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Blend", ",", " ", 
+     RowBox[{"Partition", "[", 
+      RowBox[{"secondari2", ",", " ", "2", ",", " ", "1"}], "]"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"coloriGiusti", " ", "=", " ", 
+    RowBox[{"RotateRight", "[", 
+     RowBox[{
+      RowBox[{"Riffle", "[", 
+       RowBox[{
+        RowBox[{"Drop", "[", 
+         RowBox[{"secondari2", ",", 
+          RowBox[{"-", "1"}]}], "]"}], ",", "terziari"}], "]"}], ",", "2"}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"o", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"Sqrt", "[", "3", "]"}]}], "/", "4"}], ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "4"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sqrt", "[", "3", "]"}], "/", "4"}], ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "4"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"1", "/", "2"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"Sqrt", "[", "3", "]"}]}], "/", "8"}], ",", 
+     RowBox[{"1", "/", "8"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"e", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sqrt", "[", "3", "]"}], "/", "8"}], ",", 
+     RowBox[{"1", "/", "8"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "4"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "2"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"q", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"Sqrt", "[", "3", "]"}]}], "/", "4"}], ",", 
+     RowBox[{"1", "/", "4"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sqrt", "[", "3", "]"}], "/", "4"}], ",", 
+      RowBox[{"1", "/", "4"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Punti", " ", "aree", " ", "colori", " ", "primari", " ", "e", " ", 
+    "secondari"}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"ptsY", "=", 
+   RowBox[{"{", 
+    RowBox[{"o", ",", "e", ",", "c", ",", "d"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ptsB", "=", 
+   RowBox[{"{", 
+    RowBox[{"o", ",", "d", ",", "a", ",", "h"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ptsR", "=", 
+   RowBox[{"{", 
+    RowBox[{"o", ",", "e", ",", "b", ",", "h"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ptsO", "=", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "r", ",", "b"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ptsG", "=", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "q", ",", "a"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ptsV", "=", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "p"}], "}"}]}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "stringhe", " ", "per", " ", "il", " ", "mouseover", " ", "della", " ", 
+    "ruota", " ", "dei", " ", "12", " ", "colori"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"lblsOver", "=", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{"ConstantArray", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Primario\>\"", ",", "\"\<Terziario\>\"", ",", 
+         "\"\<Secondario\>\"", ",", "\"\<Terziario\>\""}], "}"}], ",", "3"}], 
+      "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "caricamento", " ", "immagine", " ", "per", " ", "il", " ", "bottone", 
+    " ", "\"\<canella\>\""}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cleanImage", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<clean.png\>\""}], 
+        "}"}], "]"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "30"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ShowExercise1", "[", "]"}], " ", ":=", " ", 
+    RowBox[{"DynamicModule", "[", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"{", " ", 
+       RowBox[{
+       "risposta", ",", "\[IndentingNewLine]", "\t", "coloreRandom", ",", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{
+        "messaggioUtente", " ", "=", " ", 
+         "\"\<Che tipo di colore \[EGrave] questo?\>\""}], ",", 
+        "\[IndentingNewLine]", "\t", "buttonPrimarioColor", ",", 
+        "\[IndentingNewLine]", "\t", "buttonSecondarioColor", ",", 
+        "\[IndentingNewLine]", "\t", "buttonTerziarioColor", ",", 
+        "\[IndentingNewLine]", "\t", "cleanImage", ",", "\[IndentingNewLine]",
+         "\t", "showhide", ",", "i", ",", "toshow", ",", "listaOggetti"}], 
+       "}"}], ",", "\[IndentingNewLine]", "\t ", 
+      RowBox[{
+       RowBox[{"Dynamic", "[", " ", 
+        RowBox[{
+        "messaggioUtente", " ", "=", " ", 
+         "\"\<Che tipo di colore \[EGrave] questo?\>\""}], "]"}], ";", 
+       "\[IndentingNewLine]", "\t  ", 
+       RowBox[{"risposta", " ", "=", " ", "\"\<\>\""}], ";", 
+       "\[IndentingNewLine]", "\t  ", 
+       RowBox[{"coloreRandom", " ", "=", " ", 
+        RowBox[{"RandomChoice", "[", "coloriGiusti", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\t  ", 
+       RowBox[{"buttonPrimarioColor", " ", "=", " ", "Null"}], ";", 
+       "\[IndentingNewLine]", "\t  ", 
+       RowBox[{"buttonSecondarioColor", " ", "=", " ", "Null"}], ";", 
+       "\[IndentingNewLine]", "\t  ", 
+       RowBox[{"buttonTerziarioColor", " ", "=", " ", "Null"}], ";", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"showhide", "=", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Nascondi il cerchio di Itten\>\"", ",", 
+          "\"\<Mostra il cerchio di Itten\>\""}], "}"}]}], ";", "\n", "\t\t", 
+       RowBox[{"i", "=", "1"}], ";", 
+       RowBox[{"(*", 
+        RowBox[{
+        "indice", " ", "per", " ", "il", " ", "numero", " ", "di", " ", 
+         "click"}], "*)"}], 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+         "lista", " ", "degli", " ", "oggetti", " ", "grafici", " ", "da", 
+          " ", "mostrare", " ", "sulla", " ", "destra", " ", 
+          RowBox[{"dell", "'"}], 
+          RowBox[{"esrcizio", ":", 
+           RowBox[{
+           "area", " ", "vuota", " ", "e", " ", "cerchio", " ", "di", " ", 
+            "itten"}]}]}], "\[Rule]", 
+         RowBox[{
+         "per", " ", "mostrare", " ", "e", " ", "nascondere", " ", "il", " ", 
+          "\"\<suggerimento\>\"", " ", "del", " ", "cerchio"}]}], "*)"}], 
+       RowBox[{"listaOggetti", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Graphics", "[", 
+           RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"300", ",", "400"}], "}"}]}], "]"}], ",", 
+          RowBox[{"Show", "[", 
+           RowBox[{
+            RowBox[{"IttenWheel", "[", 
+             RowBox[{"ImageSize", "\[Rule]", "Medium"}], "]"}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"300", ",", "400"}], "}"}]}], ",", 
+            RowBox[{"ImageMargins", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"40", ",", "400"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}]}], "]"}]}], "}"}]}],
+        ";", "\n", 
+       RowBox[{"toshow", "=", 
+        RowBox[{"listaOggetti", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+         "se", " ", "non", " ", "esplicitamente", " ", "richiesto", " ", 
+          "tramite", " ", "bottone"}], ",", 
+         RowBox[{
+         "il", " ", "cerchio", " ", "\[EGrave]", " ", "nascosto", " ", 
+          "quindi", " ", "si", " ", "mostra", " ", 
+          RowBox[{"l", "'"}], "area", " ", "grafica", " ", "vuota"}]}], 
+        "*)"}], "\[IndentingNewLine]", "\t  ", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", "\n", "\t\t\t ", 
+         RowBox[{
+          RowBox[{"Row", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", "\t", 
+             RowBox[{
+              RowBox[{"Row", "[", 
+               RowBox[{
+                RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+                 RowBox[{"Column", "[", 
+                  RowBox[{
+                   RowBox[{"{", "\[IndentingNewLine]", "\t           ", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "@", 
+                    RowBox[{"Which", "[", "\[IndentingNewLine]", "\t\t", 
+                    RowBox[{
+                    RowBox[{"risposta", " ", "\[Equal]", " ", "\"\<\>\""}], 
+                    ",", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"messaggioUtente", ",", 
+                    RowBox[{"FontSize", "\[Rule]", "40"}], ",", " ", 
+                    "White"}], "]"}], ",", " ", "\[IndentingNewLine]", "\t\t", 
+                    RowBox[{"CheckAnswer", "[", 
+                    RowBox[{"risposta", ",", " ", "coloreRandom"}], "]"}], 
+                    ",", " ", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<Corretto!\>\"", ",", " ", 
+                    RowBox[{"FontSize", "\[Rule]", "40"}], ",", " ", 
+                    "White"}], " ", "]"}], ",", " ", "\[IndentingNewLine]", 
+                    "\t\t", "True", ",", " ", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<Sbagliato\>\"", ",", " ", 
+                    RowBox[{"FontSize", "\[Rule]", " ", "40"}], ",", " ", 
+                    "White"}], "]"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+                    "\t\t  ", 
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", "\[IndentingNewLine]", "\t\t\t", 
+                    RowBox[{
+                    RowBox[{"Button", "[", 
+                    RowBox[{"\"\<Primario\>\"", ",", " ", 
+                    RowBox[{"risposta", " ", "=", " ", "\"\<Primario\>\""}], 
+                    ",", " ", 
+                    RowBox[{
+                    "Background", "\[Rule]", " ", "buttonPrimarioColor"}]}], 
+                    "]"}], ",", "\[IndentingNewLine]", "\t\t\t", 
+                    RowBox[{"Button", "[", 
+                    RowBox[{"\"\<Secondario\>\"", ",", " ", 
+                    RowBox[{"risposta", " ", "=", " ", "\"\<Secondario\>\""}],
+                     ",", " ", 
+                    RowBox[{
+                    "Background", "\[Rule]", " ", "buttonSecondarioColor"}]}],
+                     "]"}], ",", "\[IndentingNewLine]", "\t\t\t", 
+                    RowBox[{"Button", "[", 
+                    RowBox[{"\"\<Terziario\>\"", ",", " ", 
+                    RowBox[{"risposta", " ", "=", " ", "\"\<Terziario\>\""}], 
+                    ",", " ", 
+                    RowBox[{
+                    "Background", " ", "\[Rule]", "buttonTerziarioColor"}]}], 
+                    "]"}]}], "\[IndentingNewLine]", "\t       ", "}"}], 
+                    "]"}]}], "\[IndentingNewLine]", "\t    ", "}"}], ",", " ", 
+                   RowBox[{"Spacings", "\[Rule]", "10"}]}], "]"}], "}"}], 
+                "\[IndentingNewLine]", "\t", ",", 
+                RowBox[{"Background", "\[Rule]", " ", 
+                 RowBox[{"Dynamic", "@", "coloreRandom"}]}], " ", ",", " ", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"450", ",", " ", "450"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}], ",", " ", 
+                RowBox[{"Frame", " ", "\[Rule]", " ", "True"}], ",", " ", 
+                RowBox[{"FrameMargins", "\[Rule]", "80"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", "\t       ", 
+              RowBox[{"Column", "[", 
+               RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+                RowBox[{
+                 RowBox[{"Button", "[", 
+                  RowBox[{"cleanImage", ",", 
+                   RowBox[{
+                    RowBox[{"risposta", " ", "=", " ", "\"\<\>\""}], ";", " ", 
+                    RowBox[{
+                    "messaggioUtente", " ", "=", " ", "\"\<\>\""}]}]}], "]"}],
+                  ",", "\[IndentingNewLine]", "\t\t", 
+                 RowBox[{"Button", "[", 
+                  RowBox[{"\"\<Nuovo esercizio\>\"", ",", " ", 
+                   RowBox[{
+                    RowBox[{"coloreRandom", " ", "=", " ", 
+                    RowBox[{"RandomChoice", "[", "coloriGiusti", "]"}]}], ";",
+                     " ", 
+                    RowBox[{"risposta", " ", "=", " ", "\"\<\>\""}], ";", " ", 
+                    RowBox[{
+                    "messaggioUtente", " ", "=", " ", 
+                    "\"\<Che tipo di colore \[EGrave] questo?\>\""}]}]}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t\t", 
+                 RowBox[{"Button", "[", 
+                  RowBox[{"\"\<Mostra risposta\>\"", ",", " ", 
+                   RowBox[{
+                    RowBox[{"risposta", " ", "=", " ", "\"\<\>\""}], ";", " ", 
+                    RowBox[{"messaggioUtente", " ", "=", 
+                    RowBox[{"ShowAnswer", "[", "coloreRandom", "]"}]}]}]}], 
+                  "]"}]}], "\[IndentingNewLine]", "\t", "}"}], "]"}]}], 
+             "\[IndentingNewLine]", "\t", "}"}], ",", 
+            RowBox[{"Alignment", "\[Rule]", "Right"}], ",", " ", 
+            RowBox[{"ImageSize", "\[Rule]", " ", 
+             RowBox[{"{", 
+              RowBox[{"550", ",", " ", "600"}], "}"}]}], ",", " ", 
+            RowBox[{"Background", "\[Rule]", " ", 
+             RowBox[{"RGBColor", "[", "\"\<#f2f7ff\>\"", "]"}]}]}], "]"}], 
+          ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"Row", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"(*", 
+              RowBox[{
+              "colonna", " ", "contenente", " ", "bottone", " ", "e", " ", 
+               "cerchio", " ", "di", " ", "itten"}], "*)"}], 
+             RowBox[{"Column", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Button", "[", 
+                 RowBox[{"(*", 
+                  RowBox[{
+                   RowBox[{
+                   "scelgo", " ", "la", " ", "label", " ", "da", " ", 
+                    "mostrare", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    "nascondi", " ", "o", " ", "mostra", " ", "il", " ", 
+                    "cerchio"}], ")"}]}], ",", 
+                   RowBox[{
+                   "in", " ", "base", " ", "allo", " ", "stato", " ", "del", 
+                    " ", "cerchio", " ", "che", " ", "\[EGrave]", " ", "dato",
+                     " ", "dal", " ", "numero", " ", "di", " ", "click", " ", 
+                    "nella", " ", "variabile", " ", 
+                    RowBox[{"\"\<i\>\"", ".", "Se"}], " ", "il", " ", 
+                    "numero", " ", "di", " ", "click", " ", "\[EGrave]", " ", 
+                    "0", " ", "o", " ", "pari"}], ",", 
+                   RowBox[{
+                   "e", " ", "quindi", " ", "\"\<i\>\"", " ", "\[EGrave]", 
+                    " ", "dispari", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"inizializzata", " ", "a", " ", "1"}], ")"}], " ",
+                     "il", " ", "cerchio", " ", "\[EGrave]", " ", "nascosto", 
+                    " ", "e", " ", "il", " ", "bottone", " ", "deve", " ", 
+                    "essere", " ", 
+                    RowBox[{"\"\<mostrare\>\"", ".", "se"}], " ", "il", " ", 
+                    "numero", " ", "di", " ", "click", " ", "\[EGrave]", " ", 
+                    "dispari", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"\"\<i\>\"", " ", "pari"}], ")"}], " ", "allora", 
+                    " ", "il", " ", "cerchio", " ", "\[EGrave]", " ", 
+                    "visibile", " ", "e", " ", "il", " ", "bottone", " ", 
+                    "deve", " ", "essere", " ", "\"\<nascondi\>\""}]}], 
+                  "*)"}], 
+                 RowBox[{
+                  RowBox[{"Dynamic", "@", 
+                   RowBox[{"ToString", "@", 
+                    RowBox[{"showhide", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", "+", 
+                    RowBox[{"Mod", "[", 
+                    RowBox[{"i", ",", "2"}], "]"}]}], "]"}], "]"}]}]}], ",", 
+                  RowBox[{"toshow", "=", 
+                   RowBox[{"listaOggetti", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", "+", 
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"i", "++"}], ",", "2"}], "]"}]}], "]"}], "]"}]}], 
+                  ",", 
+                  RowBox[{"(*", 
+                   RowBox[{
+                    RowBox[{"come", " ", "commento", " ", "sopra"}], ",", 
+                    RowBox[{"si", " ", "seleziona", " ", 
+                    RowBox[{"l", "'"}], "oggetto", " ", "da", " ", 
+                    RowBox[{"mostrare", ":", 
+                    RowBox[{
+                    "area", " ", "vuota", " ", "o", " ", "cerchio", " ", "di",
+                     " ", "itten"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                  RowBox[{"ImageSize", "\[Rule]", "150"}], ",", 
+                  RowBox[{"ImageMargins", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"100", ",", "100"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}], ",", 
+                  RowBox[{"FrameMargins", "\[Rule]", "Large"}], ",", 
+                  RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+                RowBox[{"(*", 
+                 RowBox[{
+                 "area", " ", "che", " ", "si", " ", "aggiorna", " ", 
+                  "dinamicamente", " ", "per", " ", "mostrare", " ", "e", " ",
+                   "nascondere", " ", "il", " ", "cerchio"}], "*)"}], 
+                RowBox[{"Dynamic", "@", 
+                 RowBox[{"Show", "[", "toshow", "]"}]}]}], "}"}], "]"}], 
+             "}"}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"400", ",", "600"}], "}"}]}], ",", 
+            RowBox[{"Background", "\[Rule]", 
+             RowBox[{"RGBColor", "[", "\"\<#f2f7ff\>\"", "]"}]}]}], "]"}]}], 
+         "\[IndentingNewLine]", "\n", "}"}], "\n", "]"}]}]}], "\n", "]"}]}], 
+   ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IttenWheel", "::", "badBool"}], "=", 
+   "\"\<`1` non \[EGrave] un valore valido per l'opzione Mouseover (valori \
+accettati: True, False)\>\""}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"IttenWheel", "::", "badSize"}], "=", 
+    "\"\<`1` non \[EGrave] un valore valido per l'opzione ImageSize (valori \
+accettati: Medium, Large)\>\""}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "IttenWheel", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Mouseover", "\[Rule]", "False"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"IttenWheel", "[", 
+    RowBox[{"OptionsPattern", "[", "]"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"terziariWheel", ",", "coloriEstesi", ",", "lbls"}], "}"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+       "se", " ", "non", " ", "\[EGrave]", " ", "stato", " ", "passato", " ", 
+        "un", " ", "valore", " ", "che", " ", "non", " ", "\[EGrave]", " ", 
+        "True", " ", "o", " ", "False"}], ",", 
+       RowBox[{"si", " ", "d\[AGrave]", " ", 
+        RowBox[{"errore", ".", "Altrimenti"}], " ", "si", " ", "crea", " ", 
+        "il", " ", "cerchio"}]}], "*)"}], 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"SameQ", "[", 
+         RowBox[{
+          RowBox[{"OptionValue", "[", "Mouseover", "]"}], ",", "True"}], 
+         "]"}], "||", 
+        RowBox[{
+         RowBox[{"SameQ", "[", 
+          RowBox[{
+           RowBox[{"OptionValue", "[", "Mouseover", "]"}], ",", "False"}], 
+          "]"}], "&&", 
+         RowBox[{"MemberQ", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Medium", ",", "Large"}], "}"}], ",", 
+           RowBox[{"OptionValue", "[", "ImageSize", "]"}]}], "]"}]}]}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "creazione", " ", "dei", " ", "colori", " ", "terziari", " ", "del", 
+         " ", "cerchio", " ", "tramite", " ", "la", " ", "unione", " ", 
+         "delle", " ", "coppie", " ", "di", " ", "colori", " ", "primari", 
+         " ", "e", " ", "secondari"}], "*)"}], 
+       RowBox[{
+        RowBox[{"terziariWheel", "=", 
+         RowBox[{"Map", "[", 
+          RowBox[{"Blend", ",", 
+           RowBox[{"Partition", "[", 
+            RowBox[{"secondariWheel", ",", "2", ",", "1"}], "]"}]}], "]"}]}], 
+        ";", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Partiton", " ", "crea", " ", "una", " ", "lista", " ", "di", " ", 
+          "coppie", " ", "di", " ", "colori"}], "*)"}], 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{
+          "creazione", " ", "della", " ", "lista", " ", "dei", " ", "12", " ",
+            "colori", " ", "del", " ", "cerchio", " ", "di", " ", "Itten"}], 
+          ",", 
+          RowBox[{
+          "alternando", " ", "la", " ", "lista", " ", "dei", " ", "secondari",
+            " ", "estesi", " ", "con", " ", "quella", " ", "dei", " ", 
+           "terziari"}]}], "*)"}], 
+        RowBox[{"coloriEstesi", "=", 
+         RowBox[{"Riffle", "[", 
+          RowBox[{
+           RowBox[{"Drop", "[", 
+            RowBox[{"secondariWheel", ",", 
+             RowBox[{"-", "1"}]}], "]"}], ",", "terziariWheel"}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"lbls", "=", 
+         RowBox[{"Reverse", "[", 
+          RowBox[{"RotateLeft", "[", 
+           RowBox[{
+            RowBox[{"Range", "[", "12", "]"}], ",", "1"}], "]"}], "]"}]}], 
+        ";", 
+        RowBox[{"(*", 
+         RowBox[{"creazione", " ", "delle", " ", 
+          RowBox[{"etichette", "/", "numerazione"}], " ", "dei", " ", 
+          "colori"}], "*)"}], 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"OptionValue", "[", "Mouseover", "]"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"caso", " ", "interattivo"}], "*)"}], 
+          RowBox[{"Show", "[", 
+           RowBox[{
+            RowBox[{"InnerGeometry", "[", 
+             RowBox[{"OptionValue", "[", "Mouseover", "]"}], "]"}], ",", 
+            RowBox[{"OuterGeometryOver", "[", 
+             RowBox[{"coloriEstesi", ",", "lbls"}], "]"}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"OptionValue", "[", "ImageSize", "]"}]}]}], "]"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"caso", " ", "statico"}], "*)"}], 
+          RowBox[{"Graphics", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"InnerGeometry", "[", "]"}], ",", 
+              RowBox[{"OuterGeometry", "[", 
+               RowBox[{"coloriEstesi", ",", "lbls"}], "]"}]}], "}"}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"OptionValue", "[", "ImageSize", "]"}]}]}], "]"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{
+          "creazione", " ", "oggetto", " ", "grafico", " ", "che", " ", 
+           "unisce", " ", "la", " ", "parte", " ", "interna", " ", "e", " ", 
+           RowBox[{"l", "'"}], "anello", " ", "esternodel", " ", "cerchio", 
+           " ", "dei", " ", "colori"}], "*)"}], "]"}]}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "messaggi", " ", "di", " ", "errore", " ", "in", " ", "caso", " ", 
+         "di", " ", "valore", " ", "non", " ", "accettabile", " ", "per", " ",
+          "le", " ", "options"}], "*)"}], 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"!", 
+            RowBox[{"SameQ", "[", 
+             RowBox[{
+              RowBox[{"OptionValue", "[", "Mouseover", "]"}], ",", "True"}], 
+             "]"}]}], "&&", 
+           RowBox[{"!", 
+            RowBox[{"SameQ", "[", 
+             RowBox[{
+              RowBox[{"OptionValue", "[", "Mouseover", "]"}], ",", "False"}], 
+             "]"}]}]}], ",", 
+          RowBox[{"Message", "[", 
+           RowBox[{
+            RowBox[{"IttenWheel", "::", "badBool"}], ",", 
+            RowBox[{"OptionValue", "[", "Mouseover", "]"}]}], "]"}]}], "]"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"MemberQ", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"Medium", ",", "Large"}], "}"}], ",", 
+             RowBox[{"OptionValue", "[", "ImageSize", "]"}]}], "]"}]}], ",", 
+          RowBox[{"Message", "[", 
+           RowBox[{
+            RowBox[{"IttenWheel", "::", "badSize"}], ",", 
+            RowBox[{"OptionValue", "[", "ImageSize", "]"}]}], "]"}]}], "]"}], 
+        ";"}]}], "]"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"secondariWheel", "=", 
+    RowBox[{"{", 
+     RowBox[{"Yellow", ",", 
+      RowBox[{"Darker", "[", "Green", "]"}], ",", "Blue", ",", "Purple", ",", 
+      "Red", ",", "Orange", ",", "Yellow"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"creazione", " ", 
+    RowBox[{"dell", "'"}], "esagono", " ", "interno", " ", "del", " ", 
+    "cercio", " ", "dei", " ", "colori", " ", "di", " ", 
+    RowBox[{"Itten", "."}]}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InnerGeometry", "[", 
+    RowBox[{"over_", ":", "False"}], "]"}], ":=", 
+   RowBox[{"If", "[", 
+    RowBox[{"over", ",", 
+     RowBox[{"(*", 
+      RowBox[{"caso", " ", "dinamico"}], "*)"}], 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+       "se", " ", "si", " ", "vuole", " ", "un", " ", "cerchio", " ", 
+        "dinamica"}], ",", 
+       RowBox[{
+       "con", " ", "mouseover", " ", "chiamo", " ", "la", " ", "funzione", 
+        " ", "SectorWheelOver", " ", "per", " ", "ogni", " ", "colore"}]}], 
+      "*)"}], 
+     RowBox[{"Return", "[", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{"SectorWheelOver", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+           "ptsY", ",", "ptsO", ",", "ptsR", ",", "ptsV", ",", "ptsB", ",", 
+            "ptsG"}], "}"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"punti", " ", "da", " ", "unire"}], "*)"}], 
+          RowBox[{"Range", "[", 
+           RowBox[{"1", ",", "11", ",", "2"}], "]"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{
+           "generazione", " ", "delle", " ", "etichette", " ", "dei", " ", 
+            "colori", " ", "come", " ", "numeri", " ", "interi"}], "*)"}], 
+          RowBox[{"(*", 
+           RowBox[{
+            RowBox[{"Moltiplico", " ", "la", " ", "lista", " ", 
+             RowBox[{"{", 
+              RowBox[{"\"\<Primario\>\"", ",", "\"\<Secondario\>\""}], "}"}], 
+             " ", "per", " ", "una", " ", "lista", " ", "contenente", " ", 
+             "tre", " ", "1"}], ",", 
+            RowBox[{
+            "in", " ", "modo", " ", "da", " ", "creare", " ", "tre", " ", 
+             "liste", " ", "uguali", " ", "alla", " ", "coppia", " ", "di", 
+             " ", 
+             RowBox[{"stringhe", ".", "Le"}], " ", "unisco", " ", "con", " ", 
+             "Join", " ", "per", " ", "ottenere", " ", 
+             RowBox[{"un", "'"}], "alternanza", " ", "di", " ", "stringhe", 
+             " ", "lunga", " ", "6.", " ", "Sono", " ", "le", " ", 
+             "etichette", " ", "da", " ", "mostrare", " ", "in", " ", "caso", 
+             " ", "di", " ", "Mouseover"}]}], "*)"}], 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Join", "@@", 
+             RowBox[{
+              RowBox[{"{", "#", "}"}], "[", 
+              RowBox[{"[", 
+               RowBox[{"ConstantArray", "[", 
+                RowBox[{"1", ",", "3"}], "]"}], "]"}], "]"}]}], "&"}], "[", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Primario\>\"", ",", "\"\<Secondario\>\""}], "}"}], 
+           "]"}], ",", 
+          RowBox[{"Drop", "[", 
+           RowBox[{
+            RowBox[{"Reverse", "[", "secondariWheel", "]"}], ",", 
+            RowBox[{"-", "1"}]}], "]"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{
+           "generazione", " ", "dei", " ", "colori", " ", "nel", " ", 
+            "giusto", " ", "ordine"}], ",", 
+           RowBox[{
+           "a", " ", "partire", " ", "dalla", " ", "lista", " ", "dei", " ", 
+            "colori", " ", "gi\[AGrave]", " ", 
+            RowBox[{"esistente", ":", 
+             RowBox[{
+             "si", " ", "rovescia", " ", "la", " ", "lista", " ", "e", " ", 
+              "si", " ", "toglie", " ", 
+              RowBox[{"l", "'"}], "ultimo", " ", "elemento", " ", "che", " ", 
+              "consiste", " ", "in", " ", "una", " ", "ripetizione", " ", 
+              "del", " ", "giallo"}]}]}]}], "*)"}], "}"}]}], "]"}], "]"}], 
+     ",", 
+     RowBox[{"(*", 
+      RowBox[{"caso", " ", "statico"}], "*)"}], 
+     RowBox[{"(*", 
+      RowBox[{
+      "chiama", " ", "la", " ", "funzione", " ", "ausialiare", " ", 
+       "SectorWheel", " ", "per", " ", "ognuno", " ", "dei", " ", "sei", " ", 
+       "colori", " ", "da", " ", 
+       RowBox[{"rappresentare", "."}]}], "*)"}], 
+     RowBox[{"Return", "[", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{"SectorWheel", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+           "ptsY", ",", "ptsO", ",", "ptsR", ",", "ptsV", ",", "ptsB", ",", 
+            "ptsG"}], "}"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"punti", " ", "da", " ", "unire"}], "*)"}], 
+          RowBox[{"Range", "[", 
+           RowBox[{"1", ",", "11", ",", "2"}], "]"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{
+           "generazione", " ", "delle", " ", "etichette", " ", "dei", " ", 
+            "colori", " ", "come", " ", "numeri", " ", "interi"}], "*)"}], 
+          RowBox[{"Drop", "[", 
+           RowBox[{
+            RowBox[{"Reverse", "[", "secondariWheel", "]"}], ",", 
+            RowBox[{"-", "1"}]}], "]"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{
+           "generazione", " ", "dei", " ", "colori", " ", "nel", " ", 
+            "giusto", " ", "ordine"}], ",", 
+           RowBox[{
+           "a", " ", "partire", " ", "dalla", " ", "lista", " ", "dei", " ", 
+            "colori", " ", "gi\[AGrave]", " ", 
+            RowBox[{"esistente", ":", 
+             RowBox[{
+             "si", " ", "rovescia", " ", "la", " ", "lista", " ", "e", " ", 
+              "si", " ", "toglie", " ", 
+              RowBox[{"l", "'"}], "ultimo", " ", "elemento", " ", "che", " ", 
+              "consiste", " ", "in", " ", "una", " ", "ripetizione", " ", 
+              "del", " ", "giallo"}]}]}]}], "*)"}], "}"}]}], "]"}], "]"}]}], 
+    "]"}]}], "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Funzione", " ", 
+     RowBox[{"ausiliare", ".", 
+      RowBox[{"Dati", ":", 
+       RowBox[{"una", " ", "lista", " ", "di", " ", "punti"}]}]}]}], ",", 
+    RowBox[{
+    "una", " ", "etichetta", " ", "e", " ", "un", " ", "colore", " ", "la", 
+     " ", "funzione", " ", "crea", " ", "un", " ", "poligono", " ", 
+     "colorato", " ", "al", " ", "cui", " ", "centro", " ", "viene", " ", 
+     "sovrapposta", " ", "la", " ", "sua", " ", "etichetta", " ", 
+     RowBox[{
+      RowBox[{"(", "testo", ")"}], ".", "Resituisce"}], " ", "una", " ", 
+     RowBox[{"lisa", "."}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SectorWheel", "[", 
+    RowBox[{"pts_", ",", "txt_", ",", "color_"}], "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"Polygon", "[", "pts", "]"}], ",", "color"}], "]"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{"creazione", " ", "del", " ", "poligono"}], "*)"}], 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{"txt", ",", 
+         RowBox[{"RegionCentroid", "[", 
+          RowBox[{"Polygon", "[", "pts", "]"}], "]"}]}], "]"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "aggiunta", " ", "del", " ", "testo", " ", "nel", " ", "centro", " ", 
+         "del", " ", "poligono"}], "*)"}], "Bold", ",", 
+       RowBox[{"FontSize", "\[Rule]", "14"}]}], " ", 
+      RowBox[{"(*", 
+       RowBox[{"stile", " ", "del", " ", "testo"}], "*)"}], "]"}]}], "}"}]}], 
+  "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Funzione", " ", 
+     RowBox[{"ausiliare", ".", 
+      RowBox[{"Dati", ":", 
+       RowBox[{"una", " ", "lista", " ", "di", " ", "punti"}]}]}]}], ",", 
+    RowBox[{
+    "due", " ", "etichette", " ", "e", " ", "un", " ", "colore", " ", "la", 
+     " ", "funzione", " ", "crea", " ", "un", " ", "poligono", " ", 
+     "colorato", " ", "al", " ", "cui", " ", "centro", " ", "viene", " ", 
+     "sovrapposta", " ", "la", " ", "sua", " ", "etichetta", " ", 
+     RowBox[{"(", "testo", ")"}], " ", "che", " ", "cambia", " ", "in", " ", 
+     "seguito", " ", "ad", " ", "evento", " ", "mouseover"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SectorWheelOver", "[", 
+    RowBox[{"pts_", ",", "txt_", ",", "txtOver_", ",", "color_"}], "]"}], ":=", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", 
+     RowBox[{"(*", 
+      RowBox[{"Mouseover", " ", "gestisce", " ", 
+       RowBox[{"l", "'"}], "evento", " ", "che", " ", "si", " ", "attiva", 
+       " ", "quando", " ", "il", " ", "mouse", " ", "passa", " ", "sopra", 
+       " ", "alla", " ", "regione", " ", "geometrica"}], "*)"}], 
+     RowBox[{"Mouseover", "[", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"oggetto", " ", "originale"}], ",", 
+        RowBox[{
+        "che", " ", "viene", " ", "mostrato", " ", "se", " ", "il", " ", 
+         "muose", " ", "non", " ", "si", " ", "trova", " ", "sopra", " ", 
+         RowBox[{"l", "'"}], "oggetto"}]}], "*)"}], 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Polygon", "[", "pts", "]"}], ",", "color"}], "]"}], ",", 
+         RowBox[{"(*", 
+          RowBox[{"creazione", " ", "del", " ", "poligono"}], "*)"}], 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{"txt", ",", 
+             RowBox[{"RegionCentroid", "[", 
+              RowBox[{"Polygon", "[", "pts", "]"}], "]"}]}], "]"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{
+            "aggiunta", " ", "del", " ", "testo", " ", "nel", " ", "centro", 
+             " ", "del", " ", "poligono"}], "*)"}], "Bold", ",", 
+           RowBox[{"FontSize", "\[Rule]", "14"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"stile", " ", "del", " ", "testo"}], "*)"}], 
+       RowBox[{"(*", 
+        RowBox[{
+        "oggetto", " ", "modificato", " ", "che", " ", "viene", " ", 
+         "mostrato", " ", "quando", " ", "il", " ", "muose", " ", "si", " ", 
+         "trova", " ", "sopra", " ", 
+         RowBox[{"l", "'"}], "oggetto"}], "*)"}], 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Polygon", "[", "pts", "]"}], ",", "color"}], "]"}], ",", 
+         RowBox[{"(*", 
+          RowBox[{"creazione", " ", "del", " ", "poligono"}], "*)"}], 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{"txtOver", ",", 
+             RowBox[{"RegionCentroid", "[", 
+              RowBox[{"Polygon", "[", "pts", "]"}], "]"}]}], "]"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{
+            "aggiunta", " ", "del", " ", "testo", " ", "nel", " ", "centro", 
+             " ", "del", " ", "poligono"}], "*)"}], "Bold", ",", 
+           RowBox[{"FontSize", "\[Rule]", "14"}]}], "]"}]}], "}"}]}], "]"}], 
+     "}"}], "]"}]}], "\n", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Funzione", " ", "che", " ", "crea", " ", 
+     RowBox[{"l", "'"}], "anello", " ", "esterno", " ", "del", " ", "cercio", 
+     " ", "dei", " ", "colori", " ", "di", " ", "itten", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"con", " ", "12", " ", "colori"}], ")"}], ".", 
+      RowBox[{"Input", ":", 
+       RowBox[{"lista", " ", "di", " ", "colori"}]}]}]}], ",", 
+    RowBox[{"lista", " ", "di", " ", "etichette"}], ",", 
+    RowBox[{"raggio", " ", "interno"}], ",", 
+    RowBox[{"raggio", " ", "esterno", " ", 
+     RowBox[{"dell", "'"}], "anello"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"OuterGeometry", "[", 
+     RowBox[{"colorList_", ",", "lbl_", ",", 
+      RowBox[{"r1_", ":", "0.5"}], ",", 
+      RowBox[{"r2_", ":", "0.8"}]}], "]"}], ":=", 
+    RowBox[{"Join", "[", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"(*", 
+           RowBox[{
+           "la", " ", "funzione", " ", "Annulus", " ", "crea", " ", "un", " ",
+             "singolo", " ", "settore", " ", 
+            RowBox[{"dell", "'"}], 
+            RowBox[{"anello", "."}]}], "*)"}], 
+          RowBox[{"(*", 
+           RowBox[{"centro", ",", 
+            RowBox[{"raggio", " ", "interno", " ", "e", " ", "esterno"}], ",", 
+            RowBox[{"angolo", " ", "iniziale", " ", "e", " ", "finale"}]}], 
+           "*)"}], 
+          RowBox[{"(*", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "1"}], "/", "12"}], "Pi", " ", "per", " ", 
+             "\"\<ruotare\>\"", " ", "di", " ", "mezzo", " ", "settore"}], 
+            ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"+", "Pi"}], "/", "2"}], " ", "per", " ", "portare", 
+             " ", "i", " ", "colori", " ", "nella", " ", "giusta", " ", 
+             "posizione"}], ",", 
+            RowBox[{
+            "con", " ", "il", " ", "giallo", " ", "in", " ", "alto"}]}], 
+           "*)"}], 
+          RowBox[{
+           RowBox[{"Annulus", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"i", "-", 
+                RowBox[{
+                 RowBox[{"1", "/", "12"}], " ", "Pi"}], "+", 
+                RowBox[{"Pi", "/", "2"}]}], ",", 
+               RowBox[{"i", "+", 
+                RowBox[{
+                 RowBox[{"2", "/", "12"}], "*", "Pi"}], "-", 
+                RowBox[{
+                 RowBox[{"1", "/", "12"}], "Pi"}], "+", 
+                RowBox[{"Pi", "/", "2"}]}]}], "}"}]}], "]"}], ",", 
+           RowBox[{"colorList", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{"i", "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"2", "/", "12"}], "*", "Pi"}], ")"}]}], "+", "1"}], 
+             "]"}], "]"}]}], "]"}], ",", 
+         RowBox[{"(*", 
+          RowBox[{"colore", " ", "del", " ", "settore"}], "*)"}], 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"lbl", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"i", "/", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"2", "/", "12"}], "*", "Pi"}], ")"}]}], "+", "1"}],
+                "]"}], "]"}], ",", 
+             RowBox[{"(*", "etichetta", "*)"}], 
+             RowBox[{"RegionCentroid", "[", 
+              RowBox[{"Annulus", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"i", "-", 
+                   RowBox[{
+                    RowBox[{"1", "/", "12"}], " ", "Pi"}], "+", 
+                   RowBox[{"Pi", "/", "2"}]}], ",", 
+                  RowBox[{"i", "+", 
+                   RowBox[{
+                    RowBox[{"2", "/", "12"}], "*", "Pi"}], "-", 
+                   RowBox[{
+                    RowBox[{"1", "/", "12"}], "Pi"}], "+", 
+                   RowBox[{"Pi", "/", "2"}]}]}], "}"}]}], "]"}], "]"}]}], 
+            "]"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{"centro", " ", 
+             RowBox[{"dell", "'"}], "area", " ", "in", " ", "cui", " ", 
+             "mettere", " ", "il", " ", "testo"}], "*)"}], 
+           RowBox[{"FontSize", "\[Rule]", "14"}], ",", "Bold"}], " ", 
+          RowBox[{"(*", 
+           RowBox[{"stile", " ", "del", " ", "testo"}], "*)"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", 
+         RowBox[{
+          RowBox[{"2", "*", "Pi"}], "-", 
+          RowBox[{
+           RowBox[{"2", "/", "12"}], "*", "Pi"}]}], ",", 
+         RowBox[{
+          RowBox[{"2", "/", "12"}], "*", "Pi"}]}], "}"}]}], "]"}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Funzione", " ", "che", " ", "crea", " ", 
+     RowBox[{"l", "'"}], "anello", " ", "esterno", " ", "del", " ", "cercio", 
+     " ", "dei", " ", "colori", " ", "di", " ", "itten", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"con", " ", "12", " ", "colori"}], ")"}], ".", 
+      RowBox[{"Input", ":", 
+       RowBox[{"lista", " ", "di", " ", "colori"}]}]}]}], ",", 
+    RowBox[{"lista", " ", "di", " ", "etichette", " ", 
+     RowBox[{"(", 
+      RowBox[{"che", " ", "cambiano", " ", "con", " ", "mouseover"}], ")"}]}],
+     ",", 
+    RowBox[{"raggio", " ", "interno"}], ",", 
+    RowBox[{"raggio", " ", "esterno", " ", 
+     RowBox[{"dell", "'"}], "anello"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"OuterGeometryOver", "[", 
+    RowBox[{"colorList_", ",", "lbl_", ",", 
+     RowBox[{"r1_", ":", "0.5"}], ",", 
+     RowBox[{"r2_", ":", "0.8"}]}], "]"}], ":=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Mouseover", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"(*", 
+             RowBox[{
+             "la", " ", "funzione", " ", "Annulus", " ", "crea", " ", "un", 
+              " ", "singolo", " ", "settore", " ", 
+              RowBox[{"dell", "'"}], 
+              RowBox[{"anello", "."}]}], "*)"}], 
+            RowBox[{"(*", 
+             RowBox[{"centro", ",", 
+              RowBox[{"raggio", " ", "interno", " ", "e", " ", "esterno"}], 
+              ",", 
+              RowBox[{"angolo", " ", "iniziale", " ", "e", " ", "finale"}]}], 
+             "*)"}], 
+            RowBox[{
+             RowBox[{"Annulus", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"i", "-", 
+                  RowBox[{
+                   RowBox[{"1", "/", "12"}], " ", "Pi"}], "+", 
+                  RowBox[{"Pi", "/", "2"}]}], ",", 
+                 RowBox[{"i", "+", 
+                  RowBox[{
+                   RowBox[{"2", "/", "12"}], "*", "Pi"}], "-", 
+                  RowBox[{
+                   RowBox[{"1", "/", "12"}], "Pi"}], "+", 
+                  RowBox[{"Pi", "/", "2"}]}]}], "}"}]}], "]"}], ",", 
+             RowBox[{"colorList", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"i", "/", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"2", "/", "12"}], "*", "Pi"}], ")"}]}], "+", "1"}],
+                "]"}], "]"}]}], "]"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{"colore", " ", "del", " ", "settore"}], "*)"}], 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"Text", "[", 
+              RowBox[{
+               RowBox[{"lbl", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", "/", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "/", "12"}], "*", "Pi"}], ")"}]}], "+", 
+                  "1"}], "]"}], "]"}], ",", 
+               RowBox[{"(*", "etichetta", "*)"}], 
+               RowBox[{"RegionCentroid", "[", 
+                RowBox[{"Annulus", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"i", "-", 
+                    RowBox[{
+                    RowBox[{"1", "/", "12"}], " ", "Pi"}], "+", 
+                    RowBox[{"Pi", "/", "2"}]}], ",", 
+                    RowBox[{"i", "+", 
+                    RowBox[{
+                    RowBox[{"2", "/", "12"}], "*", "Pi"}], "-", 
+                    RowBox[{
+                    RowBox[{"1", "/", "12"}], "Pi"}], "+", 
+                    RowBox[{"Pi", "/", "2"}]}]}], "}"}]}], "]"}], "]"}]}], 
+              "]"}], ",", 
+             RowBox[{"(*", 
+              RowBox[{"centro", " ", 
+               RowBox[{"dell", "'"}], "area"}], "*)"}], 
+             RowBox[{"FontSize", "\[Rule]", "14"}], ",", "Bold"}], "]"}]}], 
+          "}"}], ",", 
+         RowBox[{"(*", 
+          RowBox[{"stile", " ", "del", " ", "testo"}], "*)"}], 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"(*", 
+             RowBox[{
+             "la", " ", "funzione", " ", "Annulus", " ", "crea", " ", "un", 
+              " ", "singolo", " ", "settore", " ", 
+              RowBox[{"dell", "'"}], 
+              RowBox[{"anello", "."}]}], "*)"}], 
+            RowBox[{"(*", 
+             RowBox[{"centro", ",", 
+              RowBox[{"raggio", " ", "interno", " ", "e", " ", "esterno"}], 
+              ",", 
+              RowBox[{"angolo", " ", "iniziale", " ", "e", " ", "finale"}]}], 
+             "*)"}], 
+            RowBox[{
+             RowBox[{"Annulus", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"i", "-", 
+                  RowBox[{
+                   RowBox[{"1", "/", "12"}], " ", "Pi"}], "+", 
+                  RowBox[{"Pi", "/", "2"}]}], ",", 
+                 RowBox[{"i", "+", 
+                  RowBox[{
+                   RowBox[{"2", "/", "12"}], "*", "Pi"}], "-", 
+                  RowBox[{
+                   RowBox[{"1", "/", "12"}], "Pi"}], "+", 
+                  RowBox[{"Pi", "/", "2"}]}]}], "}"}]}], "]"}], ",", 
+             RowBox[{"colorList", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"i", "/", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"2", "/", "12"}], "*", "Pi"}], ")"}]}], "+", "1"}],
+                "]"}], "]"}]}], "]"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{"colore", " ", "del", " ", "settore"}], "*)"}], 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"Text", "[", 
+              RowBox[{
+               RowBox[{"lblsOver", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", "/", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", "/", "12"}], "*", "Pi"}], ")"}]}], "+", 
+                  "1"}], "]"}], "]"}], ",", 
+               RowBox[{"(*", "etichetta", "*)"}], 
+               RowBox[{"RegionCentroid", "[", 
+                RowBox[{"Annulus", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"r1", ",", "r2"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"i", "-", 
+                    RowBox[{
+                    RowBox[{"1", "/", "12"}], " ", "Pi"}], "+", 
+                    RowBox[{"Pi", "/", "2"}]}], ",", 
+                    RowBox[{"i", "+", 
+                    RowBox[{
+                    RowBox[{"2", "/", "12"}], "*", "Pi"}], "-", 
+                    RowBox[{
+                    RowBox[{"1", "/", "12"}], "Pi"}], "+", 
+                    RowBox[{"Pi", "/", "2"}]}]}], "}"}]}], "]"}], "]"}]}], 
+              "]"}], ",", 
+             RowBox[{"(*", 
+              RowBox[{"centro", " ", 
+               RowBox[{"dell", "'"}], "area"}], "*)"}], 
+             RowBox[{"FontSize", "\[Rule]", "14"}], ",", "Bold"}], "]"}]}], 
+          "}"}]}], 
+        RowBox[{"(*", 
+         RowBox[{"stile", " ", "del", " ", "testo"}], "*)"}], "]"}], "}"}], 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", 
+       RowBox[{
+        RowBox[{"2", "*", "Pi"}], "-", 
+        RowBox[{
+         RowBox[{"2", "/", "12"}], "*", "Pi"}]}], ",", 
+       RowBox[{
+        RowBox[{"2", "/", "12"}], "*", "Pi"}]}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.829642301848665*^9, 3.829642344098157*^9}, {
+   3.82964295691817*^9, 3.829642994585453*^9}, 3.829643032971768*^9, {
+   3.829643241186104*^9, 3.8296432431846447`*^9}, {3.829643307750885*^9, 
+   3.829643318094112*^9}, 3.829643350734923*^9, {3.829643394374133*^9, 
+   3.829643416439411*^9}, {3.8296434583058443`*^9, 3.8296434935906267`*^9}, {
+   3.829643604323913*^9, 3.8296436704014*^9}, {3.829643708401112*^9, 
+   3.829643828074003*^9}, {3.829643858217753*^9, 3.8296438587561617`*^9}, {
+   3.829644017641889*^9, 3.8296441059980164`*^9}, 3.829644149445321*^9, {
+   3.8296441963497972`*^9, 3.829644222227201*^9}, {3.829644257703725*^9, 
+   3.8296444720069323`*^9}, {3.829645043652462*^9, 3.82964509725173*^9}, {
+   3.829645128234164*^9, 3.829645131721307*^9}, {3.829645166720117*^9, 
+   3.829645169016721*^9}, {3.829645213461411*^9, 3.829645218453166*^9}, {
+   3.829645267198447*^9, 3.829645362955944*^9}, {3.8296454107493963`*^9, 
+   3.8296454126358232`*^9}, {3.829645521794238*^9, 3.8296456436467247`*^9}, {
+   3.8296456814056664`*^9, 3.8296457986166286`*^9}, {3.829646576499823*^9, 
+   3.829646593398798*^9}, {3.829646726267565*^9, 3.8296468265615873`*^9}, {
+   3.829647122954607*^9, 3.829647151720743*^9}, {3.829647236216776*^9, 
+   3.829647256105812*^9}, {3.8296472941486998`*^9, 3.829647295523663*^9}, 
+   3.829647329031464*^9, {3.82964736701278*^9, 3.829647435071933*^9}, {
+   3.829647500894328*^9, 3.829647530173431*^9}, {3.829647587888989*^9, 
+   3.8296476041214943`*^9}, {3.829647644167222*^9, 3.829647698370202*^9}, {
+   3.829648146734193*^9, 3.8296481501794252`*^9}, {3.829648379590596*^9, 
+   3.829648440504156*^9}, {3.829648789675706*^9, 3.829648814369066*^9}, {
+   3.829648953279595*^9, 3.8296489569722967`*^9}, {3.829649035383236*^9, 
+   3.829649062020317*^9}, {3.8296491401128063`*^9, 3.8296492899925613`*^9}, {
+   3.829649408416009*^9, 3.8296494296891813`*^9}, {3.8296494979298763`*^9, 
+   3.829649554714922*^9}, {3.829649597652876*^9, 3.829649693207016*^9}, {
+   3.829649792932148*^9, 3.8296499480904827`*^9}, {3.8296500624350443`*^9, 
+   3.8296501123013067`*^9}, {3.829650746530532*^9, 3.8296508448128853`*^9}, {
+   3.8296508782932663`*^9, 3.829650922974929*^9}, {3.829650980386984*^9, 
+   3.829650993141369*^9}, {3.829651144176539*^9, 3.829651158955716*^9}, {
+   3.8296511927472343`*^9, 3.829651258845574*^9}, {3.82965130601394*^9, 
+   3.829651332782164*^9}, {3.8296513703538523`*^9, 3.829651402091695*^9}, 
+   3.829801635505994*^9, {3.8298021282887583`*^9, 3.829802157703386*^9}, {
+   3.829802328946354*^9, 3.8298023659254646`*^9}, {3.8298025793375216`*^9, 
+   3.82980258145794*^9}, {3.829802671240492*^9, 3.829802734528091*^9}, {
+   3.82980279316484*^9, 3.8298028126669655`*^9}, {3.829803097959976*^9, 
+   3.8298031168349004`*^9}, {3.829803159386548*^9, 3.829803164493933*^9}, {
+   3.8298828161052194`*^9, 3.829882825364084*^9}, 3.829882954644732*^9, {
+   3.8298829956621037`*^9, 3.8298829977072625`*^9}, {3.8298831687491827`*^9, 
+   3.829883173538725*^9}, {3.829883203839425*^9, 3.8298832108226423`*^9}, {
+   3.829883248131197*^9, 3.829883251154928*^9}, 3.829883333193736*^9, {
+   3.829883402037487*^9, 3.8298834055738373`*^9}, {3.829883617800762*^9, 
+   3.829883620663122*^9}, {3.8298838605874195`*^9, 3.829883867609848*^9}, {
+   3.8298842351096506`*^9, 3.8298842454483232`*^9}, {3.8298849780266876`*^9, 
+   3.829884979804119*^9}, {3.8298850181256824`*^9, 3.829885070791917*^9}, {
+   3.8298851828637905`*^9, 3.829885273717191*^9}, {3.829885446192279*^9, 
+   3.829885503580735*^9}, {3.8298866881768646`*^9, 3.829886913724267*^9}, {
+   3.8298869475924063`*^9, 3.8298869534320397`*^9}, {3.82990603813678*^9, 
+   3.8299060719372253`*^9}, {3.829906142118126*^9, 3.8299062051078706`*^9}, {
+   3.829906353080789*^9, 3.829906397438091*^9}, {3.8299064519953218`*^9, 
+   3.8299065189996586`*^9}, {3.829906558930252*^9, 3.8299067043155174`*^9}, {
+   3.8299067361838474`*^9, 3.8299067422472734`*^9}, {3.8299067766249743`*^9, 
+   3.8299067846607037`*^9}, {3.8299068154326754`*^9, 
+   3.8299068358557024`*^9}, {3.8299068705251293`*^9, 3.829906878945235*^9}, {
+   3.8299069698193398`*^9, 3.8299069842568426`*^9}, 3.8299071717851686`*^9, {
+   3.8299080765064716`*^9, 3.829908079014266*^9}, {3.829909650758325*^9, 
+   3.829909673944707*^9}, {3.829909798268196*^9, 3.829909803512527*^9}, {
+   3.8299105365360317`*^9, 3.8299105370597615`*^9}, {3.8299648713688154`*^9, 
+   3.8299648877508526`*^9}, {3.8305086778328023`*^9, 3.8305086978086596`*^9}, 
+   3.830516970810626*^9, {3.830518437628684*^9, 3.830518453278768*^9}, {
+   3.830572577884387*^9, 3.83057258791566*^9}, {3.8305726630188284`*^9, 
+   3.8305726694981194`*^9}, {3.8312755926823654`*^9, 
+   3.8312755960870757`*^9}, {3.8312788114858527`*^9, 
+   3.8312788488962717`*^9}, {3.8312789140891275`*^9, 3.831278916647106*^9}, {
+   3.8312789592443275`*^9, 3.8312790023553457`*^9}, {3.8312840960711546`*^9, 
+   3.831284124921341*^9}, {3.8312841683166275`*^9, 3.831284174225263*^9}, {
+   3.8312847244412136`*^9, 3.831284779346793*^9}, {3.831284815037294*^9, 
+   3.8312848702744894`*^9}, {3.8312849042763247`*^9, 
+   3.8312849067662125`*^9}, {3.831285139134378*^9, 3.831285139911152*^9}, {
+   3.8312852478450294`*^9, 3.8312852497260766`*^9}, {3.83128550645673*^9, 
+   3.831285508437276*^9}, {3.8312855701285415`*^9, 3.831285570949332*^9}},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"e3ff671f-9910-4b33-86d2-91e583e3a61f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ShowExercise1", "[", "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.829911004899921*^9, 3.8299110061848145`*^9}, 
+   3.8299648843450603`*^9, {3.82996493004014*^9, 3.8299649352563376`*^9}},
+ CellLabel->
+  "In[142]:=",ExpressionUUID->"3081f47a-97fe-493e-88ff-c8eb689c279b"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`risposta$$ = 
+  "Primario", $CellContext`coloreRandom$$ = RGBColor[0, 
+   Rational[1, 3], 
+   Rational[1, 2]], $CellContext`messaggioUtente$$ = 
+  "Che tipo di colore \[EGrave] questo?", $CellContext`buttonPrimarioColor$$ =
+   Null, $CellContext`buttonSecondarioColor$$ = 
+  Null, $CellContext`buttonTerziarioColor$$ = 
+  Null, $CellContext`cleanImage$$, $CellContext`showhide$$ = {
+  "Nascondi il cerchio di Itten", 
+   "Mostra il cerchio di Itten"}, $CellContext`i$$ = 
+  4, $CellContext`toshow$$ = Graphics[{{{
+      Style[
+       Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}, {0, 
+          Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}}], 
+       RGBColor[1, 1, 0]], 
+      Style[
+       Text[
+       1, {0, 16 
+         3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
+          Rational[3, 256] 3^Rational[1, 2])}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 
+          Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}}], 
+       RGBColor[1, 0.5, 0]], 
+      Style[
+       Text[3, {Rational[1, 2] 3^Rational[-1, 2], 
+         Rational[1, 6]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {0, 
+          Rational[-1, 4]}}], 
+       RGBColor[1, 0, 0]], 
+      Style[
+       Text[5, {Rational[5, 16] 3^Rational[-1, 2], 
+         Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {0, 
+          Rational[-1, 2]}}], 
+       RGBColor[0.5, 0, 0.5]], 
+      Style[
+       Text[7, {0, 
+         Rational[-1, 3]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {0, 
+          Rational[-1, 4]}}], 
+       RGBColor[0, 0, 1]], 
+      Style[
+       Text[9, {Rational[-5, 16] 3^Rational[-1, 2], 
+         Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 
+          Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}}], 
+       RGBColor[0, 
+        Rational[2, 3], 0]], 
+      Style[
+       Text[11, {Rational[-1, 2] 3^Rational[-1, 2], 
+         Rational[1, 6]}], Bold, FontSize -> 14]}}, {{
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 12] Pi, Rational[7, 12] Pi}], 
+       RGBColor[1, 1, 0]], 
+      Style[
+       Text[1, {0., 0.6540074610309363}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 12] Pi, Rational[3, 4] Pi}], 
+       RGBColor[
+        Rational[1, 2], 
+        Rational[5, 6], 0]], 
+      Style[
+       Text[12, {-0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[3, 4] Pi, Rational[11, 12] Pi}], 
+       RGBColor[0, 
+        Rational[2, 3], 0]], 
+      Style[
+       Text[11, {-0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {
+        Rational[11, 12] Pi, Rational[13, 12] Pi}], 
+       RGBColor[0, 
+        Rational[1, 3], 
+        Rational[1, 2]]], 
+      Style[
+       Text[10, {-0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[13, 12] Pi, Rational[5, 4] Pi}], 
+       RGBColor[0, 0, 1]], 
+      Style[
+       Text[9, {-0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 4] Pi, Rational[17, 12] Pi}], 
+       RGBColor[0.25, 0, 0.75]], 
+      Style[
+       Text[8, {-0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {
+        Rational[17, 12] Pi, Rational[19, 12] Pi}], 
+       RGBColor[0.5, 0, 0.5]], 
+      Style[
+       Text[7, {0., -0.6540074610309363}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[19, 12] Pi, Rational[7, 4] Pi}], 
+       RGBColor[0.75, 0, 0.25]], 
+      Style[
+       Text[6, {0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 4] Pi, Rational[23, 12] Pi}], 
+       RGBColor[1, 0, 0]], 
+      Style[
+       Text[5, {0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {
+        Rational[23, 12] Pi, Rational[25, 12] Pi}], 
+       RGBColor[1, 0.25, 0]], 
+      Style[
+       Text[4, {0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[25, 12] Pi, Rational[9, 4] Pi}], 
+       RGBColor[1, 0.5, 0]], 
+      Style[
+       Text[3, {0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[9, 4] Pi, Rational[29, 12] Pi}], 
+       RGBColor[1, 0.75, 0]], 
+      Style[
+       Text[2, {0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
+       Bold]}}}, {
+   ImageSize -> {300, 400}, ImageMargins -> {{40, 400}, {2, 2}}, ImageSize -> 
+    Medium}], $CellContext`listaOggetti$$ = {
+   Graphics[ImageSize -> {300, 400}], 
+   Graphics[{{{
+       Style[
+        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}, {0, 
+           Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}}], 
+        RGBColor[1, 1, 0]], 
+       Style[
+        Text[
+        1, {0, 16 
+          3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
+           Rational[3, 256] 3^Rational[1, 2])}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 
+           Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}}], 
+        RGBColor[1, 0.5, 0]], 
+       Style[
+        Text[3, {Rational[1, 2] 3^Rational[-1, 2], 
+          Rational[1, 6]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {0, 
+           Rational[-1, 4]}}], 
+        RGBColor[1, 0, 0]], 
+       Style[
+        Text[5, {Rational[5, 16] 3^Rational[-1, 2], 
+          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {0, 
+           Rational[-1, 2]}}], 
+        RGBColor[0.5, 0, 0.5]], 
+       Style[
+        Text[7, {0, 
+          Rational[-1, 3]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {0, 
+           Rational[-1, 4]}}], 
+        RGBColor[0, 0, 1]], 
+       Style[
+        Text[9, {Rational[-5, 16] 3^Rational[-1, 2], 
+          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 
+           Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}}], 
+        RGBColor[0, 
+         Rational[2, 3], 0]], 
+       Style[
+        Text[11, {Rational[-1, 2] 3^Rational[-1, 2], 
+          Rational[1, 6]}], Bold, FontSize -> 14]}}, {{
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 12] Pi, Rational[7, 12] Pi}], 
+        RGBColor[1, 1, 0]], 
+       Style[
+        Text[1, {0., 0.6540074610309363}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 12] Pi, Rational[3, 4] Pi}], 
+        RGBColor[
+         Rational[1, 2], 
+         Rational[5, 6], 0]], 
+       Style[
+        Text[12, {-0.32700373051546816`, 0.5663870755173521}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[3, 4] Pi, Rational[11, 12] Pi}], 
+        RGBColor[0, 
+         Rational[2, 3], 0]], 
+       Style[
+        Text[11, {-0.5663870755173521, 0.32700373051546816`}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {
+         Rational[11, 12] Pi, Rational[13, 12] Pi}], 
+        RGBColor[0, 
+         Rational[1, 3], 
+         Rational[1, 2]]], 
+       Style[
+        Text[10, {-0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[13, 12] Pi, Rational[5, 4] Pi}], 
+        RGBColor[0, 0, 1]], 
+       Style[
+        Text[9, {-0.5663870755173521, -0.32700373051546816`}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 4] Pi, Rational[17, 12] Pi}], 
+        RGBColor[0.25, 0, 0.75]], 
+       Style[
+        Text[8, {-0.32700373051546816`, -0.5663870755173521}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {
+         Rational[17, 12] Pi, Rational[19, 12] Pi}], 
+        RGBColor[0.5, 0, 0.5]], 
+       Style[
+        Text[7, {0., -0.6540074610309363}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[19, 12] Pi, Rational[7, 4] Pi}], 
+        RGBColor[0.75, 0, 0.25]], 
+       Style[
+        Text[6, {0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
+        Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 4] Pi, Rational[23, 12] Pi}], 
+        RGBColor[1, 0, 0]], 
+       Style[
+        Text[5, {0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
+        Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {
+         Rational[23, 12] Pi, Rational[25, 12] Pi}], 
+        RGBColor[1, 0.25, 0]], 
+       Style[
+        Text[4, {0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[25, 12] Pi, Rational[9, 4] Pi}], 
+        RGBColor[1, 0.5, 0]], 
+       Style[
+        Text[3, {0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
+        Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[9, 4] Pi, Rational[29, 12] Pi}], 
+        RGBColor[1, 0.75, 0]], 
+       Style[
+        Text[2, {0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
+        Bold]}}}, {
+    ImageSize -> {300, 400}, ImageMargins -> {{40, 400}, {2, 2}}, ImageSize -> 
+     Medium}]}}, 
+  TemplateBox[{
+    TemplateBox[{
+      TemplateBox[{
+        TagBox[
+         GridBox[{{
+            DynamicBox[
+             ToBoxes[
+              Which[$CellContext`risposta$$ == "", 
+               Style[$CellContext`messaggioUtente$$, FontSize -> 40, White], 
+               $CellContext`CheckAnswer[$CellContext`risposta$$, \
+$CellContext`coloreRandom$$], 
+               Style["Corretto!", FontSize -> 40, White], True, 
+               Style["Sbagliato", FontSize -> 40, White]], StandardForm]]}, {
+            TemplateBox[{
+              ButtonBox[
+              "\"Primario\"", 
+               ButtonFunction :> ($CellContext`risposta$$ = "Primario"), 
+               Background -> Null, Appearance -> Automatic, Evaluator -> 
+               Automatic, Method -> "Preemptive"], 
+              ButtonBox[
+              "\"Secondario\"", 
+               ButtonFunction :> ($CellContext`risposta$$ = "Secondario"), 
+               Background -> Null, Appearance -> Automatic, Evaluator -> 
+               Automatic, Method -> "Preemptive"], 
+              ButtonBox[
+              "\"Terziario\"", 
+               ButtonFunction :> ($CellContext`risposta$$ = "Terziario"), 
+               Background -> Null, Appearance -> Automatic, Evaluator -> 
+               Automatic, Method -> "Preemptive"]}, "RowDefault"]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+          "Column", 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          GridBoxSpacings -> {"Columns" -> {{Automatic}}, "Rows" -> {{10}}}], 
+         "Column"]}, "Row", DisplayFunction -> (PaneBox[
+         FrameBox[#, Background -> Dynamic[$CellContext`coloreRandom$$], 
+          FrameMargins -> 80, FrameStyle -> Automatic], Alignment -> Center, 
+         ImageSize -> {450, 450}]& ), 
+       InterpretationFunction -> (RowBox[{"Row", "[", 
+          RowBox[{
+            RowBox[{"{", #, "}"}], ",", 
+            RowBox[{"Background", "\[Rule]", 
+              DynamicBox[
+               ToBoxes[$CellContext`coloreRandom$$, StandardForm]]}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+              RowBox[{"{", 
+                RowBox[{"450", ",", "450"}], "}"}]}], ",", 
+            RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
+            RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+            RowBox[{"FrameMargins", "\[Rule]", "80"}]}], "]"}]& )], 
+      TagBox[
+       GridBox[{{
+          ButtonBox[
+          "cleanImage$$", 
+           ButtonFunction :> ($CellContext`risposta$$ = 
+             ""; $CellContext`messaggioUtente$$ = ""), Appearance -> 
+           Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
+          ButtonBox[
+          "\"Nuovo esercizio\"", 
+           ButtonFunction :> ($CellContext`coloreRandom$$ = 
+             RandomChoice[$CellContext`coloriGiusti]; $CellContext`risposta$$ = 
+             ""; $CellContext`messaggioUtente$$ = 
+             "Che tipo di colore \[EGrave] questo?"), Appearance -> Automatic,
+            Evaluator -> Automatic, Method -> "Preemptive"]}, {
+          ButtonBox[
+          "\"Mostra risposta\"", 
+           ButtonFunction :> ($CellContext`risposta$$ = 
+             ""; $CellContext`messaggioUtente$$ = \
+$CellContext`ShowAnswer[$CellContext`coloreRandom$$]), Appearance -> 
+           Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+        "Column", 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
+     "Row", DisplayFunction -> (PaneBox[
+       StyleBox[
+        RowBox[{
+          TemplateSlotSequence[1, "\[InvisibleSpace]"]}], Background -> 
+        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], Alignment -> 
+       Right, ImageSize -> {550, 600}]& ), 
+     InterpretationFunction -> (RowBox[{"Row", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            TemplateSlotSequence[1, ","], "}"}], ",", 
+          RowBox[{"Alignment", "\[Rule]", "Right"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+              RowBox[{"550", ",", "600"}], "}"}]}], ",", 
+          RowBox[{"Background", "\[Rule]", 
+            InterpretationBox[
+             ButtonBox[
+              TooltipBox[
+               GraphicsBox[{{
+                  GrayLevel[0], 
+                  RectangleBox[{0, 0}]}, {
+                  GrayLevel[0], 
+                  RectangleBox[{1, -1}]}, {
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
+                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                FrameStyle -> 
+                RGBColor[
+                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
+                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                Dynamic[{
+                  Automatic, 
+                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+               StyleBox[
+                RowBox[{"RGBColor", "[", 
+                  
+                  RowBox[{
+                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
+                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
+              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+              DefaultBaseStyle -> {}, ButtonFunction :> 
+              With[{Typeset`box$ = EvaluationBox[]}, 
+                If[
+                 Not[
+                  AbsoluteCurrentValue["Deployed"]], 
+                 SelectionMove[Typeset`box$, All, Expression]; 
+                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                 FrontEnd`Private`$ColorSelectorInitialColor = 
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
+                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                 MathLink`CallFrontEnd[
+                   FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
+             False, Selectable -> False]}]}], "]"}]& )], 
+    TemplateBox[{
+      TagBox[
+       GridBox[{{
+          ButtonBox[
+           DynamicBox[
+            ToBoxes[
+             ToString[
+              Part[$CellContext`showhide$$, 1 + Mod[$CellContext`i$$, 2]]], 
+             StandardForm]], 
+           ButtonFunction :> ($CellContext`toshow$$ = 
+            Part[$CellContext`listaOggetti$$, 1 + Mod[
+                Increment[$CellContext`i$$], 2]]), ImageSize -> 150, 
+           ImageMargins -> {{100, 100}, {2, 2}}, FrameMargins -> Large, 
+           Alignment -> Center, Appearance -> Automatic, Evaluator -> 
+           Automatic, Method -> "Preemptive"]}, {
+          DynamicBox[
+           ToBoxes[
+            Show[$CellContext`toshow$$], StandardForm]]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+        "Column", 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
+     "Row", DisplayFunction -> (PaneBox[
+       StyleBox[#, Background -> 
+        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], 
+       ImageSize -> {400, 600}]& ), 
+     InterpretationFunction -> (RowBox[{"Row", "[", 
+        RowBox[{
+          RowBox[{"{", #, "}"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+              RowBox[{"400", ",", "600"}], "}"}]}], ",", 
+          RowBox[{"Background", "\[Rule]", 
+            InterpretationBox[
+             ButtonBox[
+              TooltipBox[
+               GraphicsBox[{{
+                  GrayLevel[0], 
+                  RectangleBox[{0, 0}]}, {
+                  GrayLevel[0], 
+                  RectangleBox[{1, -1}]}, {
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
+                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                FrameStyle -> 
+                RGBColor[
+                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
+                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                Dynamic[{
+                  Automatic, 
+                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+               StyleBox[
+                RowBox[{"RGBColor", "[", 
+                  
+                  RowBox[{
+                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
+                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
+              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+              DefaultBaseStyle -> {}, ButtonFunction :> 
+              With[{Typeset`box$ = EvaluationBox[]}, 
+                If[
+                 Not[
+                  AbsoluteCurrentValue["Deployed"]], 
+                 SelectionMove[Typeset`box$, All, Expression]; 
+                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                 FrontEnd`Private`$ColorSelectorInitialColor = 
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
+                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                 MathLink`CallFrontEnd[
+                   FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
+             False, Selectable -> False]}]}], "]"}]& )]},
+   "RowDefault"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.8299713140320463`*^9, 3.830506024605378*^9, 
+  3.8305083153691626`*^9, 3.830508688572432*^9, 3.830510286500025*^9, 
+  3.8305145778521037`*^9, 3.8305169809959517`*^9, 3.8312841963000216`*^9, 
+  3.831285165309272*^9, 3.831285265630838*^9, 3.8312855839330997`*^9},
+ CellLabel->
+  "Out[142]=",ExpressionUUID->"66a959d9-ff8b-4f25-b782-af91d5efc8a5"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.8299110385740805`*^9, 3.8299110397016883`*^9}, {
+   3.8299132857450013`*^9, 3.829913286314395*^9}, {3.82991487708959*^9, 
+   3.8299148815672874`*^9}, {3.829915371699317*^9, 3.8299153739357843`*^9}, {
+   3.829917169699665*^9, 3.8299171850247664`*^9}, 
+   3.829917273065194*^9},ExpressionUUID->"f13cf88a-3212-4920-ba9d-\
+1921bfa5066f"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8298840273369226`*^9, 3.829884099865347*^9}, {
+   3.8298841408463707`*^9, 3.8298841479777994`*^9}, 3.829884192385874*^9, {
+   3.829886990662896*^9, 3.8298870028553*^9}, {3.8299077285059614`*^9, 
+   3.829907731296213*^9}, {3.8299080877816677`*^9, 3.8299080883049946`*^9}, {
+   3.829908187289569*^9, 3.8299081890245175`*^9}, {3.829908343035884*^9, 
+   3.8299083564483967`*^9}, {3.8299086028296843`*^9, 3.829908647780413*^9}, {
+   3.8299087673188505`*^9, 3.8299087699235964`*^9}, {3.8299088431225224`*^9, 
+   3.8299088455093927`*^9}, {3.829909362677558*^9, 3.8299094449336696`*^9}, {
+   3.8299095106910057`*^9, 3.8299095518546553`*^9}, {3.829909704359589*^9, 
+   3.8299097073971863`*^9}, {3.8299097528016167`*^9, 3.829909757961752*^9}, {
+   3.8299098708219013`*^9, 3.829909881019482*^9}, {3.829909967470496*^9, 
+   3.829910053706051*^9}, {3.829910175928338*^9, 3.8299101952410707`*^9}, {
+   3.8299105630384197`*^9, 3.829910603636759*^9}, {3.8299106625217113`*^9, 
+   3.8299106872662487`*^9}, {3.8299109032781534`*^9, 
+   3.8299109595046997`*^9}, {3.8299110691577835`*^9, 3.829911080599208*^9}, {
+   3.82991172454924*^9, 3.8299117274570203`*^9}, {3.8299119159096017`*^9, 
+   3.8299119175124083`*^9}, {3.829911950974967*^9, 3.829912005875176*^9}, {
+   3.829912038516825*^9, 3.8299120408379636`*^9}, {3.8299121350173345`*^9, 
+   3.829912158135293*^9}, {3.8299121915195446`*^9, 3.829912242363248*^9}, {
+   3.8299123133537345`*^9, 3.8299123561399307`*^9}, {3.8299124263770027`*^9, 
+   3.8299125290268526`*^9}, {3.8299126219399815`*^9, 3.82991262320978*^9}, {
+   3.829912665020522*^9, 3.829912683062579*^9}, {3.8299129646000867`*^9, 
+   3.829912969018529*^9}, {3.8299130541335535`*^9, 3.8299130771162434`*^9}, {
+   3.8299132639499273`*^9, 3.829913318294185*^9}, {3.8299133880656166`*^9, 
+   3.8299133912212014`*^9}, 3.829913497605685*^9, {3.8299135834599504`*^9, 
+   3.829913585210352*^9}, {3.8299137328166876`*^9, 3.8299138388009915`*^9}, {
+   3.8299139422302694`*^9, 3.8299139656169834`*^9}, {3.8299140455013285`*^9, 
+   3.8299140911680646`*^9}, {3.8299141478721137`*^9, 
+   3.8299141488274603`*^9}, {3.829914203392638*^9, 3.8299142273820148`*^9}, {
+   3.829914451090247*^9, 3.8299144731442595`*^9}, {3.8299151016211796`*^9, 
+   3.829915155319354*^9}, {3.829915491425719*^9, 3.8299155681523604`*^9}, {
+   3.8299155996765623`*^9, 3.8299156542694693`*^9}, {3.829915689269656*^9, 
+   3.8299156903441687`*^9}, {3.829915795218671*^9, 3.829915810374552*^9}, {
+   3.82991595846581*^9, 3.829916010242818*^9}, {3.8299161458009915`*^9, 
+   3.8299161519877234`*^9}, {3.829916348898693*^9, 3.829916350849296*^9}, {
+   3.8299164662684965`*^9, 3.82991647363698*^9}, {3.8299165444722815`*^9, 
+   3.829916573120328*^9}, {3.8299177031904163`*^9, 3.8299177056439466`*^9}, {
+   3.8299179979183173`*^9, 3.8299180174507427`*^9}, {3.829918048808214*^9, 
+   3.829918074269025*^9}, {3.8299181375350833`*^9, 3.8299181520668764`*^9}, {
+   3.8299181884622316`*^9, 3.8299182104718003`*^9}, {3.8299182487761736`*^9, 
+   3.8299182536877933`*^9}, {3.829918359360447*^9, 3.8299183662081137`*^9}, {
+   3.8299183964975643`*^9, 3.8299184639960356`*^9}, {3.8299184968433485`*^9, 
+   3.829918524913085*^9}, {3.829918587464135*^9, 3.829918589298151*^9}, {
+   3.829918632468472*^9, 3.8299186379204035`*^9}, {3.829918699891618*^9, 
+   3.8299187360220833`*^9}, 3.829918800271389*^9, {3.8299264508075495`*^9, 
+   3.8299264518411303`*^9}, {3.829926482773332*^9, 3.8299265435901384`*^9}, {
+   3.829926606271044*^9, 3.82992660875428*^9}, 3.8299269278701787`*^9, {
+   3.8299270065978947`*^9, 3.8299270430015564`*^9}, {3.8299270829965477`*^9, 
+   3.8299271252214994`*^9}, {3.82992732848623*^9, 3.829927373915398*^9}, {
+   3.8299274451520076`*^9, 3.829927502616951*^9}, {3.8299275393419247`*^9, 
+   3.829927561540251*^9}, {3.829927596039531*^9, 3.8299276372670226`*^9}, {
+   3.8299276831237965`*^9, 3.829927730935804*^9}, {3.829927808394272*^9, 
+   3.82992781865232*^9}, {3.8299278956499324`*^9, 3.8299279085480423`*^9}, {
+   3.8299279722436347`*^9, 3.829928019642068*^9}, {3.8299280624323373`*^9, 
+   3.82992806456029*^9}, {3.8299280991580343`*^9, 3.829928132216341*^9}, 
+   3.8299281677135005`*^9, {3.8299282162800417`*^9, 3.829928260393005*^9}, {
+   3.8299284118890347`*^9, 3.829928434057017*^9}, {3.829928532549652*^9, 
+   3.8299285374608994`*^9}, 3.8299285818344812`*^9, {3.8299286333758135`*^9, 
+   3.829928642460041*^9}, {3.8299286734730816`*^9, 3.82992870507823*^9}, {
+   3.8299287385112257`*^9, 3.829928748417316*^9}, {3.8299288998400493`*^9, 
+   3.829928920386711*^9}, {3.829929007264841*^9, 3.829929017630638*^9}, {
+   3.829929106963534*^9, 3.8299291336094713`*^9}, {3.8299291637505555`*^9, 
+   3.8299292039097323`*^9}, {3.8299292451626854`*^9, 
+   3.8299292564847717`*^9}, {3.829929318653689*^9, 3.829929343970703*^9}, {
+   3.8299293821350794`*^9, 3.829929390005136*^9}, {3.829929440341544*^9, 
+   3.829929546596085*^9}, {3.8299299288272223`*^9, 3.8299299434112997`*^9}, {
+   3.8299301461056786`*^9, 3.829930223685644*^9}, {3.8299302817432003`*^9, 
+   3.8299302998415813`*^9}, {3.8299303327201376`*^9, 
+   3.8299303464502172`*^9}, {3.829930407271491*^9, 3.8299305179112673`*^9}, {
+   3.8299306720168667`*^9, 3.829930727207282*^9}, {3.8299307902155247`*^9, 
+   3.8299307978372965`*^9}, {3.8299649068221226`*^9, 
+   3.8299649076326876`*^9}, {3.8299683948372793`*^9, 
+   3.8299684358576994`*^9}, {3.830572653975251*^9, 
+   3.830572654391736*^9}},ExpressionUUID->"729246ed-e207-4435-8a1c-\
+24d79a284a1a"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"CheckAnswer1", "[", 
+      RowBox[{"risposta1_", ",", "risposta2_", ",", " ", "colore_"}], "]"}], 
+     " ", ":=", " ", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"ContainsExactly", "[", 
+        RowBox[{
+         RowBox[{"Take", "[", 
+          RowBox[{"colore", ",", "2"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"risposta1", ",", "risposta2"}], "}"}]}], "]"}], ",", 
+       "\"\<Corretto\>\"", ",", "\"\<Sbagliato\>\""}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ShowAnswer1", "[", "colore_", "]"}], ":=", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Take", "[", 
+      RowBox[{"colore", ",", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.8299126002311916`*^9, 3.8299126032193975`*^9}, 
+   3.829918644627694*^9, {3.8299308103955984`*^9, 3.829930861952013*^9}, {
+   3.8299309071430244`*^9, 3.829930912728219*^9}, {3.8299309436307583`*^9, 
+   3.829930968727586*^9}, {3.829931007579897*^9, 3.829931045005657*^9}, {
+   3.82993112969074*^9, 3.829931131689183*^9}, {3.829931171880743*^9, 
+   3.829931177673892*^9}, {3.8299312154090986`*^9, 3.8299312322973204`*^9}, {
+   3.8299312649400344`*^9, 3.829931289940949*^9}, {3.8299313490556755`*^9, 
+   3.829931357920842*^9}, {3.829931467462137*^9, 3.829931469285717*^9}, 
+   3.8299649132201385`*^9, {3.829968438951786*^9, 3.829968442529777*^9}, {
+   3.8299687573735285`*^9, 3.8299687581974*^9}, {3.829971487740963*^9, 
+   3.8299714888136396`*^9}, {3.829971559170007*^9, 3.8299715608750343`*^9}, {
+   3.8305060018135986`*^9, 3.83050600924592*^9}, {3.830506080457148*^9, 
+   3.8305060868568587`*^9}, {3.830506120999277*^9, 3.8305061679554467`*^9}, {
+   3.830506237193303*^9, 3.8305063472263374`*^9}, {3.83050639629955*^9, 
+   3.830506469058066*^9}, {3.830506582071933*^9, 3.830506635186889*^9}, {
+   3.830506672825224*^9, 3.8305066785912*^9}, {3.830506828194287*^9, 
+   3.8305069018493767`*^9}, {3.830506940038707*^9, 3.8305070054659033`*^9}, {
+   3.8305070445395207`*^9, 3.830507053971384*^9}, {3.8305071197155275`*^9, 
+   3.830507217704912*^9}, {3.8305072928109937`*^9, 3.8305073152734985`*^9}, {
+   3.8305075530984216`*^9, 3.830507563758707*^9}, {3.8305076492650394`*^9, 
+   3.830507691143193*^9}, {3.8305077241636496`*^9, 3.830507737626706*^9}, {
+   3.83050810969382*^9, 3.8305081132600913`*^9}, {3.830508163016605*^9, 
+   3.8305081671949754`*^9}, {3.830508218261554*^9, 3.830508293915906*^9}, {
+   3.8305084115057287`*^9, 3.8305084927518835`*^9}, {3.830508551074477*^9, 
+   3.8305085514602327`*^9}, 3.8305085814867053`*^9, {3.830508741094454*^9, 
+   3.830508815769568*^9}, 3.830510359883686*^9, {3.830510414448278*^9, 
+   3.8305104147550707`*^9}, {3.8305104713273077`*^9, 3.830510474593897*^9}, {
+   3.83051050570553*^9, 3.830510550166544*^9}, {3.83051065003601*^9, 
+   3.8305106508497705`*^9}, {3.830510702926597*^9, 3.8305107124269614`*^9}, {
+   3.830510830430114*^9, 3.8305108346219997`*^9}, {3.83051095296708*^9, 
+   3.830510966139628*^9}, {3.8305110293544865`*^9, 3.8305110712148376`*^9}, {
+   3.8305111122306156`*^9, 3.830511137776643*^9}, {3.830511212967037*^9, 
+   3.830511249743038*^9}, {3.8305113014217153`*^9, 3.830511346507291*^9}, {
+   3.8305113998123465`*^9, 3.830511437479266*^9}, {3.8305115708470306`*^9, 
+   3.830511581562865*^9}, {3.8305116174368715`*^9, 3.8305116223166895`*^9}, {
+   3.830511712087453*^9, 3.8305117660206437`*^9}, {3.8305118167359548`*^9, 
+   3.830511863929092*^9}, {3.830511903792167*^9, 3.8305119071544065`*^9}, {
+   3.830511943098502*^9, 3.8305120790269527`*^9}, {3.8305121232729683`*^9, 
+   3.830512185679378*^9}, {3.8305123299021435`*^9, 3.83051233847716*^9}, {
+   3.8305123923948975`*^9, 3.830512460674704*^9}, {3.8305124998435535`*^9, 
+   3.8305125236387916`*^9}, {3.830512594740827*^9, 3.830512619743929*^9}, {
+   3.8305134904159327`*^9, 3.830513493266965*^9}, {3.8305135305021276`*^9, 
+   3.8305136196058908`*^9}, {3.8305137669345636`*^9, 3.830513939343978*^9}, {
+   3.8305140602689853`*^9, 3.830514070831012*^9}, {3.8305142990226183`*^9, 
+   3.8305143407314367`*^9}, {3.830514371261119*^9, 3.8305143835275555`*^9}, {
+   3.830514435619809*^9, 3.8305144367542305`*^9}, {3.8305144948391895`*^9, 
+   3.8305145080741615`*^9}, {3.83051453976411*^9, 3.8305145534656076`*^9}, {
+   3.8305148890826545`*^9, 3.830514934537022*^9}, {3.830516532179773*^9, 
+   3.8305165378042564`*^9}, {3.8305168451405277`*^9, 
+   3.8305169094237394`*^9}, {3.830517516541831*^9, 3.8305176033336897`*^9}, {
+   3.830517716812499*^9, 3.830517741684569*^9}, {3.830517819946701*^9, 
+   3.830517926546281*^9}, {3.830517958098256*^9, 3.830517982920854*^9}, {
+   3.8305180429108105`*^9, 3.830518094286697*^9}, 3.830518167585797*^9, {
+   3.830518200800006*^9, 3.830518209681944*^9}, {3.8305182411737413`*^9, 
+   3.8305182436087284`*^9}, {3.8305182755065956`*^9, 
+   3.8305182898527594`*^9}, {3.8305183253982143`*^9, 3.830518328589299*^9}, {
+   3.8305183885740867`*^9, 3.830518397799836*^9}, {3.8305184929224787`*^9, 
+   3.8305184966002016`*^9}, {3.830518533351307*^9, 3.8305185550633297`*^9}, {
+   3.830518782325773*^9, 3.830518801286451*^9}, {3.830519239553816*^9, 
+   3.830519253286644*^9}, {3.83051929618988*^9, 3.8305193090302877`*^9}, {
+   3.830519394837665*^9, 3.8305194322521167`*^9}, {3.8305195269667606`*^9, 
+   3.830519585555045*^9}, {3.830519636881872*^9, 3.830519640306897*^9}, {
+   3.8305197002348785`*^9, 3.8305197727451715`*^9}, {3.8305204112997437`*^9, 
+   3.830520423869008*^9}, {3.8305204540513086`*^9, 3.8305204626236153`*^9}, {
+   3.830520494890321*^9, 3.8305205290047073`*^9}, {3.830520583404019*^9, 
+   3.830520618633642*^9}, {3.8305213763502965`*^9, 3.830521381577527*^9}, {
+   3.8305214825287704`*^9, 3.8305214901105423`*^9}, {3.830535731375904*^9, 
+   3.8305357766794586`*^9}, {3.830535895841258*^9, 3.8305359003379946`*^9}, {
+   3.830570186125164*^9, 3.8305702015106444`*^9}, 3.830570262272942*^9, {
+   3.8305703058413286`*^9, 3.8305703658264513`*^9}, {3.8305705126907854`*^9, 
+   3.830570516959922*^9}, {3.8305707145202265`*^9, 3.830570720590645*^9}, {
+   3.8305725390250397`*^9, 3.830572570594097*^9}, {3.8305726813288946`*^9, 
+   3.8305726832387915`*^9}, {3.8312688915241656`*^9, 3.8312688995379944`*^9}, 
+   3.83126999002608*^9, {3.8312700808089333`*^9, 3.8312701672787685`*^9}, {
+   3.8312704823948145`*^9, 3.8312705051737432`*^9}, {3.831270543132496*^9, 
+   3.8312705521195335`*^9}, {3.831274739220888*^9, 3.831274740317212*^9}, {
+   3.831274773902649*^9, 3.831274778475366*^9}, {3.8312749213079805`*^9, 
+   3.8312749221114492`*^9}, {3.831289677041077*^9, 3.8312896777968235`*^9}},
+ CellLabel->
+  "In[245]:=",ExpressionUUID->"9b6463c5-4f0d-496e-a185-12d753a05c18"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"coloriComposti", " ", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"5", ",", "1", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "3", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "5", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "12", "]"}], "]"}]}], " ", "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"7", ",", "5", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "10", "]"}], "]"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"9", ",", "5", " ", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "9", "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"9", ",", "7", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "8", "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"9", ",", " ", "11", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "6", "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"9", ",", "1", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "5", "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"11", ",", "1", ",", 
+         RowBox[{"coloriGiusti", "[", 
+          RowBox[{"[", "4", "]"}], "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "}"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ShowExercise2", "[", "]"}], " ", ":=", " ", 
+     RowBox[{"DynamicModule", "[", 
+      RowBox[{
+       RowBox[{"{", " ", "\[IndentingNewLine]", "\t", 
+        RowBox[{
+        "risposta1", ",", "\[IndentingNewLine]", "\t", "risposta2", ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{
+         "consegna", " ", "=", " ", 
+          "\"\<Che tipo di colore \[EGrave] questo?\>\""}], ",", 
+         "\[IndentingNewLine]", "\t", "triplaRandom", ",", 
+         "\[IndentingNewLine]", "\t", "coloreRandom", ",", 
+         "\[IndentingNewLine]", "\t", "esito", ",", "\[IndentingNewLine]", 
+         "\t", "showhide", ",", "i", ",", "toshow", ",", "listaOggetti"}], 
+        "\[IndentingNewLine]", "}"}], ",", " ", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"risposta1", "=", "Null"}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"risposta2", "=", " ", "Null"}], ";", "\[IndentingNewLine]", 
+        "\t", 
+        RowBox[{"triplaRandom", "=", 
+         RowBox[{"RandomChoice", "[", "coloriComposti", "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"coloreRandom", "=", 
+         RowBox[{"Last", "[", "triplaRandom", "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"showhide", "=", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Nascondi il cerchio di Itten\>\"", ",", 
+           "\"\<Mostra il cerchio di Itten\>\""}], "}"}]}], ";", "\n", "\t\t", 
+        RowBox[{"i", "=", "1"}], ";", 
+        RowBox[{"(*", 
+         RowBox[{
+         "indice", " ", "per", " ", "il", " ", "numero", " ", "di", " ", 
+          "click"}], "*)"}], 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{
+          "lista", " ", "degli", " ", "oggetti", " ", "grafici", " ", "da", 
+           " ", "mostrare", " ", "sulla", " ", "destra", " ", 
+           RowBox[{"dell", "'"}], 
+           RowBox[{"esrcizio", ":", 
+            RowBox[{
+            "area", " ", "vuota", " ", "e", " ", "cerchio", " ", "di", " ", 
+             "itten"}]}]}], "\[Rule]", 
+          RowBox[{
+          "per", " ", "mostrare", " ", "e", " ", "nascondere", " ", "il", 
+           " ", "\"\<suggerimento\>\"", " ", "del", " ", "cerchio"}]}], 
+         "*)"}], 
+        RowBox[{"listaOggetti", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Graphics", "[", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"300", ",", "400"}], "}"}]}], "]"}], ",", 
+           RowBox[{"Show", "[", 
+            RowBox[{
+             RowBox[{"IttenWheel", "[", 
+              RowBox[{"ImageSize", "\[Rule]", "Medium"}], "]"}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"250", ",", "400"}], "}"}]}], ",", 
+             RowBox[{"ImageMargins", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"40", ",", "400"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}]}], "]"}]}], 
+          "}"}]}], ";", "\n", "\t\t", 
+        RowBox[{"toshow", "=", 
+         RowBox[{"listaOggetti", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Row", "[", 
+         RowBox[{"{", "\n", "\t\t\t", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{
+             RowBox[{"{", "\[IndentingNewLine]", "\t", 
+              RowBox[{
+               RowBox[{"Row", "[", 
+                RowBox[{
+                 RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+                  RowBox[{"Column", "[", 
+                   RowBox[{
+                    RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "@", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"risposta1", "\[Equal]", "Null"}], "||", 
+                    RowBox[{"risposta2", "\[Equal]", "Null"}]}], ")"}], ",", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "consegna", "=", 
+                    "\"\<Quali sono i colori che compongono questo colore? \>\
+\""}], ",", 
+                    RowBox[{"FontSize", "\[Rule]", "25"}], ",", " ", 
+                    "White"}], "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"consegna", "=", "\"\<Corretto\>\""}], ",", " ", 
+                    RowBox[{"FontSize", "\[Rule]", "40"}], ",", " ", 
+                    "White"}], " ", "]"}], ",", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"consegna", "=", 
+                    RowBox[{"CheckAnswer1", "[", 
+                    RowBox[{
+                    "risposta1", ",", "risposta2", ",", "triplaRandom"}], 
+                    "]"}]}], ",", " ", 
+                    RowBox[{"FontSize", "\[Rule]", "40"}], ",", " ", 
+                    "White"}], " ", "]"}]}], "]"}]}], ",", 
+                    "\[IndentingNewLine]", "\t\t\t", 
+                    RowBox[{"Row", "[", 
+                    RowBox[{
+                    RowBox[{"{", "\[IndentingNewLine]", "\t\t\t", 
+                    RowBox[{
+                    RowBox[{"InputField", "[", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "[", "risposta1", "]"}], ",", 
+                    RowBox[{"FieldSize", "\[Rule]", "10"}]}], "]"}], ",", 
+                    RowBox[{"InputField", "[", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "[", "risposta2", "]"}], ",", 
+                    RowBox[{"FieldSize", "\[Rule]", "10"}]}], "]"}]}], 
+                    "\[IndentingNewLine]", "\t\t", "}"}], ",", " ", 
+                    RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+                    "\[IndentingNewLine]", "\t    ", "}"}], ",", " ", 
+                    RowBox[{"Spacings", "\[Rule]", "15"}]}], "]"}], " ", 
+                  "\[IndentingNewLine]", "            ", "}"}], ",", 
+                 RowBox[{"Background", "\[Rule]", " ", 
+                  RowBox[{"Dynamic", "@", "coloreRandom"}]}], ",", " ", 
+                 RowBox[{"ImageSize", "\[Rule]", 
+                  RowBox[{"{", 
+                   RowBox[{"450", ",", " ", "450"}], "}"}]}], ",", 
+                 RowBox[{"Alignment", "\[Rule]", "Center"}], ",", " ", 
+                 RowBox[{"Frame", " ", "\[Rule]", " ", "True"}], ",", " ", 
+                 RowBox[{"FrameMargins", "\[Rule]", "80"}]}], "]"}], ",", 
+               "\[IndentingNewLine]", "\t       ", 
+               RowBox[{"Column", "[", 
+                RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+                 RowBox[{
+                  RowBox[{"Button", "[", 
+                   RowBox[{"\"\<Nuovo esercizio\>\"", ",", 
+                    RowBox[{
+                    RowBox[{"triplaRandom", "=", " ", 
+                    RowBox[{"RandomChoice", "[", "coloriComposti", "]"}]}], 
+                    ";", 
+                    RowBox[{"coloreRandom", " ", "=", " ", 
+                    RowBox[{"Last", "[", "triplaRandom", "]"}]}], ";", 
+                    "\[IndentingNewLine]", "\t\t\t\t", 
+                    RowBox[{"risposta1", "=", "Null"}], ";", 
+                    RowBox[{"risposta2", "=", "Null"}], ";", 
+                    RowBox[{
+                    "consegna", "=", 
+                    "\"\<Quali sono i colori che compongono questo \
+colore?\>\""}]}]}], "]"}], ",", "\[IndentingNewLine]", "\t\t", 
+                  RowBox[{"Button", "[", 
+                   RowBox[{
+                   "\"\<Mostra risposta\>\"", ",", "\[IndentingNewLine]", 
+                    "\t\t\t\t", 
+                    RowBox[{
+                    RowBox[{"risposta1", "=", 
+                    RowBox[{"Part", "[", 
+                    RowBox[{
+                    RowBox[{"ShowAnswer1", "[", "triplaRandom", "]"}], ",", 
+                    "1"}], "]"}]}], ";", 
+                    RowBox[{"risposta2", "=", 
+                    RowBox[{"Part", "[", 
+                    RowBox[{
+                    RowBox[{"ShowAnswer1", "[", "triplaRandom", "]"}], ",", 
+                    "2"}], "]"}]}], ";"}]}], "]"}], ",", 
+                  "\[IndentingNewLine]", "\t\t", 
+                  RowBox[{"Button", "[", 
+                   RowBox[{"\"\<Pulisci caselle\>\"", ",", 
+                    RowBox[{
+                    RowBox[{"risposta1", "=", "Null"}], ";", " ", 
+                    RowBox[{"risposta2", "=", "Null"}]}]}], "]"}]}], "\t", 
+                 "\[IndentingNewLine]", "\t", "}"}], "]"}]}], 
+              "\[IndentingNewLine]", "\t", "}"}], ",", 
+             RowBox[{"Alignment", "\[Rule]", "Right"}], ",", " ", 
+             RowBox[{"ImageSize", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{"600", ",", " ", "600"}], "}"}]}], ",", " ", 
+             RowBox[{"Background", "\[Rule]", " ", 
+              RowBox[{"RGBColor", "[", "\"\<#f2f7ff\>\"", "]"}]}]}], "]"}], 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{"Row", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"(*", 
+               RowBox[{
+               "colonna", " ", "contenente", " ", "bottone", " ", "e", " ", 
+                "cerchio", " ", "di", " ", "itten"}], "*)"}], 
+              RowBox[{"Column", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"Button", "[", 
+                  RowBox[{"(*", 
+                   RowBox[{
+                    RowBox[{
+                    "scelgo", " ", "la", " ", "label", " ", "da", " ", 
+                    "mostrare", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    "nascondi", " ", "o", " ", "mostra", " ", "il", " ", 
+                    "cerchio"}], ")"}]}], ",", 
+                    RowBox[{
+                    "in", " ", "base", " ", "allo", " ", "stato", " ", "del", 
+                    " ", "cerchio", " ", "che", " ", "\[EGrave]", " ", "dato",
+                     " ", "dal", " ", "numero", " ", "di", " ", "click", " ", 
+                    "nella", " ", "variabile", " ", 
+                    RowBox[{"\"\<i\>\"", ".", "Se"}], " ", "il", " ", 
+                    "numero", " ", "di", " ", "click", " ", "\[EGrave]", " ", 
+                    "0", " ", "o", " ", "pari"}], ",", 
+                    RowBox[{
+                    "e", " ", "quindi", " ", "\"\<i\>\"", " ", "\[EGrave]", 
+                    " ", "dispari", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"inizializzata", " ", "a", " ", "1"}], ")"}], " ",
+                     "il", " ", "cerchio", " ", "\[EGrave]", " ", "nascosto", 
+                    " ", "e", " ", "il", " ", "bottone", " ", "deve", " ", 
+                    "essere", " ", 
+                    RowBox[{"\"\<mostrare\>\"", ".", "se"}], " ", "il", " ", 
+                    "numero", " ", "di", " ", "click", " ", "\[EGrave]", " ", 
+                    "dispari", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"\"\<i\>\"", " ", "pari"}], ")"}], " ", "allora", 
+                    " ", "il", " ", "cerchio", " ", "\[EGrave]", " ", 
+                    "visibile", " ", "e", " ", "il", " ", "bottone", " ", 
+                    "deve", " ", "essere", " ", "\"\<nascondi\>\""}]}], 
+                   "*)"}], 
+                  RowBox[{
+                   RowBox[{"Dynamic", "@", 
+                    RowBox[{"ToString", "@", 
+                    RowBox[{"showhide", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", "+", 
+                    RowBox[{"Mod", "[", 
+                    RowBox[{"i", ",", "2"}], "]"}]}], "]"}], "]"}]}]}], ",", 
+                   RowBox[{"toshow", "=", 
+                    RowBox[{"listaOggetti", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", "+", 
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"i", "++"}], ",", "2"}], "]"}]}], "]"}], "]"}]}], 
+                   ",", 
+                   RowBox[{"(*", 
+                    RowBox[{
+                    RowBox[{"come", " ", "commento", " ", "sopra"}], ",", 
+                    RowBox[{"si", " ", "seleziona", " ", 
+                    RowBox[{"l", "'"}], "oggetto", " ", "da", " ", 
+                    RowBox[{"mostrare", ":", 
+                    RowBox[{
+                    "area", " ", "vuota", " ", "o", " ", "cerchio", " ", "di",
+                     " ", "itten"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                   RowBox[{"ImageSize", "\[Rule]", "150"}], ",", 
+                   RowBox[{"ImageMargins", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"100", ",", "100"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}], ",", 
+                   RowBox[{"FrameMargins", "\[Rule]", "Large"}], ",", 
+                   RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+                 RowBox[{"(*", 
+                  RowBox[{
+                  "area", " ", "che", " ", "si", " ", "aggiorna", " ", 
+                   "dinamicamente", " ", "per", " ", "mostrare", " ", "e", 
+                   " ", "nascondere", " ", "il", " ", "cerchio"}], "*)"}], 
+                 RowBox[{"Dynamic", "@", 
+                  RowBox[{"Show", "[", "toshow", "]"}]}]}], "}"}], "]"}], 
+              "}"}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"400", ",", "600"}], "}"}]}], ",", 
+             RowBox[{"Background", "\[Rule]", 
+              RowBox[{"RGBColor", "[", "\"\<#f2f7ff\>\"", "]"}]}]}], "]"}]}], 
+          "\n", "\[IndentingNewLine]", "}"}], "\n", "]"}]}]}], "\n", "]"}]}], 
+    ";"}], "\n", "\n", "\[IndentingNewLine]", 
+   RowBox[{"ShowExercise2", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.830521527020953*^9, 3.8305215307838087`*^9}, {
+   3.8305215781169877`*^9, 3.8305217868854218`*^9}, {3.8305218607360926`*^9, 
+   3.830521869643278*^9}, {3.8305220878059254`*^9, 3.830522162397998*^9}, {
+   3.830522274962328*^9, 3.830522356405133*^9}, {3.830522447682419*^9, 
+   3.8305224727874413`*^9}, {3.830522575995682*^9, 3.8305225922306643`*^9}, {
+   3.8305226268827686`*^9, 3.8305226390426674`*^9}, {3.8305324545874767`*^9, 
+   3.830532460041541*^9}, {3.830532540943471*^9, 3.8305325425013366`*^9}, {
+   3.8305343803136854`*^9, 3.8305344871727624`*^9}, {3.8305345744728737`*^9, 
+   3.8305345988912907`*^9}, {3.8305346289699326`*^9, 3.830534675802108*^9}, {
+   3.8305347508646283`*^9, 3.830534774824258*^9}, {3.8305348147530365`*^9, 
+   3.8305348287773314`*^9}, {3.830534975518749*^9, 3.830534979647138*^9}, {
+   3.830535104058378*^9, 3.8305351153414593`*^9}, {3.8305352198309336`*^9, 
+   3.830535221353895*^9}, {3.830535342112006*^9, 3.8305353444121723`*^9}, {
+   3.830535521774276*^9, 3.830535554291525*^9}, {3.8305356428106556`*^9, 
+   3.8305356624670267`*^9}, {3.830535829075349*^9, 3.830535874157723*^9}, {
+   3.8305359262247295`*^9, 3.830535982630727*^9}, {3.830536013117221*^9, 
+   3.8305360149901967`*^9}, {3.830536157101202*^9, 3.8305362073358912`*^9}, {
+   3.830536356031024*^9, 3.8305363581594753`*^9}, {3.8305364477776155`*^9, 
+   3.830536484420248*^9}, {3.830536527193575*^9, 3.830536559198928*^9}, {
+   3.830536603015703*^9, 3.830536604875044*^9}, {3.83053672088221*^9, 
+   3.830536804561304*^9}, {3.830537126870019*^9, 3.830537187719038*^9}, {
+   3.830537248884076*^9, 3.8305373134953957`*^9}, {3.8305373645952587`*^9, 
+   3.830537376059881*^9}, {3.83053800466267*^9, 3.8305380817849483`*^9}, {
+   3.8305381891880054`*^9, 3.8305381914417267`*^9}, {3.8305382360516396`*^9, 
+   3.830538265218753*^9}, {3.8305383463317475`*^9, 3.8305383919390464`*^9}, {
+   3.8305385041459537`*^9, 3.8305385049320726`*^9}, {3.8305385542153397`*^9, 
+   3.8305385543675575`*^9}, {3.8305386195787396`*^9, 3.830538628297714*^9}, {
+   3.830540441344243*^9, 3.8305404922734356`*^9}, {3.830540525596972*^9, 
+   3.8305405575606146`*^9}, {3.8305406078890533`*^9, 3.830540609982977*^9}, {
+   3.830540647329182*^9, 3.8305406474351516`*^9}, {3.8305407192597656`*^9, 
+   3.830540722345215*^9}, {3.8305407633464003`*^9, 3.8305407661312704`*^9}, {
+   3.8305408497697334`*^9, 3.83054091952003*^9}, {3.8305410327918406`*^9, 
+   3.8305410357683597`*^9}, {3.8305411710885973`*^9, 
+   3.8305412519060946`*^9}, {3.8305412959810925`*^9, 3.830541384602846*^9}, {
+   3.830541485655984*^9, 3.83054148872336*^9}, {3.8305415499493055`*^9, 
+   3.8305415522991447`*^9}, {3.830541807312718*^9, 3.8305418233314476`*^9}, {
+   3.830542178536278*^9, 3.8305422171927896`*^9}, {3.8305422795841656`*^9, 
+   3.830542285583748*^9}, {3.830542321778933*^9, 3.830542373700713*^9}, {
+   3.830569840254238*^9, 3.8305698962632895`*^9}, 3.8305704145004187`*^9, {
+   3.8305725957121315`*^9, 3.8305726102767897`*^9}, {3.83126896358958*^9, 
+   3.8312689954997845`*^9}, {3.831269048184382*^9, 3.831269049505251*^9}, {
+   3.831269895638593*^9, 3.8312699142404995`*^9}, {3.8312704035926456`*^9, 
+   3.8312704047221155`*^9}, {3.8312705692099576`*^9, 
+   3.8312708039370937`*^9}, {3.8312708412703314`*^9, 3.831270980727498*^9}, {
+   3.8312710541544647`*^9, 3.8312710700985765`*^9}, {3.831271419568787*^9, 
+   3.83127142559369*^9}, {3.831272832385092*^9, 3.831272843804593*^9}, {
+   3.831273640998171*^9, 3.8312736430033674`*^9}, {3.831273809323516*^9, 
+   3.8312739019132566`*^9}, {3.831273937114211*^9, 3.8312739992088423`*^9}, {
+   3.831274039781394*^9, 3.8312740445648108`*^9}, {3.831274271121784*^9, 
+   3.8312742793238854`*^9}, 3.8312743445228662`*^9, {3.8312744620136194`*^9, 
+   3.831274645850222*^9}, {3.8312747602177644`*^9, 3.8312747640216727`*^9}, {
+   3.8312751067410583`*^9, 3.83127510724251*^9}, {3.831285691549781*^9, 
+   3.8312856955593367`*^9}, {3.831285735553734*^9, 3.8312857509392986`*^9}, {
+   3.831285814297557*^9, 3.8312858370700912`*^9}, {3.831285877187874*^9, 
+   3.8312858773555837`*^9}, {3.8312860444059563`*^9, 
+   3.8312860458368206`*^9}, {3.8312861214175596`*^9, 3.831286134033084*^9}, {
+   3.831286282835116*^9, 3.8312862836192093`*^9}, {3.831286363643564*^9, 
+   3.8312863922265234`*^9}, {3.831286438999136*^9, 3.831286441400605*^9}, {
+   3.831286551279978*^9, 3.8312865692129173`*^9}, {3.8312868316132927`*^9, 
+   3.8312868376398067`*^9}, 3.831286947188916*^9, {3.8312870558008904`*^9, 
+   3.8312871653145494`*^9}, {3.8312871984272437`*^9, 
+   3.8312872291327734`*^9}, {3.8312873885512967`*^9, 
+   3.8312873909309397`*^9}, {3.8312878999993987`*^9, 
+   3.8312879441901903`*^9}, {3.8312880503912325`*^9, 3.831288054668198*^9}, {
+   3.83128854717813*^9, 3.831288575510268*^9}, {3.831289093136541*^9, 
+   3.8312891293792844`*^9}, {3.8312894902112494`*^9, 3.831289544478218*^9}, {
+   3.8312895753904376`*^9, 
+   3.8312896526190815`*^9}},ExpressionUUID->"e2cffb4c-f7ef-49c2-9cfa-\
+47ef58c9d58f"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`risposta1$$ = Null, $CellContext`risposta2$$ =
+   Null, $CellContext`consegna$$ = 
+  "Quali sono i colori che compongono questo colore? ", \
+$CellContext`triplaRandom$$ = {7, 5, 
+   RGBColor[0.75, 0, 0.25]}, $CellContext`coloreRandom$$ = RGBColor[
+  0.75, 0, 0.25], $CellContext`esito$$, $CellContext`showhide$$ = {
+  "Nascondi il cerchio di Itten", 
+   "Mostra il cerchio di Itten"}, $CellContext`i$$ = 
+  8, $CellContext`toshow$$ = Graphics[{{{
+      Style[
+       Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}, {0, 
+          Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}}], 
+       RGBColor[1, 1, 0]], 
+      Style[
+       Text[
+       1, {0, 16 
+         3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
+          Rational[3, 256] 3^Rational[1, 2])}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 
+          Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}}], 
+       RGBColor[1, 0.5, 0]], 
+      Style[
+       Text[3, {Rational[1, 2] 3^Rational[-1, 2], 
+         Rational[1, 6]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {0, 
+          Rational[-1, 4]}}], 
+       RGBColor[1, 0, 0]], 
+      Style[
+       Text[5, {Rational[5, 16] 3^Rational[-1, 2], 
+         Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {0, 
+          Rational[-1, 2]}}], 
+       RGBColor[0.5, 0, 0.5]], 
+      Style[
+       Text[7, {0, 
+         Rational[-1, 3]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
+          Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}, {0, 
+          Rational[-1, 4]}}], 
+       RGBColor[0, 0, 1]], 
+      Style[
+       Text[9, {Rational[-5, 16] 3^Rational[-1, 2], 
+         Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+      Style[
+       Polygon[{{0, 
+          Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
+          Rational[-1, 4]}}], 
+       RGBColor[0, 
+        Rational[2, 3], 0]], 
+      Style[
+       Text[11, {Rational[-1, 2] 3^Rational[-1, 2], 
+         Rational[1, 6]}], Bold, FontSize -> 14]}}, {{
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 12] Pi, Rational[7, 12] Pi}], 
+       RGBColor[1, 1, 0]], 
+      Style[
+       Text[1, {0., 0.6540074610309363}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 12] Pi, Rational[3, 4] Pi}], 
+       RGBColor[
+        Rational[1, 2], 
+        Rational[5, 6], 0]], 
+      Style[
+       Text[12, {-0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[3, 4] Pi, Rational[11, 12] Pi}], 
+       RGBColor[0, 
+        Rational[2, 3], 0]], 
+      Style[
+       Text[11, {-0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {
+        Rational[11, 12] Pi, Rational[13, 12] Pi}], 
+       RGBColor[0, 
+        Rational[1, 3], 
+        Rational[1, 2]]], 
+      Style[
+       Text[10, {-0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[13, 12] Pi, Rational[5, 4] Pi}], 
+       RGBColor[0, 0, 1]], 
+      Style[
+       Text[9, {-0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 4] Pi, Rational[17, 12] Pi}], 
+       RGBColor[0.25, 0, 0.75]], 
+      Style[
+       Text[8, {-0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {
+        Rational[17, 12] Pi, Rational[19, 12] Pi}], 
+       RGBColor[0.5, 0, 0.5]], 
+      Style[
+       Text[7, {0., -0.6540074610309363}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[19, 12] Pi, Rational[7, 4] Pi}], 
+       RGBColor[0.75, 0, 0.25]], 
+      Style[
+       Text[6, {0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 4] Pi, Rational[23, 12] Pi}], 
+       RGBColor[1, 0, 0]], 
+      Style[
+       Text[5, {0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {
+        Rational[23, 12] Pi, Rational[25, 12] Pi}], 
+       RGBColor[1, 0.25, 0]], 
+      Style[
+       Text[4, {0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[25, 12] Pi, Rational[9, 4] Pi}], 
+       RGBColor[1, 0.5, 0]], 
+      Style[
+       Text[3, {0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
+       Bold]}, {
+      Style[
+       Annulus[{0, 0}, {0.5, 0.8}, {Rational[9, 4] Pi, Rational[29, 12] Pi}], 
+       RGBColor[1, 0.75, 0]], 
+      Style[
+       Text[2, {0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
+       Bold]}}}, {
+   ImageSize -> {250, 400}, ImageMargins -> {{20, 400}, {2, 2}}, ImageSize -> 
+    Medium}], $CellContext`listaOggetti$$ = {
+   Graphics[ImageSize -> {300, 400}], 
+   Graphics[{{{
+       Style[
+        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}, {0, 
+           Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}}], 
+        RGBColor[1, 1, 0]], 
+       Style[
+        Text[
+        1, {0, 16 
+          3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
+           Rational[3, 256] 3^Rational[1, 2])}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 
+           Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}}], 
+        RGBColor[1, 0.5, 0]], 
+       Style[
+        Text[3, {Rational[1, 2] 3^Rational[-1, 2], 
+          Rational[1, 6]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {0, 
+           Rational[-1, 4]}}], 
+        RGBColor[1, 0, 0]], 
+       Style[
+        Text[5, {Rational[5, 16] 3^Rational[-1, 2], 
+          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {0, 
+           Rational[-1, 2]}}], 
+        RGBColor[0.5, 0, 0.5]], 
+       Style[
+        Text[7, {0, 
+          Rational[-1, 3]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
+           Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}, {0, 
+           Rational[-1, 4]}}], 
+        RGBColor[0, 0, 1]], 
+       Style[
+        Text[9, {Rational[-5, 16] 3^Rational[-1, 2], 
+          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
+       Style[
+        Polygon[{{0, 
+           Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
+           Rational[-1, 4]}}], 
+        RGBColor[0, 
+         Rational[2, 3], 0]], 
+       Style[
+        Text[11, {Rational[-1, 2] 3^Rational[-1, 2], 
+          Rational[1, 6]}], Bold, FontSize -> 14]}}, {{
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 12] Pi, Rational[7, 12] Pi}], 
+        RGBColor[1, 1, 0]], 
+       Style[
+        Text[1, {0., 0.6540074610309363}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 12] Pi, Rational[3, 4] Pi}], 
+        RGBColor[
+         Rational[1, 2], 
+         Rational[5, 6], 0]], 
+       Style[
+        Text[12, {-0.32700373051546816`, 0.5663870755173521}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[3, 4] Pi, Rational[11, 12] Pi}], 
+        RGBColor[0, 
+         Rational[2, 3], 0]], 
+       Style[
+        Text[11, {-0.5663870755173521, 0.32700373051546816`}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {
+         Rational[11, 12] Pi, Rational[13, 12] Pi}], 
+        RGBColor[0, 
+         Rational[1, 3], 
+         Rational[1, 2]]], 
+       Style[
+        Text[10, {-0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[13, 12] Pi, Rational[5, 4] Pi}], 
+        RGBColor[0, 0, 1]], 
+       Style[
+        Text[9, {-0.5663870755173521, -0.32700373051546816`}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 4] Pi, Rational[17, 12] Pi}], 
+        RGBColor[0.25, 0, 0.75]], 
+       Style[
+        Text[8, {-0.32700373051546816`, -0.5663870755173521}], FontSize -> 14,
+         Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {
+         Rational[17, 12] Pi, Rational[19, 12] Pi}], 
+        RGBColor[0.5, 0, 0.5]], 
+       Style[
+        Text[7, {0., -0.6540074610309363}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[19, 12] Pi, Rational[7, 4] Pi}], 
+        RGBColor[0.75, 0, 0.25]], 
+       Style[
+        Text[6, {0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
+        Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 4] Pi, Rational[23, 12] Pi}], 
+        RGBColor[1, 0, 0]], 
+       Style[
+        Text[5, {0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
+        Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {
+         Rational[23, 12] Pi, Rational[25, 12] Pi}], 
+        RGBColor[1, 0.25, 0]], 
+       Style[
+        Text[4, {0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[25, 12] Pi, Rational[9, 4] Pi}], 
+        RGBColor[1, 0.5, 0]], 
+       Style[
+        Text[3, {0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
+        Bold]}, {
+       Style[
+        Annulus[{0, 0}, {0.5, 0.8}, {Rational[9, 4] Pi, Rational[29, 12] Pi}], 
+        RGBColor[1, 0.75, 0]], 
+       Style[
+        Text[2, {0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
+        Bold]}}}, {
+    ImageSize -> {250, 400}, ImageMargins -> {{20, 400}, {2, 2}}, ImageSize -> 
+     Medium}]}}, 
+  TemplateBox[{
+    TemplateBox[{
+      TemplateBox[{
+        TagBox[
+         GridBox[{{
+            DynamicBox[
+             ToBoxes[
+              If[
+               
+               Or[$CellContext`risposta1$$ == Null, $CellContext`risposta2$$ == 
+                Null], 
+               
+               Style[$CellContext`consegna$$ = 
+                "Quali sono i colori che compongono questo colore? ", 
+                FontSize -> 25, White], 
+               
+               Style[$CellContext`consegna$$ = "Corretto", FontSize -> 40, 
+                White], 
+               
+               Style[$CellContext`consegna$$ = \
+$CellContext`CheckAnswer1[$CellContext`risposta1$$, $CellContext`risposta2$$, \
+$CellContext`triplaRandom$$], FontSize -> 40, White]], StandardForm]]}, {
+            TemplateBox[{
+              InputFieldBox[
+               Dynamic[$CellContext`risposta1$$], FieldSize -> 10], 
+              InputFieldBox[
+               Dynamic[$CellContext`risposta2$$], FieldSize -> 10]}, "Row", 
+             DisplayFunction -> (PaneBox[
+               RowBox[{
+                 TemplateSlotSequence[1, "\[InvisibleSpace]"]}], Alignment -> 
+               Center]& ), InterpretationFunction -> (RowBox[{"Row", "[", 
+                RowBox[{
+                  RowBox[{"{", 
+                    TemplateSlotSequence[1, ","], "}"}], ",", 
+                  RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]& )]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+          "Column", 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          GridBoxSpacings -> {"Columns" -> {{Automatic}}, "Rows" -> {{15}}}], 
+         "Column"]}, "Row", DisplayFunction -> (PaneBox[
+         FrameBox[#, Background -> Dynamic[$CellContext`coloreRandom$$], 
+          FrameMargins -> 80, FrameStyle -> Automatic], Alignment -> Center, 
+         ImageSize -> {450, 450}]& ), 
+       InterpretationFunction -> (RowBox[{"Row", "[", 
+          RowBox[{
+            RowBox[{"{", #, "}"}], ",", 
+            RowBox[{"Background", "\[Rule]", 
+              DynamicBox[
+               ToBoxes[$CellContext`coloreRandom$$, StandardForm]]}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+              RowBox[{"{", 
+                RowBox[{"450", ",", "450"}], "}"}]}], ",", 
+            RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
+            RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+            RowBox[{"FrameMargins", "\[Rule]", "80"}]}], "]"}]& )], 
+      TagBox[
+       GridBox[{{
+          ButtonBox[
+          "\"Nuovo esercizio\"", 
+           ButtonFunction :> ($CellContext`triplaRandom$$ = 
+             RandomChoice[$CellContext`coloriComposti]; \
+$CellContext`coloreRandom$$ = 
+             Last[$CellContext`triplaRandom$$]; $CellContext`risposta1$$ = 
+             Null; $CellContext`risposta2$$ = Null; $CellContext`consegna$$ = 
+             "Quali sono i colori che compongono questo colore?"), Appearance -> 
+           Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
+          ButtonBox[
+          "\"Mostra risposta\"", 
+           ButtonFunction :> ($CellContext`risposta1$$ = Part[
+               $CellContext`ShowAnswer1[$CellContext`triplaRandom$$], 
+               1]; $CellContext`risposta2$$ = Part[
+               $CellContext`ShowAnswer1[$CellContext`triplaRandom$$], 2]; 
+            Null), Appearance -> Automatic, Evaluator -> Automatic, Method -> 
+           "Preemptive"]}, {
+          ButtonBox[
+          "\"Pulisci caselle\"", 
+           ButtonFunction :> ($CellContext`risposta1$$ = 
+             Null; $CellContext`risposta2$$ = Null), Appearance -> Automatic, 
+           Evaluator -> Automatic, Method -> "Preemptive"]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+        "Column", 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
+     "Row", DisplayFunction -> (PaneBox[
+       StyleBox[
+        RowBox[{
+          TemplateSlotSequence[1, "\[InvisibleSpace]"]}], Background -> 
+        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], Alignment -> 
+       Right, ImageSize -> {600, 600}]& ), 
+     InterpretationFunction -> (RowBox[{"Row", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            TemplateSlotSequence[1, ","], "}"}], ",", 
+          RowBox[{"Alignment", "\[Rule]", "Right"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+              RowBox[{"600", ",", "600"}], "}"}]}], ",", 
+          RowBox[{"Background", "\[Rule]", 
+            InterpretationBox[
+             ButtonBox[
+              TooltipBox[
+               GraphicsBox[{{
+                  GrayLevel[0], 
+                  RectangleBox[{0, 0}]}, {
+                  GrayLevel[0], 
+                  RectangleBox[{1, -1}]}, {
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
+                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                FrameStyle -> 
+                RGBColor[
+                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
+                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                Dynamic[{
+                  Automatic, 
+                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+               StyleBox[
+                RowBox[{"RGBColor", "[", 
+                  
+                  RowBox[{
+                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
+                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
+              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+              DefaultBaseStyle -> {}, ButtonFunction :> 
+              With[{Typeset`box$ = EvaluationBox[]}, 
+                If[
+                 Not[
+                  AbsoluteCurrentValue["Deployed"]], 
+                 SelectionMove[Typeset`box$, All, Expression]; 
+                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                 FrontEnd`Private`$ColorSelectorInitialColor = 
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
+                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                 MathLink`CallFrontEnd[
+                   FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
+             False, Selectable -> False]}]}], "]"}]& )], 
+    TemplateBox[{
+      TagBox[
+       GridBox[{{
+          ButtonBox[
+           DynamicBox[
+            ToBoxes[
+             ToString[
+              Part[$CellContext`showhide$$, 1 + Mod[$CellContext`i$$, 2]]], 
+             StandardForm]], 
+           ButtonFunction :> ($CellContext`toshow$$ = 
+            Part[$CellContext`listaOggetti$$, 1 + Mod[
+                Increment[$CellContext`i$$], 2]]), ImageSize -> 150, 
+           ImageMargins -> {{100, 100}, {2, 2}}, FrameMargins -> Large, 
+           Alignment -> Center, Appearance -> Automatic, Evaluator -> 
+           Automatic, Method -> "Preemptive"]}, {
+          DynamicBox[
+           ToBoxes[
+            Show[$CellContext`toshow$$], StandardForm]]}}, 
+        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+        "Column", 
+        GridBoxItemSize -> {
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
+     "Row", DisplayFunction -> (PaneBox[
+       StyleBox[#, Background -> 
+        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], 
+       ImageSize -> {400, 600}]& ), 
+     InterpretationFunction -> (RowBox[{"Row", "[", 
+        RowBox[{
+          RowBox[{"{", #, "}"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+              RowBox[{"400", ",", "600"}], "}"}]}], ",", 
+          RowBox[{"Background", "\[Rule]", 
+            InterpretationBox[
+             ButtonBox[
+              TooltipBox[
+               GraphicsBox[{{
+                  GrayLevel[0], 
+                  RectangleBox[{0, 0}]}, {
+                  GrayLevel[0], 
+                  RectangleBox[{1, -1}]}, {
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
+                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                FrameStyle -> 
+                RGBColor[
+                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
+                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                Dynamic[{
+                  Automatic, 
+                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+               StyleBox[
+                RowBox[{"RGBColor", "[", 
+                  
+                  RowBox[{
+                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
+                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
+              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+              DefaultBaseStyle -> {}, ButtonFunction :> 
+              With[{Typeset`box$ = EvaluationBox[]}, 
+                If[
+                 Not[
+                  AbsoluteCurrentValue["Deployed"]], 
+                 SelectionMove[Typeset`box$, All, Expression]; 
+                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                 FrontEnd`Private`$ColorSelectorInitialColor = 
+                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
+                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                 MathLink`CallFrontEnd[
+                   FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
+             False, Selectable -> False]}]}], "]"}]& )]},
+   "RowDefault"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.8312891582917175`*^9, {3.8312895131000457`*^9, 3.8312895475176463`*^9}, {
+   3.831289606790978*^9, 3.831289636203314*^9}},
+ CellLabel->
+  "Out[242]=",ExpressionUUID->"49818fb6-f622-4d5f-a6e0-1bc3df90dd26"]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.6 Inherited,
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"960f87b7-aa9e-4507-8fd0-59cb840329be"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 57828, 1344, 5536, "Input",ExpressionUUID->"e3ff671f-9910-4b33-86d2-91e583e3a61f"],
+Cell[CellGroupData[{
+Cell[58411, 1368, 360, 7, 106, "Input",ExpressionUUID->"3081f47a-97fe-493e-88ff-c8eb689c279b"],
+Cell[58774, 1377, 21511, 505, 989, "Output",ExpressionUUID->"66a959d9-ff8b-4f25-b782-af91d5efc8a5"]
+}, Open  ]],
+Cell[80300, 1885, 401, 6, 76, "Input",ExpressionUUID->"f13cf88a-3212-4920-ba9d-1921bfa5066f"],
+Cell[80704, 1893, 5506, 75, 45, "Input",ExpressionUUID->"729246ed-e207-4435-8a1c-24d79a284a1a"],
+Cell[86213, 1970, 6845, 104, 286, "Input",ExpressionUUID->"9b6463c5-4f0d-496e-a185-12d753a05c18"],
+Cell[CellGroupData[{
+Cell[93083, 2078, 21031, 405, 2176, "Input",ExpressionUUID->"e2cffb4c-f7ef-49c2-9cfa-47ef58c9d58f"],
+Cell[114117, 2485, 21665, 512, 989, "Output",ExpressionUUID->"49818fb6-f622-4d5f-a6e0-1bc3df90dd26"]
+}, Open  ]]
+}
+]
+*)
+
