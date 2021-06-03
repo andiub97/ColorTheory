@@ -72,6 +72,20 @@ lblsOver = Flatten[ConstantArray[{"Primario", "Terziario","Secondario","Terziari
 (*caricamento immagine per il bottone "canella"*)
 cleanImage = Import[FileNameJoin[{NotebookDirectory[],"clean.png"}], ImageSize -> 30];
 
+(*valori per le aree grafiche*)
+bigFontsize = FontSize->40;
+smallFontsize = FontSize->14;
+mediumFontsize = FontSize->20;
+squareSize = {350, 350};
+marginSize = 70;
+externalSquaresize = {450, 500};
+rightSquaresize = {350,500};
+bgcolor = RGBColor["#f2f7ff"];
+btnMargins={{100,100},{2,2}};
+btnSize=150;
+ittenSize = ImageSize->{300,300};
+ittenMargins= ImageMargins->{{40,350},{2,2}};
+spacingSize = 6;
 
 
 (*Controlla la correttezza della risposta del primo esercizio*)
@@ -100,13 +114,13 @@ ShowExercise1[] := DynamicModule[
 	buttonPrimarioColor = Null;
 	buttonSecondarioColor = Null;
 	buttonTerziarioColor = Null;
-
+	
 	(*inizializzazioni per bottone che mostra e nasconde il grafico*)
 	showhide={"Nascondi il cerchio di Itten","Mostra il cerchio di Itten"};
 	i=1; (*indice per il numero di click*)
 	(*lista degli oggetti grafici da mostrare sulla destra dell'esrcizio: area vuota e cerchio di itten\[Rule] per mostrare e nascondere il "suggerimento" del cerchio*)
-	listaOggetti={Graphics[ImageSize->{300,400}], 
-			Show[IttenWheel[ImageSize->Medium], ImageSize->{300,400},ImageMargins->{{40,400},{2,2}}]};
+	listaOggetti={Graphics[ittenSize], 
+			Show[IttenWheel[ImageSize->Medium], ittenSize,ittenMargins]};
 	toshow=listaOggetti[[1]]; (*se non esplicitamente richiesto tramite bottone, il cerchio \[EGrave] nascosto quindi si mostra l'area grafica vuota*)
 	
 	Row[{
@@ -115,26 +129,26 @@ ShowExercise1[] := DynamicModule[
 			Row[{
 				Column[{
 					Dynamic@Which[
-						risposta == "", Style[messaggioUtente,FontSize->40, White], 
-						CheckAnswer[risposta, coloreRandom], Style["Corretto!", FontSize->40, White ], 
-						True, Style["Sbagliato", FontSize-> 40, White]],
+						risposta == "", Style[messaggioUtente,bigFontsize, White], 
+						CheckAnswer[risposta, coloreRandom], Style["Corretto!", bigFontsize, White ], 
+						True, Style["Sbagliato", bigFontsize, White]],
 				Row[{
-					Button["Primario", risposta = "Primario", Background-> buttonPrimarioColor],
+					Button["Primario", risposta = "Primario", Background-> buttonPrimarioColor ],
 					Button["Secondario", risposta = "Secondario", Background-> buttonSecondarioColor],
 					Button["Terziario", risposta = "Terziario", Background ->buttonTerziarioColor]
 					}
 				]}, Spacings->10
 			] },
 			(*setting del quadrato colorato*)
-           Background-> Dynamic@coloreRandom , ImageSize->{450, 450},
-           Alignment->Center, Frame -> True, FrameMargins->80],
+           Background-> Dynamic@coloreRandom , ImageSize->squareSize,
+           Alignment->Center, Frame -> True, FrameMargins->marginSize],
            Column[{
 			Button[cleanImage,risposta = ""; messaggioUtente = ""],
 			Button["Nuovo esercizio", coloreRandom = RandomChoice[coloriGiusti]; risposta = ""; messaggioUtente = ""],
 			Button["Mostra risposta", risposta = ""; messaggioUtente =ShowAnswer[coloreRandom]]
 		}]
 		(*setting area grafica che contiene l'esercizio*)
-		},Alignment->Right, ImageSize-> {550, 600}, Background-> RGBColor["#f2f7ff"]],
+		},Alignment->Right, ImageSize-> externalSquaresize, Background-> bgcolor],
 		
 		
 		Row[{
@@ -147,11 +161,11 @@ ShowExercise1[] := DynamicModule[
 					*)
 					Dynamic@ToString@showhide[[1+Mod[i,2]]],
 					toshow=listaOggetti[[1+Mod[i++,2]]], (*come commento sopra, si seleziona l'oggetto da mostrare: area vuota o cerchio di itten*)
-					ImageSize->150, ImageMargins->{{100,100},{2,2}}, FrameMargins->Large, Alignment->Center],
+					ImageSize->btnSize, ImageMargins->btnMargins, FrameMargins->Large, Alignment->Center],
 				(*area che si aggiorna dinamicamente per mostrare e nascondere il cerchio*)
 				Dynamic@Show[toshow] 
 			}]
-		}, ImageSize-> {400, 600}, Background-> RGBColor["#f2f7ff"]
+		}, ImageSize-> rightSquaresize, Background-> bgcolor
 		]
 			
 		}
@@ -180,20 +194,24 @@ GetAnswer2[tuplaColore_] :=
     	indicazione = "Quali sono i colori che compongono questo colore?",
     	tuplaRandom,
     	coloreRandom,
-    	showhide, i, toshow, listaOggetti
+    	showhide, i, toshow, listaOggetti, fieldsz
     }, 
     (*Le variabili non inizializzate in precedenza vengono inizializzate*)
    	risposta1 = Null;
    	risposta2 = Null;
    	tuplaRandom = RandomChoice[coloriComposti];
    	coloreRandom = Last[tuplaRandom];
+   	fieldsz = 10;
    	showhide = {"Nascondi il cerchio di Itten", 
      "Mostra il cerchio di Itten"};
      (*indice per il numero di click*)
    		i = 1;
    (*lista degli oggetti grafici da mostrare sulla destra dell'esercizio: area vuota e cerchio di itten\[Rule]per mostrare e nascondere il "suggerimento" del cerchio*)
-   listaOggetti = {Graphics[ImageSize -> {300, 400}], 
-   Show[IttenWheel[ImageSize -> Medium], ImageSize -> {300, 400}, ImageMargins -> {{40, 400}, {2, 2}}]}; toshow = listaOggetti[[1]];
+
+   listaOggetti={Graphics[ittenSize], 
+			Show[IttenWheel[ImageSize->Medium], ittenSize,ittenMargins]};
+	toshow=listaOggetti[[1]];
+	
    	Row[{
      	Row[{
      		(*Quadrato colorato*)
@@ -201,17 +219,17 @@ GetAnswer2[tuplaColore_] :=
          	Column[{
          		(*If dinamico che mostra l'indicazione con il valore di consegna se una delle due risposte non \[EGrave] stata data e non si \[EGrave] cliccato invio, e l'invocazione della funzione CheckAnswer2 nel caso si sia data la risposta.*)
          		Dynamic@If[(risposta1 == Null || risposta2 == Null), 
-         		Style[indicazione= "Quali sono i colori che compongono questo colore? ", FontSize -> 25, White], Style["Corretto!", FontSize->40, White ],
-         		Style[indicazione = CheckAnswer2[risposta1, risposta2, tuplaRandom], FontSize -> 40, White ]],
+         		Style[indicazione= "Quali sono i colori che compongono questo colore? ", mediumFontsize, White], Style["Corretto!", bigFontsize, White ],
+         		Style[indicazione = CheckAnswer2[risposta1, risposta2, tuplaRandom], bigFontsize, White ]],
          		(*Riga che ospita le due input field da riempire con la risposta dell'utente allineate in basso al centro del quadrato dell'esercizio*)
            		Row[{
-             			InputField[Dynamic[risposta1], FieldSize -> 10], InputField[Dynamic[risposta2], FieldSize -> 10]
+             			InputField[Dynamic[risposta1], FieldSize -> fieldsz], InputField[Dynamic[risposta2], FieldSize -> fieldsz]
              		}, Alignment -> Center]
-           	  }, Spacings -> 15] 
+           	  }, Spacings -> spacingSize] 
            }, 
            (*Il colore di cui bisogna indicare i colori che lo compongono \[EGrave] il colore di sfondo.*)
            Background -> Dynamic@coloreRandom, 
-           ImageSize -> {450, 450}, Alignment -> Center, Frame -> True, FrameMargins -> 80],
+           ImageSize -> squareSize, Alignment -> Center, Frame -> True, FrameMargins -> marginSize],
            (*Colonna con i bottoni da premere per richiedere un nuovo esercizio, che sceglie una nuova tupla di colori da indovinare e il colore dell'esercizio, cancella eventuali stringhe o numeri presenti e riporta il valore dell'indicazione 
                a quello di consegna; il bottone per mostrare la risposta all'utente assegnando i due colori presenti nella tupla precedentemente scelta a caso; il bottone per cancellare il contenute delle caselle di testo. *)
        		Column[{
@@ -219,15 +237,15 @@ GetAnswer2[tuplaColore_] :=
        			Button["Mostra risposta", risposta1 = Part[GetAnswer2[tuplaRandom], 1]; risposta2 = Part[GetAnswer2[tuplaRandom], 2]],
        			Button["Pulisci caselle", risposta1 = Null; risposta2 = Null]
          		}]
-       	}, Alignment -> Right, ImageSize -> {550, 600}, Background -> RGBColor["#f2f7ff"]],
+       	}, Alignment -> Right, ImageSize -> externalSquaresize, Background -> bgcolor],
      Row[{(*colonna contenente bottone e cerchio di itten*)
        Column[{
           Button[
             Dynamic@ToString@showhide[[1 + Mod[i, 2]]], 
             toshow = listaOggetti[[1 + Mod[i++, 2]]],
-            ImageSize -> 150, ImageMargins -> {{100, 100}, {2, 2}}, FrameMargins -> Large, Alignment -> Center], 
+            ImageSize -> btnSize, ImageMargins -> btnMargins, FrameMargins -> Large, Alignment -> Center], 
             
-            Dynamic@Show[toshow]}]}, ImageSize -> {400, 600}, Background -> RGBColor["#f2f7ff"]]
+            Dynamic@Show[toshow]}]}, ImageSize-> rightSquaresize, Background-> bgcolor]
      
      }]
    ];
@@ -281,7 +299,7 @@ Resituisce una lisa.*)
 SectorWheel[pts_,txt_,color_]:=
 	{Style[Polygon[pts],color], (*creazione del poligono*)
 	Style[Text[txt, RegionCentroid[Polygon[pts]]], (*aggiunta del testo nel centro del poligono*)
-	Bold,  FontSize->14 (*stile del testo*)
+	Bold,  smallFontsize(*stile del testo*)
 	]}
 	
 (*Funzione ausiliare. Dati: una lista di punti, due etichette e un colore la funzione crea un poligono 
@@ -294,12 +312,12 @@ SectorWheelOver[pts_,txt_, txtOver_,color_]:=
 		(*oggetto originale, che viene mostrato se il muose non si trova sopra l'oggetto*)
 			{Style[Polygon[pts],color], (*creazione del poligono*)
 			Style[Text[txt, RegionCentroid[Polygon[pts]]], (*aggiunta del testo nel centro del poligono*)
-			Bold,  FontSize->14]},(*stile del testo*)
+			Bold,  smallFontsize]},(*stile del testo*)
 			
 		(*oggetto modificato che viene mostrato quando il muose si trova sopra l'oggetto*)
 			{Style[Polygon[pts],color], (*creazione del poligono*)
 			Style[Text[txtOver, RegionCentroid[Polygon[pts]]], (*aggiunta del testo nel centro del poligono*)
-			Bold, FontSize->14]}
+			Bold, smallFontsize]}
 		]
 	}
 	]
@@ -320,7 +338,7 @@ OuterGeometry[colorList_,lbl_,r1_:0.5,r2_:0.8] :=
 		Style[
 			Text[lbl[[i/(2/12*Pi)+1]], (*etichetta*)
 			RegionCentroid[Annulus[{0,0},{r1,r2},{i-1/12 Pi+Pi/2,i+2/12*Pi-1/12Pi+Pi/2}]]], (*centro dell'area in cui mettere il testo*)
-			FontSize->14, Bold (*stile del testo*)
+			smallFontsize, Bold (*stile del testo*)
 		]},
 		{i,0,2*Pi-2/12*Pi,2/12*Pi}]];
 		
@@ -339,7 +357,7 @@ OuterGeometryOver[colorList_,lbl_,r1_:0.5,r2_:0.8] :=
 				Style[
 					Text[lbl[[i/(2/12*Pi)+1]], (*etichetta*)
 					RegionCentroid[Annulus[{0,0},{r1,r2},{i-1/12 Pi+Pi/2,i+2/12*Pi-1/12Pi+Pi/2}]]], (*centro dell'area*)
-					FontSize->14, Bold ]},(*stile del testo*)
+					smallFontsize, Bold ]},(*stile del testo*)
 					
 				{Style[
 				(*la funzione Annulus crea un singolo settore dell'anello.*)
@@ -349,7 +367,7 @@ OuterGeometryOver[colorList_,lbl_,r1_:0.5,r2_:0.8] :=
 				Style[
 					Text[lblsOver[[i/(2/12*Pi)+1]], (*etichetta*)
 					RegionCentroid[Annulus[{0,0},{r1,r2},{i-1/12 Pi+Pi/2,i+2/12*Pi-1/12Pi+Pi/2}]]], (*centro dell'area*)
-					FontSize->14, Bold]}(*stile del testo*)
+					smallFontsize, Bold]}(*stile del testo*)
 			]
 		}],
 		{i,0,2*Pi-2/12*Pi,2/12*Pi}];
@@ -497,12 +515,12 @@ Arcobaleno[color_:True]:=
 			(*colore che varia con il raggio; definizione dello stile di presentazione dell'animazione e dell'area da rappresentare*)
 				ColorFunction->(ColorData[colSchema][#4]&),Frame->False,Axes->False,BoundaryStyle->None,PlotRange->{{-1,1},{0,1}},
 				(*aggiunta del testo sopra all'arcobaleno*)
-				PlotLabel->Style[txt, FontSize->24, Black, Bold]
+				PlotLabel->Style[txt, Black, Bold]
 			],
 			(*definizione di variazione dell'angolo. AppearenceElements\[Rule] None nasconde i comandi di animazione*)
-			{m,0, Pi, AppearanceElements->None}, 
+			{{m,0,""},Pi,AppearanceElements->None}, 
 			(*velocit\[AGrave] dell'animazione e numero di ripetizione automatiche*)
-			AnimationRate->0.7, AnimationRepetitions->1, Paneled->False]
+			AnimationRate->0.6, AnimationRepetitions->1, Paneled->False]
 		]
 	]
 (*funzione ausiliaria che controlla la correttezza della risposta dell'utente per l'esercizio 2 (arcobaleno).
@@ -513,7 +531,7 @@ CheckEs3[indici_, coloriRand_]:=
 	(*si controlla se almeno una cella di input \[EGrave] lasciata vuota e se almeno un indice non \[EGrave] intero*)
 		MemberQ[indici, ""] || !ArrayQ[indici,_,IntegerQ] || !AllTrue[indici,Positive] || Max[indici]> 6,
 		(*allora sicuramente l'esercizio \[EGrave] sbagliato*)
-		False,
+		MessageDialog["Attenzione: devi inserire dei numeri interi tra 1 e 6."]; Return[False],
 		(*alternativamente, si controlla che la lista dei colori dell'arcobaleno sia uguale a quella dei colori random riordinati dall'utente*)
 		MatchQ[RotateLeft[Drop[secondari2,1],3], coloriRand[[indici]] ]		
 	]
@@ -521,7 +539,7 @@ CheckEs3[indici_, coloriRand_]:=
 CreatePaletteEs3[colori_]:=
 		GraphicsRow[
 				Graphics/@Table[
-							{Style[Disk[], colori[[i]]], Style[Text[i], Bold, FontSize->14, White]}
+							{Style[Disk[], colori[[i]]], Style[Text[i], Bold, smallFontsize, White]}
 							,{i,Length[colori]}]
 			]
 		
@@ -539,41 +557,42 @@ ShowSolutionEs3[colori_]:=
 
 (*esercizio 3: riordinamento dei 6 colori primari e secondari *)
 ShowExercise3[] := DynamicModule[
-	{ rainbowCol, randCol, palette, animazione, primo,secondo,terzo,quarto,quinto,sesto, risposta},
+	{ rainbowCol, randCol, palette, animazione, primo,secondo,terzo,quarto,quinto,sesto, risposta, szField},
 	(*colori dell'arcobaleno*)
 	rainbowCol=RotateLeft[Drop[secondari2,1],3];
 	randCol = RandomSample[rainbowCol];	(*riordino casuale dei colori*)
 	palette = CreatePaletteEs3[randCol]; (*creazione dischi colorati*)
 	animazione="";
 	risposta="";
+	szField= {90,30};
 	primo=secondo=terzo=quarto=quinto=sesto="";
 	Row[{
 		Column[{
 			 Dynamic@palette,
 			 (*creazione riga di input field per l'utente*)
 			Row[{
-				InputField[Dynamic@primo,Number, ImageSize->{90,30}],
-				InputField[Dynamic@secondo,Number, ImageSize->{90,30}],
-				InputField[Dynamic@terzo,Number, ImageSize->{90,30}],
-				InputField[Dynamic@quarto,Number, ImageSize->{90,30}],
-				InputField[Dynamic@quinto,Number, ImageSize->{90,30}],
-				InputField[Dynamic@sesto,Number, ImageSize->{90,30}]
+				InputField[Dynamic@primo,Number, ImageSize->szField],
+				InputField[Dynamic@secondo,Number, ImageSize->szField],
+				InputField[Dynamic@terzo,Number, ImageSize->szField],
+				InputField[Dynamic@quarto,Number, ImageSize->szField],
+				InputField[Dynamic@quinto,Number, ImageSize->szField],
+				InputField[Dynamic@sesto,Number, ImageSize->szField]
 			}],
 			Dynamic@animazione
 		}],
 	
 		Column[{
 		(*bottone invia risposta*)
-			Button[Style["Invia",FontSize->12],
+			Button["Invia",
 					(*controllo la correttezza della risposta, creo l'animazione*)
 					risposta=CheckEs3[{primo,secondo,terzo,quarto,quinto,sesto}, randCol]; animazione=Arcobaleno[risposta]],
 					(*bottone di pulizia: cancello le celle di input, il risultato della risposta e l'animazione*)
 			Button[cleanImage, primo = ""; secondo=""; terzo=""; quarto=""; quinto=""; sesto=""; risposta=""; animazione=""],
 			(*creazione di un nuovo esercizio: pulizia delle variabili, nuovo riordinamento dei colori*)
-			Button[Style["Nuovo esercizio",FontSize->12], randCol = RandomSample[rainbowCol]; 
+			Button["Nuovo esercizio", randCol = RandomSample[rainbowCol]; 
 					primo = ""; secondo=""; terzo=""; quarto=""; quinto=""; sesto="";risposta="";palette=CreatePaletteEs3[randCol];animazione=""],
 					(*mostra soluzione dell'esercizio corrente*)
-			Button[Style["Mostra soluzione",FontSize->12],{primo,secondo,terzo,quarto,quinto,sesto}= ShowSolutionEs3[randCol]; animazione=""]
+			Button["Mostra soluzione",{primo,secondo,terzo,quarto,quinto,sesto}= ShowSolutionEs3[randCol]; animazione=""]
 		}]	
 	}]
 	

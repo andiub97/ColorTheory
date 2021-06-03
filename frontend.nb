@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1171886,      20432]
-NotebookOptionsPosition[   1157355,      20163]
-NotebookOutlinePosition[   1161381,      20249]
-CellTagsIndexPosition[   1161001,      20235]
+NotebookDataLength[   1070516,      18138]
+NotebookOptionsPosition[   1056915,      17890]
+NotebookOutlinePosition[   1060950,      17976]
+CellTagsIndexPosition[   1060570,      17962]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -97,18 +97,22 @@ Cell[TextData[ButtonBox["Esercizio 1: la classe dei colori ",
   3.8296415810694094`*^9, 3.8296415945099735`*^9}, {3.8296419256513615`*^9, 
   3.8296419256567907`*^9}, {3.831198645548255*^9, 3.8311986750935926`*^9}, {
   3.831209523116435*^9, 3.8312095387291694`*^9}, {3.831289941109516*^9, 
-  3.8312899441522427`*^9}},ExpressionUUID->"bf64a49a-9fb6-42b5-b348-\
-3702663b9741"],
+  3.8312899965216346`*^9}, {3.831567349325432*^9, 3.8315673493351884`*^9}, {
+  3.831567388234747*^9, 
+  3.8315673934949436`*^9}},ExpressionUUID->"dad61a3e-8feb-4ce1-954a-\
+61beafb95c70"],
 
-Cell[TextData[ButtonBox["Esercizio 2: composizione dei colori",
+Cell[TextData[ButtonBox["Esercizio 2: la composizione dei colori",
  BaseStyle->"Hyperlink",
- ButtonData->{"06_", "06_es2"}]], "ItemNumbered",
+ ButtonData->"06_es2"]], "ItemNumbered",
  CellChangeTimes->{{3.8296397751819377`*^9, 3.829639778166545*^9}, {
   3.8296415810694094`*^9, 3.8296415945099735`*^9}, {3.8296419256513615`*^9, 
   3.8296419256567907`*^9}, {3.831198645548255*^9, 3.8311986750935926`*^9}, {
   3.831209523116435*^9, 3.8312095387291694`*^9}, {3.831289941109516*^9, 
-  3.8312899965216346`*^9}},ExpressionUUID->"287a839d-8a5c-4ecb-b21d-\
-b78b51eaa03e"],
+  3.8312899965216346`*^9}, {3.831567349325432*^9, 3.8315673493351884`*^9}, {
+  3.831567388234747*^9, 
+  3.8315674254393177`*^9}},ExpressionUUID->"c6dbf60c-fbde-4e52-ad90-\
+ae981afbb718"],
 
 Cell[TextData[ButtonBox["Esercizio 3: riordina l'arcobaleno",
  BaseStyle->"Hyperlink",
@@ -243,8 +247,6 @@ Cell[BoxData[
  CellLabel->"Out[2]=",ExpressionUUID->"cc50886b-39c8-451b-80d9-d31bc9209c8a"]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SetDirectory", "[", " ", 
@@ -256,22 +258,16 @@ Cell[BoxData[{
  CellChangeTimes->{{3.8296409526205344`*^9, 3.8296409720422063`*^9}, {
   3.829641266326733*^9, 3.8296412743856363`*^9}, {3.8296424294074965`*^9, 
   3.8296424471484385`*^9}, {3.8299869119593945`*^9, 3.8299869132453623`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"a66d78b4-d66a-44a8-9ec7-466e3abc6f51"],
-
-Cell[BoxData["\<\"Materiale caricato!\"\>"], "Print",
- CellChangeTimes->{3.831293576378848*^9, 3.831376087369426*^9},
- CellLabel->
-  "During evaluation of \
-In[1]:=",ExpressionUUID->"03491140-572a-4fd7-91ab-e9c12ca768b6"]
-}, Open  ]],
+ CellLabel->"In[28]:=",ExpressionUUID->"a66d78b4-d66a-44a8-9ec7-466e3abc6f51"],
 
 Cell["\<\
-Se hai cliccato il bottone puoi continuare alla prossima pagina!\
+Se hai fatto click ti apparir\[AGrave] un messaggio sotto al bottone. Adesso \
+puoi continuare alla prossima pagina!\
 \>", "Text",
  Editable->False,
  CellChangeTimes->{{3.8296413216651497`*^9, 3.829641413891408*^9}, {
-  3.82964151347662*^9, 
-  3.8296415177513337`*^9}},ExpressionUUID->"d2d49775-681f-4298-a6e8-\
+  3.82964151347662*^9, 3.8296415177513337`*^9}, {3.831567473195116*^9, 
+  3.8315675674333615`*^9}},ExpressionUUID->"d2d49775-681f-4298-a6e8-\
 634487ce5564"]
 }, Open  ]]
 }, Open  ]],
@@ -16947,7 +16943,10 @@ Cell[TextData[{
   FontWeight->"Bold",
   FontColor->GrayLevel[1],
   Background->RGBColor[1., 0., 0.]],
- " + ",
+ " ",
+ StyleBox["+",
+  FontWeight->"Bold"],
+ " ",
  StyleBox[" ",
   FontColor->GrayLevel[0],
   Background->RGBColor[1, 1, 0]],
@@ -16955,7 +16954,10 @@ Cell[TextData[{
   FontWeight->"Bold",
   FontColor->GrayLevel[0],
   Background->RGBColor[1, 1, 0]],
- " = ",
+ " ",
+ StyleBox["=",
+  FontWeight->"Bold"],
+ " ",
  StyleBox[" arancio ",
   FontWeight->"Bold",
   FontColor->GrayLevel[1],
@@ -16964,8 +16966,8 @@ Cell[TextData[{
  Editable->False,
  CellChangeTimes->{{3.831196980715259*^9, 3.831197001516611*^9}, {
    3.831197411728402*^9, 3.831197474497534*^9}, {3.831197557596648*^9, 
-   3.831197666542736*^9}, 
-   3.8311977163639383`*^9},ExpressionUUID->"ba3af1a8-a37e-445a-b42c-\
+   3.831197666542736*^9}, 3.8311977163639383`*^9, {3.831567739052183*^9, 
+   3.831567742095587*^9}},ExpressionUUID->"ba3af1a8-a37e-445a-b42c-\
 cedf210b14a3"],
 
 Cell[TextData[{
@@ -17003,7 +17005,7 @@ Cell[TextData[{
  StyleBox[" viola ",
   FontWeight->"Bold",
   FontColor->GrayLevel[1],
-  Background->RGBColor[0., 0., 0.5019607843137255]]
+  Background->RGBColor[0.5019607843137255, 0., 0.5019607843137255]]
 }], "Subitem",
  Editable->False,
  CellChangeTimes->{{3.831196980715259*^9, 3.831197001516611*^9}, {
@@ -17097,8 +17099,6 @@ classe:", "Author",
   3.8311985176179447`*^9}},ExpressionUUID->"7c1aae8a-350c-48dc-8941-\
 d9d781674e87"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"IttenWheel", "[", 
   RowBox[{"\"\<Mouseover\>\"", "\[Rule]", "True"}], "]"}]], "Input",
@@ -17111,981 +17111,7 @@ Cell[BoxData[
   3.830232992110051*^9, 3.8302330170188665`*^9}, {3.8302336785082097`*^9, 
   3.8302337322923727`*^9}, {3.8302710845782757`*^9, 3.830271095983568*^9}, {
   3.830271131875987*^9, 3.830271134586709*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"3445a310-f8da-4714-aae1-2e0cae01c67c"],
-
-Cell[BoxData[
- GraphicsBox[{
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {0, 
-           Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}}, {{0, 0}, {0.21650635094610965`, 0.125}, {
-          0, 0.5}, {-0.21650635094610965`, 0.125}}]], {
-        RGBColor[1, 1, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Primario\"", TraditionalForm], 
-        NCache[{
-         0, 16 3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
-           Rational[3, 256] 3^Rational[1, 2])}, {0, 0.20833333333333337`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}, {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {0, 
-           Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}}, {{0, 0}, {0.21650635094610965`, 0.125}, {
-          0, 0.5}, {-0.21650635094610965`, 0.125}}]], {
-        RGBColor[1, 1, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["1", TraditionalForm], 
-        NCache[{
-         0, 16 3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
-           Rational[3, 256] 3^Rational[1, 2])}, {0, 0.20833333333333337`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}],
-    ImageSizeCache->{{204., 342.}, {-161., -2.}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 
-           Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}, {{0, 0.5}, {0.4330127018922193, 0.25}, {
-          0.4330127018922193, -0.25}}]], {
-        RGBColor[1, 0.5, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Secondario\"", TraditionalForm], 
-        NCache[{Rational[1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}, {0.2886751345948129, 0.16666666666666666`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}, {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 
-           Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}, {{0, 0.5}, {0.4330127018922193, 0.25}, {
-          0.4330127018922193, -0.25}}]], {
-        RGBColor[1, 0.5, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["3", TraditionalForm], 
-        NCache[{Rational[1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}, {0.2886751345948129, 0.16666666666666666`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}],
-    ImageSizeCache->{{273., 411.}, {-161., 77.}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}, {{0, 0}, {0.21650635094610965`, 0.125}, {
-          0.4330127018922193, -0.25}, {0, -0.25}}]], {
-        RGBColor[1, 0, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Primario\"", TraditionalForm], 
-        NCache[{Rational[5, 16] 3^Rational[-1, 2], 
-          Rational[-5, 48]}, {
-         0.18042195912175807`, -0.10416666666666667`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}, {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}, {{0, 0}, {0.21650635094610965`, 0.125}, {
-          0.4330127018922193, -0.25}, {0, -0.25}}]], {
-        RGBColor[1, 0, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["5", TraditionalForm], 
-        NCache[{Rational[5, 16] 3^Rational[-1, 2], 
-          Rational[-5, 48]}, {
-         0.18042195912175807`, -0.10416666666666667`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}],
-    ImageSizeCache->{{273., 411.}, {-42., 77.}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       PolygonBox[
-        NCache[{{Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 2]}}, {{-0.4330127018922193, -0.25}, {
-          0.4330127018922193, -0.25}, {0, -0.5}}]], {
-        RGBColor[0.5, 0, 0.5]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Secondario\"", TraditionalForm], 
-        NCache[{0, 
-          Rational[-1, 3]}, {0, -0.3333333333333333}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}, {
-      StyleBox[
-       PolygonBox[
-        NCache[{{Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 2]}}, {{-0.4330127018922193, -0.25}, {
-          0.4330127018922193, -0.25}, {0, -0.5}}]], {
-        RGBColor[0.5, 0, 0.5]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["7", TraditionalForm], 
-        NCache[{0, 
-          Rational[-1, 3]}, {0, -0.3333333333333333}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}],
-    ImageSizeCache->{{136., 411.}, {76., 156.}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}, {{0, 0}, {-0.21650635094610965`, 
-          0.125}, {-0.4330127018922193, -0.25}, {0, -0.25}}]], {
-        RGBColor[0, 0, 1]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Primario\"", TraditionalForm], 
-        NCache[{Rational[-5, 16] 3^Rational[-1, 2], 
-          
-          Rational[-5, 
-           48]}, {-0.18042195912175807`, -0.10416666666666667`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}, {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}, {{0, 0}, {-0.21650635094610965`, 
-          0.125}, {-0.4330127018922193, -0.25}, {0, -0.25}}]], {
-        RGBColor[0, 0, 1]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["9", TraditionalForm], 
-        NCache[{Rational[-5, 16] 3^Rational[-1, 2], 
-          
-          Rational[-5, 
-           48]}, {-0.18042195912175807`, -0.10416666666666667`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}],
-    ImageSizeCache->{{136., 274.}, {-42., 77.}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 
-           Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}, {{0, 0.5}, {-0.4330127018922193, 
-          0.25}, {-0.4330127018922193, -0.25}}]], {
-        RGBColor[0, 
-         NCache[
-          Rational[2, 3], 0.6666666666666666], 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Secondario\"", TraditionalForm], 
-        NCache[{Rational[-1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}, {-0.2886751345948129, 0.16666666666666666`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}, {
-      StyleBox[
-       PolygonBox[
-        NCache[{{0, 
-           Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}, {{0, 0.5}, {-0.4330127018922193, 
-          0.25}, {-0.4330127018922193, -0.25}}]], {
-        RGBColor[0, 
-         NCache[
-          Rational[2, 3], 0.6666666666666666], 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["11", TraditionalForm], 
-        NCache[{Rational[-1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}, {-0.2886751345948129, 0.16666666666666666`}]], {
-       Bold, FontSize -> 14}, StripOnInput -> False]}],
-    ImageSizeCache->{{136., 274.}, {-161., 77.}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.20705523608201695`, 0.7727406610312546}, {
-          1.6653345369377348`*^-16, 
-          0.8282209443280665}, {-0.20705523608201656`, 
-          0.7727406610312546}, {-0.16823237931663845`, 
-          0.6278517870878944}, {-0.12940952255126034`, 0.4829629131445341}, {
-          1.3877787807814457`*^-16, 0.5176380902050415}, {
-          0.12940952255126062`, 0.48296291314453405`}, {0.1682323793166388, 
-          0.6278517870878944}, {0.20705523608201695`, 0.7727406610312546}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[5, 12] Pi, Rational[7, 12] Pi}]], {
-        RGBColor[1, 1, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Primario\"", TraditionalForm], {0., 0.6540074610309363}], {
-       FontSize -> 14, Bold}, StripOnInput -> False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.20705523608201695`, 0.7727406610312546}, {
-          1.6653345369377348`*^-16, 
-          0.8282209443280665}, {-0.20705523608201656`, 
-          0.7727406610312546}, {-0.16823237931663845`, 
-          0.6278517870878944}, {-0.12940952255126034`, 0.4829629131445341}, {
-          1.3877787807814457`*^-16, 0.5176380902050415}, {
-          0.12940952255126062`, 0.48296291314453405`}, {0.1682323793166388, 
-          0.6278517870878944}, {0.20705523608201695`, 0.7727406610312546}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[5, 12] Pi, Rational[7, 12] Pi}]], {
-        RGBColor[1, 1, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["1", TraditionalForm], {0., 0.6540074610309363}], {
-       FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{203.7606933090101, 
-     342.2393066909899}, {-268.2393066909899, -151.7606933090101}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.20705523608201637`, 
-          0.7727406610312547}, {-0.4141104721640331, 
-          0.7172603777344428}, {-0.565685424949238, 
-          0.565685424949238}, {-0.4596194077712559, 
-          0.4596194077712559}, {-0.35355339059327373`, 
-          0.35355339059327373`}, {-0.2588190451025207, 
-          0.4482877360840268}, {-0.12940952255126018`, 
-          0.4829629131445342}, {-0.16823237931663823`, 
-          0.6278517870878945}, {-0.20705523608201637`, 0.7727406610312547}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[7, 12] Pi, Rational[3, 4] Pi}]], {
-        RGBColor[
-         NCache[
-          Rational[1, 2], 0.5], 
-         NCache[
-          Rational[5, 6], 0.8333333333333334], 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Terziario\"", TraditionalForm], {-0.32700373051546816`, 
-        0.5663870755173521}], {FontSize -> 14, Bold}, StripOnInput -> 
-       False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.20705523608201637`, 
-          0.7727406610312547}, {-0.4141104721640331, 
-          0.7172603777344428}, {-0.565685424949238, 
-          0.565685424949238}, {-0.4596194077712559, 
-          0.4596194077712559}, {-0.35355339059327373`, 
-          0.35355339059327373`}, {-0.2588190451025207, 
-          0.4482877360840268}, {-0.12940952255126018`, 
-          0.4829629131445342}, {-0.16823237931663823`, 
-          0.6278517870878945}, {-0.20705523608201637`, 0.7727406610312547}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[7, 12] Pi, Rational[3, 4] Pi}]], {
-        RGBColor[
-         NCache[
-          Rational[1, 2], 0.5], 
-         NCache[
-          Rational[5, 6], 0.8333333333333334], 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["12", TraditionalForm], {-0.32700373051546816`, 
-        0.5663870755173521}], {FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{90.7606933090101, 
-     236.2393066909899}, {-250.2393066909899, -110.7606933090101}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.5656854249492378, 
-          0.5656854249492382}, {-0.7172603777344427, 
-          0.4141104721640333}, {-0.7727406610312546, 
-          0.20705523608201656`}, {-0.6278517870878944, 
-          0.16823237931663845`}, {-0.4829629131445341, 
-          0.12940952255126034`}, {-0.4482877360840267, 
-          0.25881904510252085`}, {-0.35355339059327356`, 
-          0.35355339059327384`}, {-0.4596194077712557, 
-          0.4596194077712561}, {-0.5656854249492378, 0.5656854249492382}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[3, 4] Pi, Rational[11, 12] Pi}]], {
-        RGBColor[0, 
-         NCache[
-          Rational[2, 3], 0.6666666666666666], 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Secondario\"", TraditionalForm], {-0.5663870755173521, 
-        0.32700373051546816`}], {FontSize -> 14, Bold}, StripOnInput -> 
-       False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.5656854249492378, 
-          0.5656854249492382}, {-0.7172603777344427, 
-          0.4141104721640333}, {-0.7727406610312546, 
-          0.20705523608201656`}, {-0.6278517870878944, 
-          0.16823237931663845`}, {-0.4829629131445341, 
-          0.12940952255126034`}, {-0.4482877360840267, 
-          0.25881904510252085`}, {-0.35355339059327356`, 
-          0.35355339059327384`}, {-0.4596194077712557, 
-          0.4596194077712561}, {-0.5656854249492378, 0.5656854249492382}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[3, 4] Pi, Rational[11, 12] Pi}]], {
-        RGBColor[0, 
-         NCache[
-          Rational[2, 3], 0.6666666666666666], 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["11", TraditionalForm], {-0.5663870755173521, 
-        0.32700373051546816`}], {FontSize -> 14, Bold}, StripOnInput -> 
-       False]}],
-    ImageSizeCache->{{24.760693309010094`, 
-     164.2393066909899}, {-185.2393066909899, -39.760693309010094`}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.7727406610312546, 
-          0.20705523608201695`}, {-0.8282209443280665, 
-          1.6653345369377348`*^-16}, {-0.7727406610312546, \
--0.20705523608201656`}, {-0.6278517870878944, -0.16823237931663845`}, \
-{-0.4829629131445341, -0.12940952255126034`}, {-0.5176380902050415, 
-          1.3877787807814457`*^-16}, {-0.48296291314453405`, 
-          0.12940952255126062`}, {-0.6278517870878944, 
-          0.1682323793166388}, {-0.7727406610312546, 0.20705523608201695`}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[11, 12] Pi, Rational[13, 12] Pi}]], {
-        RGBColor[0, 
-         NCache[
-          Rational[1, 3], 0.3333333333333333], 
-         NCache[
-          Rational[1, 2], 0.5]]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Terziario\"", TraditionalForm], {-0.6540074610309363, 
-        0.}], {FontSize -> 14, Bold}, StripOnInput -> False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.7727406610312546, 
-          0.20705523608201695`}, {-0.8282209443280665, 
-          1.6653345369377348`*^-16}, {-0.7727406610312546, \
--0.20705523608201656`}, {-0.6278517870878944, -0.16823237931663845`}, \
-{-0.4829629131445341, -0.12940952255126034`}, {-0.5176380902050415, 
-          1.3877787807814457`*^-16}, {-0.48296291314453405`, 
-          0.12940952255126062`}, {-0.6278517870878944, 
-          0.1682323793166388}, {-0.7727406610312546, 0.20705523608201695`}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[11, 12] Pi, Rational[13, 12] Pi}]], {
-        RGBColor[0, 
-         NCache[
-          Rational[1, 3], 0.3333333333333333], 
-         NCache[
-          Rational[1, 2], 0.5]]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["10", TraditionalForm], {-0.6540074610309363, 0.}], {
-       FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{6.760693309010094, 
-     123.23930669098989`}, {-71.2393066909899, 67.2393066909899}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.7727406610312547, -0.20705523608201637`}, \
-{-0.7172603777344428, -0.4141104721640331}, {-0.565685424949238, \
--0.565685424949238}, {-0.4596194077712559, -0.4596194077712559}, \
-{-0.35355339059327373`, -0.35355339059327373`}, {-0.4482877360840268, \
--0.2588190451025207}, {-0.4829629131445342, -0.12940952255126018`}, \
-{-0.6278517870878945, -0.16823237931663823`}, {-0.7727406610312547, \
--0.20705523608201637`}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[13, 12] Pi, Rational[5, 4] Pi}]], {
-        RGBColor[0, 0, 1]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox[
-        "\"Primario\"", 
-         TraditionalForm], {-0.5663870755173521, -0.32700373051546816`}], {
-       FontSize -> 14, Bold}, StripOnInput -> False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.7727406610312547, -0.20705523608201637`}, \
-{-0.7172603777344428, -0.4141104721640331}, {-0.565685424949238, \
--0.565685424949238}, {-0.4596194077712559, -0.4596194077712559}, \
-{-0.35355339059327373`, -0.35355339059327373`}, {-0.4482877360840268, \
--0.2588190451025207}, {-0.4829629131445342, -0.12940952255126018`}, \
-{-0.6278517870878945, -0.16823237931663823`}, {-0.7727406610312547, \
--0.20705523608201637`}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[13, 12] Pi, Rational[5, 4] Pi}]], {
-        RGBColor[0, 0, 1]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox[
-        "9", TraditionalForm], {-0.5663870755173521, -0.32700373051546816`}], \
-{FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{24.760693309010094`, 164.2393066909899}, {
-     34.760693309010094`, 180.2393066909899}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.5656854249492382, -0.5656854249492378}, \
-{-0.4141104721640333, -0.7172603777344427}, {-0.20705523608201656`, \
--0.7727406610312546}, {-0.16823237931663845`, -0.6278517870878944}, \
-{-0.12940952255126034`, -0.4829629131445341}, {-0.25881904510252085`, \
--0.4482877360840267}, {-0.35355339059327384`, -0.35355339059327356`}, \
-{-0.4596194077712561, -0.4596194077712557}, {-0.5656854249492382, \
--0.5656854249492378}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[5, 4] Pi, Rational[17, 12] Pi}]], {
-        RGBColor[0.25, 0, 0.75]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox[
-        "\"Terziario\"", 
-         TraditionalForm], {-0.32700373051546816`, -0.5663870755173521}], {
-       FontSize -> 14, Bold}, StripOnInput -> False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.5656854249492382, -0.5656854249492378}, \
-{-0.4141104721640333, -0.7172603777344427}, {-0.20705523608201656`, \
--0.7727406610312546}, {-0.16823237931663845`, -0.6278517870878944}, \
-{-0.12940952255126034`, -0.4829629131445341}, {-0.25881904510252085`, \
--0.4482877360840267}, {-0.35355339059327384`, -0.35355339059327356`}, \
-{-0.4596194077712561, -0.4596194077712557}, {-0.5656854249492382, \
--0.5656854249492378}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[5, 4] Pi, Rational[17, 12] Pi}]], {
-        RGBColor[0.25, 0, 0.75]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox[
-        "8", TraditionalForm], {-0.32700373051546816`, -0.5663870755173521}], \
-{FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{90.7606933090101, 236.2393066909899}, {
-     106.7606933090101, 246.2393066909899}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.20705523608201695`, -0.7727406610312546}, \
-{-1.6653345369377348`*^-16, -0.8282209443280665}, {
-          0.20705523608201656`, -0.7727406610312546}, {
-          0.16823237931663845`, -0.6278517870878944}, {
-          0.12940952255126034`, -0.4829629131445341}, \
-{-1.3877787807814457`*^-16, -0.5176380902050415}, {-0.12940952255126062`, \
--0.48296291314453405`}, {-0.1682323793166388, -0.6278517870878944}, \
-{-0.20705523608201695`, -0.7727406610312546}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[17, 12] Pi, Rational[19, 12] Pi}]], {
-        RGBColor[0.5, 0, 0.5]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Secondario\"", TraditionalForm], {
-        0., -0.6540074610309363}], {FontSize -> 14, Bold}, StripOnInput -> 
-       False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{-0.20705523608201695`, -0.7727406610312546}, \
-{-1.6653345369377348`*^-16, -0.8282209443280665}, {
-          0.20705523608201656`, -0.7727406610312546}, {
-          0.16823237931663845`, -0.6278517870878944}, {
-          0.12940952255126034`, -0.4829629131445341}, \
-{-1.3877787807814457`*^-16, -0.5176380902050415}, {-0.12940952255126062`, \
--0.48296291314453405`}, {-0.1682323793166388, -0.6278517870878944}, \
-{-0.20705523608201695`, -0.7727406610312546}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[17, 12] Pi, Rational[19, 12] Pi}]], {
-        RGBColor[0.5, 0, 0.5]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["7", TraditionalForm], {0., -0.6540074610309363}], {
-       FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{203.7606933090101, 342.2393066909899}, {
-     146.7606933090101, 263.2393066909899}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.20705523608201637`, -0.7727406610312547}, {
-          0.4141104721640331, -0.7172603777344428}, {
-          0.565685424949238, -0.565685424949238}, {
-          0.4596194077712559, -0.4596194077712559}, {
-          0.35355339059327373`, -0.35355339059327373`}, {
-          0.2588190451025207, -0.4482877360840268}, {
-          0.12940952255126018`, -0.4829629131445342}, {
-          0.16823237931663823`, -0.6278517870878945}, {
-          0.20705523608201637`, -0.7727406610312547}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[19, 12] Pi, Rational[7, 4] Pi}]], {
-        RGBColor[0.75, 0, 0.25]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Terziario\"", TraditionalForm], {
-        0.32700373051546816`, -0.5663870755173521}], {FontSize -> 14, Bold}, 
-       StripOnInput -> False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.20705523608201637`, -0.7727406610312547}, {
-          0.4141104721640331, -0.7172603777344428}, {
-          0.565685424949238, -0.565685424949238}, {
-          0.4596194077712559, -0.4596194077712559}, {
-          0.35355339059327373`, -0.35355339059327373`}, {
-          0.2588190451025207, -0.4482877360840268}, {
-          0.12940952255126018`, -0.4829629131445342}, {
-          0.16823237931663823`, -0.6278517870878945}, {
-          0.20705523608201637`, -0.7727406610312547}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[19, 12] Pi, Rational[7, 4] Pi}]], {
-        RGBColor[0.75, 0, 0.25]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["6", TraditionalForm], {
-        0.32700373051546816`, -0.5663870755173521}], {FontSize -> 14, Bold}, 
-       StripOnInput -> False]}],
-    ImageSizeCache->{{310.7606933090101, 456.2393066909899}, {
-     106.7606933090101, 246.2393066909899}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.5656854249492378, -0.5656854249492382}, {
-          0.7172603777344427, -0.4141104721640333}, {
-          0.7727406610312546, -0.20705523608201656`}, {
-          0.6278517870878944, -0.16823237931663845`}, {
-          0.4829629131445341, -0.12940952255126034`}, {
-          0.4482877360840267, -0.25881904510252085`}, {
-          0.35355339059327356`, -0.35355339059327384`}, {
-          0.4596194077712557, -0.4596194077712561}, {
-          0.5656854249492378, -0.5656854249492382}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[7, 4] Pi, Rational[23, 12] Pi}]], {
-        RGBColor[1, 0, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Primario\"", TraditionalForm], {
-        0.5663870755173521, -0.32700373051546816`}], {FontSize -> 14, Bold}, 
-       StripOnInput -> False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.5656854249492378, -0.5656854249492382}, {
-          0.7172603777344427, -0.4141104721640333}, {
-          0.7727406610312546, -0.20705523608201656`}, {
-          0.6278517870878944, -0.16823237931663845`}, {
-          0.4829629131445341, -0.12940952255126034`}, {
-          0.4482877360840267, -0.25881904510252085`}, {
-          0.35355339059327356`, -0.35355339059327384`}, {
-          0.4596194077712557, -0.4596194077712561}, {
-          0.5656854249492378, -0.5656854249492382}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[7, 4] Pi, Rational[23, 12] Pi}]], {
-        RGBColor[1, 0, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["5", TraditionalForm], {
-        0.5663870755173521, -0.32700373051546816`}], {FontSize -> 14, Bold}, 
-       StripOnInput -> False]}],
-    ImageSizeCache->{{381.7606933090101, 521.2393066909899}, {
-     34.760693309010094`, 180.2393066909899}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.7727406610312546, -0.20705523608201695`}, {
-          0.8282209443280665, -1.6653345369377348`*^-16}, {0.7727406610312546,
-           0.20705523608201656`}, {0.6278517870878944, 
-          0.16823237931663845`}, {0.4829629131445341, 0.12940952255126034`}, {
-          0.5176380902050415, -1.3877787807814457`*^-16}, {
-          0.48296291314453405`, -0.12940952255126062`}, {
-          0.6278517870878944, -0.1682323793166388}, {
-          0.7727406610312546, -0.20705523608201695`}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[23, 12] Pi, Rational[25, 12] Pi}]], {
-        RGBColor[1, 0.25, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Terziario\"", TraditionalForm], {0.6540074610309363, 
-        0.}], {FontSize -> 14, Bold}, StripOnInput -> False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.7727406610312546, -0.20705523608201695`}, {
-          0.8282209443280665, -1.6653345369377348`*^-16}, {0.7727406610312546,
-           0.20705523608201656`}, {0.6278517870878944, 
-          0.16823237931663845`}, {0.4829629131445341, 0.12940952255126034`}, {
-          0.5176380902050415, -1.3877787807814457`*^-16}, {
-          0.48296291314453405`, -0.12940952255126062`}, {
-          0.6278517870878944, -0.1682323793166388}, {
-          0.7727406610312546, -0.20705523608201695`}}, 
-          SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[23, 12] Pi, Rational[25, 12] Pi}]], {
-        RGBColor[1, 0.25, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["4", TraditionalForm], {0.6540074610309363, 0.}], {
-       FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{421.7606933090101, 
-     538.2393066909899}, {-71.2393066909899, 67.2393066909899}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.7727406610312547, 0.20705523608201637`}, {
-          0.7172603777344428, 0.4141104721640331}, {0.565685424949238, 
-          0.565685424949238}, {0.4596194077712559, 0.4596194077712559}, {
-          0.35355339059327373`, 0.35355339059327373`}, {0.4482877360840268, 
-          0.2588190451025207}, {0.4829629131445342, 0.12940952255126018`}, {
-          0.6278517870878945, 0.16823237931663823`}, {0.7727406610312547, 
-          0.20705523608201637`}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[25, 12] Pi, Rational[9, 4] Pi}]], {
-        RGBColor[1, 0.5, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Secondario\"", TraditionalForm], {0.5663870755173521, 
-        0.32700373051546816`}], {FontSize -> 14, Bold}, StripOnInput -> 
-       False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.7727406610312547, 0.20705523608201637`}, {
-          0.7172603777344428, 0.4141104721640331}, {0.565685424949238, 
-          0.565685424949238}, {0.4596194077712559, 0.4596194077712559}, {
-          0.35355339059327373`, 0.35355339059327373`}, {0.4482877360840268, 
-          0.2588190451025207}, {0.4829629131445342, 0.12940952255126018`}, {
-          0.6278517870878945, 0.16823237931663823`}, {0.7727406610312547, 
-          0.20705523608201637`}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[25, 12] Pi, Rational[9, 4] Pi}]], {
-        RGBColor[1, 0.5, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["3", TraditionalForm], {0.5663870755173521, 
-        0.32700373051546816`}], {FontSize -> 14, Bold}, StripOnInput -> 
-       False]}],
-    ImageSizeCache->{{381.7606933090101, 
-     521.2393066909899}, {-185.2393066909899, -39.760693309010094`}}], 
-   DynamicBox[If[
-     CurrentValue["MouseOver"], {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.5656854249492382, 0.5656854249492378}, {
-          0.4141104721640333, 0.7172603777344427}, {0.20705523608201656`, 
-          0.7727406610312546}, {0.16823237931663845`, 0.6278517870878944}, {
-          0.12940952255126034`, 0.4829629131445341}, {0.25881904510252085`, 
-          0.4482877360840267}, {0.35355339059327384`, 0.35355339059327356`}, {
-          0.4596194077712561, 0.4596194077712557}, {0.5656854249492382, 
-          0.5656854249492378}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[9, 4] Pi, Rational[29, 12] Pi}]], {
-        RGBColor[1, 0.75, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["\"Terziario\"", TraditionalForm], {0.32700373051546816`, 
-        0.5663870755173521}], {FontSize -> 14, Bold}, StripOnInput -> 
-       False]}, {
-      StyleBox[
-       InterpretationBox[
-        FilledCurveBox[
-         BSplineCurve[{{0.5656854249492382, 0.5656854249492378}, {
-          0.4141104721640333, 0.7172603777344427}, {0.20705523608201656`, 
-          0.7727406610312546}, {0.16823237931663845`, 0.6278517870878944}, {
-          0.12940952255126034`, 0.4829629131445341}, {0.25881904510252085`, 
-          0.4482877360840267}, {0.35355339059327384`, 0.35355339059327356`}, {
-          0.4596194077712561, 0.4596194077712557}, {0.5656854249492382, 
-          0.5656854249492378}}, SplineKnots -> {0, 0, 0, 
-            Rational[1, 4], 
-            Rational[1, 4], 
-            Rational[1, 2], 
-            Rational[1, 2], 
-            Rational[3, 4], 
-            Rational[3, 4], 1, 1, 1}, 
-          SplineWeights -> {
-           1.333333333333333, 1.5773502691896255`, 2, 2, 2, 
-            1.5773502691896255`, 1.333333333333333, 1.333333333333333, 
-            1.333333333333333}, SplineDegree -> 2]], 
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[9, 4] Pi, Rational[29, 12] Pi}]], {
-        RGBColor[1, 0.75, 0]}, StripOnInput -> False], 
-      StyleBox[
-       InsetBox[
-        FormBox["2", TraditionalForm], {0.32700373051546816`, 
-        0.5663870755173521}], {FontSize -> 14, Bold}, StripOnInput -> False]}],
-    ImageSizeCache->{{310.7606933090101, 
-     456.2393066909899}, {-250.2393066909899, -110.7606933090101}}]},
-  ImageSize->Large]], "Output",
- CellChangeTimes->{3.8312935766431775`*^9, 3.831376087638863*^9},
- CellLabel->"Out[4]=",ExpressionUUID->"a17c38b6-37c5-4182-b52f-b24e62d008ca"]
-}, Open  ]]
+ CellLabel->"In[31]:=",ExpressionUUID->"3445a310-f8da-4714-aae1-2e0cae01c67c"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -18110,6 +17136,7 @@ Cell[TextData[{
   FontWeight->"Bold"],
  " : "
 }], "Text",
+ Editable->False,
  CellChangeTimes->{{3.8311989268138027`*^9, 
   3.8311990564497414`*^9}},ExpressionUUID->"6d53c2bf-4ab3-4f88-a815-\
 b8b6a47ec1ce"],
@@ -18137,6 +17164,7 @@ Cell[TextData[{
   Background->RGBColor[1., 0., 0.]],
  "; "
 }], "Subitem",
+ Editable->False,
  CellChangeTimes->{{3.831199059942817*^9, 3.831199075827325*^9}, {
   3.831199120127468*^9, 
   3.8311991493384905`*^9}},ExpressionUUID->"14181197-6073-49a7-bf56-\
@@ -18164,6 +17192,7 @@ Cell[TextData[{
   Background->RGBColor[0., 0., 1.]],
  " . "
 }], "Subitem",
+ Editable->False,
  CellChangeTimes->{{3.831199059942817*^9, 3.831199075207816*^9}, {
   3.8311991607569685`*^9, 3.8311991668386717`*^9}, {3.8312002974000816`*^9, 
   3.831200299174219*^9}},ExpressionUUID->"7c64b0fa-4d68-45f7-94a9-\
@@ -18174,6 +17203,7 @@ Ma la temperatura dei colori non \[EGrave] rigida: i verdi possono essere \
 caldi se contengono pi\[UGrave] giallo che blu; i viola possono essere caldi \
 se contengono pi\[UGrave] rosso che blu .\
 \>", "Text",
+ Editable->False,
  CellChangeTimes->{{3.8311989268138027`*^9, 3.831199061910592*^9}, 
    3.8311998123809843`*^9, {3.8312003181271815`*^9, 
    3.8312003185754023`*^9}},ExpressionUUID->"053216ea-121e-4415-908e-\
@@ -18192,190 +17222,11 @@ freddi, e passa il mouse sulle opere per leggere il titolo e l\
   3.8312099344214745`*^9}},ExpressionUUID->"8aa606c5-5726-42e1-8615-\
 cca9dc8156e7"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"Paintings", "[", "]"}]], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.830340253106184*^9, 3.8303402729102182`*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"f213a623-fd67-4e6d-aa2e-d4bf073507ce"],
-
-Cell[BoxData[
- DynamicModuleBox[{ColorTheory`Private`col1$$ = Graphics[{{}, {{
-      Inset[
-       Graphics[{}, {
-        DisplayFunction -> Identity, 
-         ImagePadding -> {{2.842170943040401*^-14, 1.}, {1., 0.}}}], {
-       446.25, -446.25}, 
-       ImageScaled[{0.5, 0.5}], {850., 850}]}}, {}}, 
-   ImageSize -> {850, 650}, {
-   PlotRangePadding -> {6, 5}, PlotRange -> {{0, 892.5}, {-892.5, 0}}}, 
-   ImageSize -> {850, 650}]}, 
-  GraphicsBox[{{}, {InsetBox[
-      GraphicsBox[{
-        TagBox[{
-          {RGBColor[1, 1, 0], 
-           PolygonBox[
-            NCache[{{0, 0}, {
-              Rational[1, 8] 3^Rational[1, 2], Rational[1, 8]}, {
-              0, Rational[1, 2]}, {
-              Rational[-1, 8] 3^Rational[1, 2], Rational[1, 8]}}, {{0, 0}, {
-              0.21650635094610965`, 0.125}, {0, 0.5}, {-0.21650635094610965`, 
-              0.125}}]]}, 
-          
-          StyleBox[
-           InsetBox["\<\"giallo\"\>", 
-            NCache[{0, 16 
-              3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
-               Rational[3, 256] 3^Rational[1, 2])}, {
-             0, 0.20833333333333337`}]],
-           StripOnInput->False,
-           FontSize->14,
-           FontWeight->Bold]},
-         EventHandlerTag[{
-          "MouseClicked" :> (ColorTheory`Private`col1$$ = 
-            ReplaceAll[
-             ColorTheory`Private`col1$$, {
-              Except[ColorTheory`Private`yPaintings$7903] -> 
-               ColorTheory`Private`yPaintings$7903, 
-               ColorTheory`Private`yPaintings$7903 -> 
-               ColorTheory`Private`empty$7903}]), Method -> "Preemptive", 
-           PassEventsDown -> Automatic, PassEventsUp -> True}]], 
-        TagBox[{
-          {RGBColor[0, 
-            NCache[
-             Rational[2, 3], 0.6666666666666666], 0], 
-           PolygonBox[
-            NCache[{{0, Rational[1, 2]}, {
-              Rational[-1, 4] 3^Rational[1, 2], Rational[1, 4]}, {
-              Rational[-1, 4] 3^Rational[1, 2], Rational[-1, 4]}}, {{
-              0, 0.5}, {-0.4330127018922193, 
-              0.25}, {-0.4330127018922193, -0.25}}]]}, 
-          
-          StyleBox[
-           InsetBox["\<\"verde\"\>", 
-            NCache[{Rational[-1, 2] 3^Rational[-1, 2], Rational[
-              1, 6]}, {-0.2886751345948129, 0.16666666666666666`}]],
-           StripOnInput->False,
-           FontSize->14,
-           FontWeight->Bold]},
-         EventHandlerTag[{
-          "MouseClicked" :> (ColorTheory`Private`col1$$ = 
-            ReplaceAll[
-             ColorTheory`Private`col1$$, {
-              Except[ColorTheory`Private`gPaintings$7903] -> 
-               ColorTheory`Private`gPaintings$7903, 
-               ColorTheory`Private`gPaintings$7903 -> 
-               ColorTheory`Private`empty$7903}]), Method -> "Preemptive", 
-           PassEventsDown -> Automatic, PassEventsUp -> True}]], 
-        TagBox[{
-          {RGBColor[0, 0, 1], 
-           PolygonBox[
-            NCache[{{0, 0}, {
-              Rational[-1, 8] 3^Rational[1, 2], Rational[1, 8]}, {
-              Rational[-1, 4] 3^Rational[1, 2], Rational[-1, 4]}, {
-              0, Rational[-1, 4]}}, {{0, 0}, {-0.21650635094610965`, 
-              0.125}, {-0.4330127018922193, -0.25}, {0, -0.25}}]]}, 
-          
-          StyleBox[
-           InsetBox["\<\"blu\"\>", 
-            NCache[{Rational[-5, 16] 3^Rational[-1, 2], 
-              Rational[-5, 
-               48]}, {-0.18042195912175807`, -0.10416666666666667`}]],
-           StripOnInput->False,
-           FontSize->14,
-           FontWeight->Bold]},
-         EventHandlerTag[{
-          "MouseClicked" :> (ColorTheory`Private`col1$$ = 
-            ReplaceAll[
-             ColorTheory`Private`col1$$, {
-              Except[ColorTheory`Private`bPaintings$7903] -> 
-               ColorTheory`Private`bPaintings$7903, 
-               ColorTheory`Private`bPaintings$7903 -> 
-               ColorTheory`Private`empty$7903}]), Method -> "Preemptive", 
-           PassEventsDown -> Automatic, PassEventsUp -> True}]], 
-        TagBox[{
-          {RGBColor[0.5, 0, 0.5], 
-           PolygonBox[
-            NCache[{{Rational[-1, 4] 3^Rational[1, 2], Rational[-1, 4]}, {
-              Rational[1, 4] 3^Rational[1, 2], Rational[-1, 4]}, {
-              0, Rational[-1, 2]}}, {{-0.4330127018922193, -0.25}, {
-              0.4330127018922193, -0.25}, {0, -0.5}}]]}, 
-          
-          StyleBox[
-           InsetBox["\<\"viola\"\>", 
-            NCache[{0, Rational[-1, 3]}, {0, -0.3333333333333333}]],
-           StripOnInput->False,
-           FontSize->14,
-           FontWeight->Bold]},
-         EventHandlerTag[{
-          "MouseClicked" :> (ColorTheory`Private`col1$$ = 
-            ReplaceAll[
-             ColorTheory`Private`col1$$, {
-              Except[ColorTheory`Private`pPaintings$7903] -> 
-               ColorTheory`Private`pPaintings$7903, 
-               ColorTheory`Private`pPaintings$7903 -> 
-               ColorTheory`Private`empty$7903}]), Method -> "Preemptive", 
-           PassEventsDown -> Automatic, PassEventsUp -> True}]], 
-        TagBox[{
-          {RGBColor[1, 0, 0], 
-           PolygonBox[
-            NCache[{{0, 0}, {
-              Rational[1, 8] 3^Rational[1, 2], Rational[1, 8]}, {
-              Rational[1, 4] 3^Rational[1, 2], Rational[-1, 4]}, {
-              0, Rational[-1, 4]}}, {{0, 0}, {0.21650635094610965`, 0.125}, {
-              0.4330127018922193, -0.25}, {0, -0.25}}]]}, 
-          
-          StyleBox[
-           InsetBox["\<\"rosso\"\>", 
-            NCache[{Rational[5, 16] 3^Rational[-1, 2], Rational[-5, 48]}, {
-             0.18042195912175807`, -0.10416666666666667`}]],
-           StripOnInput->False,
-           FontSize->14,
-           FontWeight->Bold]},
-         EventHandlerTag[{
-          "MouseClicked" :> (ColorTheory`Private`col1$$ = 
-            ReplaceAll[
-             ColorTheory`Private`col1$$, {
-              Except[ColorTheory`Private`rPaintings$7903] -> 
-               ColorTheory`Private`rPaintings$7903, 
-               ColorTheory`Private`rPaintings$7903 -> 
-               ColorTheory`Private`empty$7903}]), Method -> "Preemptive", 
-           PassEventsDown -> Automatic, PassEventsUp -> True}]], 
-        TagBox[{
-          {RGBColor[1, 0.5, 0], 
-           PolygonBox[
-            NCache[{{0, Rational[1, 2]}, {
-              Rational[1, 4] 3^Rational[1, 2], Rational[1, 4]}, {
-              Rational[1, 4] 3^Rational[1, 2], Rational[-1, 4]}}, {{0, 0.5}, {
-              0.4330127018922193, 0.25}, {0.4330127018922193, -0.25}}]]}, 
-          
-          StyleBox[
-           InsetBox["\<\"arancio\"\>", 
-            NCache[{Rational[1, 2] 3^Rational[-1, 2], Rational[1, 6]}, {
-             0.2886751345948129, 0.16666666666666666`}]],
-           StripOnInput->False,
-           FontSize->14,
-           FontWeight->Bold]},
-         EventHandlerTag[{
-          "MouseClicked" :> (ColorTheory`Private`col1$$ = 
-            ReplaceAll[
-             ColorTheory`Private`col1$$, {
-              Except[ColorTheory`Private`oPaintings$7903] -> 
-               ColorTheory`Private`oPaintings$7903, 
-               ColorTheory`Private`oPaintings$7903 -> 
-               ColorTheory`Private`empty$7903}]), Method -> "Preemptive", 
-           PassEventsDown -> Automatic, PassEventsUp -> True}]]}], {28.333333333333332, -341.25},
-       ImageScaled[{0, 0.5}], {849.9999999999999, 650.}], InsetBox[
-      DynamicBox[ToBoxes[ColorTheory`Private`col1$$, TraditionalForm],
-       ImageSizeCache->{407., {0., 311.}}], {935., -341.25}, {
-      Left, Center}, {850., 650.}]}, {}},
-   ImageSize->{900, 350},
-   PlotRangePadding->{6, 5}],
-  DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{3.8312935806652293`*^9, 3.831376091545349*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"59335427-fe98-4f8c-97e3-7cd132b13fc3"]
-}, Open  ]]
+ CellLabel->"In[32]:=",ExpressionUUID->"f213a623-fd67-4e6d-aa2e-d4bf073507ce"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -18448,7 +17299,7 @@ dell\[CloseCurlyQuote]arcobaleno. Descrisse ",
  StyleBox[" violetto",
   FontWeight->"Bold",
   FontColor->GrayLevel[1],
-  Background->RGBColor[0.5019607843137255, 0., 0.5019607843137255]],
+  Background->RGBColor[0.6745098039215687, 0., 0.6745098039215687]],
  StyleBox["\n \n",
   FontWeight->"Bold",
   FontColor->GrayLevel[1]],
@@ -18467,81 +17318,94 @@ dell\[CloseCurlyQuote]arcobaleno. Descrisse ",
  StyleBox["sei",
   FontWeight->"Bold",
   FontColor->GrayLevel[0]],
- StyleBox[". ",
+ StyleBox[".\nInoltre, ",
   FontColor->GrayLevel[0]],
+ StyleBox["  indaco, ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[0.25098039215686274`, 0., 0.5019607843137255]],
+ StyleBox[" ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox["e",
+  FontColor->GrayLevel[0]],
+ StyleBox[" ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" violetto",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[0.6745098039215687, 0., 0.6745098039215687]],
+ StyleBox[" ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[0.6509803921568628, 0., 0.6509803921568628]],
+ StyleBox[" sono due sfumature lievemente differenti di ",
+  FontColor->GrayLevel[0]],
+ StyleBox[" viola ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[0.5019607843137255, 0., 0.5019607843137255]],
+ StyleBox[". Quindi possiamo creare un arcobaleno anche con ",
+  FontColor->GrayLevel[0]],
+ StyleBox["sei",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" colori:\n\n",
+  FontColor->GrayLevel[0]],
+ StyleBox[" rosso, ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[1., 0., 0.]],
+ StyleBox[" arancio, ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[1, 0.5, 0]],
+ StyleBox[" giallo, ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0],
+  Background->RGBColor[1, 1, 0]],
+ StyleBox[" ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0],
+  Background->RGBColor[0., 0.5686274509803921, 0.]],
+ StyleBox["verde, ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[0., 0.5686274509803921, 0.]],
+ StyleBox[" ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0],
+  Background->RGBColor[0., 0., 1.]],
+ StyleBox["blu,  ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[0., 0., 1.]],
+ StyleBox[" viola ",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1],
+  Background->RGBColor[0.5019607843137255, 0., 0.5019607843137255]],
  "\n"
 }], "Text",
+ Editable->False,
  CellChangeTimes->{{3.8312065402667236`*^9, 3.83120657512247*^9}, {
-  3.8312067307955723`*^9, 3.831206820424162*^9}, {3.831206852835062*^9, 
-  3.831206878907143*^9}, {3.8312069645078573`*^9, 3.831206977618007*^9}, {
-  3.8312070696639557`*^9, 3.831207502021077*^9}, {3.8312075335464697`*^9, 
-  3.831207644134713*^9}, {3.8312078063719864`*^9, 3.8312078189492755`*^9}, {
-  3.8312078914151287`*^9, 3.8312078999884057`*^9}, {3.831207948243502*^9, 
-  3.8312080776966867`*^9}},ExpressionUUID->"88f67d95-8d96-42a0-9ce7-\
+   3.8312067307955723`*^9, 3.831206820424162*^9}, {3.831206852835062*^9, 
+   3.831206878907143*^9}, {3.8312069645078573`*^9, 3.831206977618007*^9}, {
+   3.8312070696639557`*^9, 3.831207502021077*^9}, {3.8312075335464697`*^9, 
+   3.831207644134713*^9}, {3.8312078063719864`*^9, 3.8312078189492755`*^9}, {
+   3.8312078914151287`*^9, 3.8312078999884057`*^9}, {3.831207948243502*^9, 
+   3.8312080776966867`*^9}, {3.8315676206531415`*^9, 
+   3.8315677047488685`*^9}, {3.8315678771964645`*^9, 3.831567878288856*^9}, 
+   3.8315679108261747`*^9, {3.8315680125919847`*^9, 
+   3.8315680500190663`*^9}},ExpressionUUID->"88f67d95-8d96-42a0-9ce7-\
 10f0695b7b5b"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Arcobaleno", "[", "True", "]"}]], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.8312084463375816`*^9, 3.831208446952923*^9}, {
   3.8312088071274743`*^9, 3.8312088128019915`*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"4f96956b-0f4d-4f15-aa79-695612b9770c"],
-
-Cell[BoxData[
- TagBox[
-  StyleBox[
-   DynamicModuleBox[{ColorTheory`Private`m$$ = 3.141592653589793, 
-    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
-    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
-    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
-      Hold[ColorTheory`Private`m$$], 0, Pi}}, Typeset`size$$ = {
-    342., {97., 102.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True}, 
-    DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {ColorTheory`Private`m$$ = 0}, 
-      "ControllerVariables" :> {}, 
-      "OtherVariables" :> {
-       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
-        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
-        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, "Body" :> 
-      ParametricPlot[{
-        ColorTheory`Private`r Cos[ColorTheory`Private`x], 
-         ColorTheory`Private`r Sin[ColorTheory`Private`x]}, {
-        ColorTheory`Private`x, 0.001, ColorTheory`Private`m$$}, {
-        ColorTheory`Private`r, 0.5, 1}, 
-        ColorFunction -> (ColorData[
-         ColorTheory`Private`colSchema$10262][#4]& ), Frame -> False, Axes -> 
-        False, BoundaryStyle -> None, PlotRange -> {{-1, 1}, {0, 1}}, 
-        PlotLabel -> 
-        Style[ColorTheory`Private`txt$10262, FontSize -> 24, Black, Bold]], 
-      "Specifications" :> {{
-        ColorTheory`Private`m$$, 0, Pi, AppearanceElements -> None, 
-         AnimationRate -> 0.7, AnimationRepetitions -> 1, 
-         AppearanceElements -> {
-          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
-           "DirectionButton"}}}, 
-      "Options" :> {
-       Paneled -> False, ControlType -> Animator, AppearanceElements -> None, 
-        DefaultBaseStyle -> "Animate", DefaultLabelStyle -> "AnimateLabel", 
-        SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
-      "DefaultOptions" :> {}],
-     ImageSizeCache->{362., {123., 129.}},
-     SingleEvaluation->True],
-    Deinitialization:>None,
-    DynamicModuleValues:>{},
-    SynchronousInitialization->True,
-    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
-    UnsavedVariables:>{Typeset`initDone$$},
-    UntrackedVariables:>{Typeset`size$$}], "Animate",
-   Deployed->True,
-   StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.831293580754902*^9, 3.831376091618105*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"7e19f84e-cdbb-47b8-a2b7-96909830b460"]
-}, Open  ]]
+ CellLabel->"In[33]:=",ExpressionUUID->"4f96956b-0f4d-4f15-aa79-695612b9770c"]
 }, Open  ]]
 }, Open  ]],
 
@@ -18563,8 +17427,8 @@ Cell[TextData[{
 quadrato e clicca sul bottone della ",
  StyleBox["classe",
   FontWeight->"Bold"],
- " giusta. Se sei in difficolt\[AGrave], prova a guardare il cerchio di Itten \
-cliccando sul bottone \[OpenCurlyDoubleQuote]",
+ " giusta. \nSe sei in difficolt\[AGrave], prova a guardare il cerchio di \
+Itten cliccando sul bottone \[OpenCurlyDoubleQuote]",
  StyleBox["Mostra il cerchio di Itten",
   FontVariations->{"Underline"->True}],
  "\[CloseCurlyDoubleQuote], oppure chiedi di vedere la soluzione con il \
@@ -18575,430 +17439,15 @@ bottone \[OpenCurlyDoubleQuote]",
 \[OpenCurlyDoubleQuote]Nuovo esercizio\[CloseCurlyDoubleQuote]."
 }], "Text",
  CellChangeTimes->{{3.8312004657806196`*^9, 3.8312006150946665`*^9}, {
-  3.8312006672222896`*^9, 
-  3.8312007027747035`*^9}},ExpressionUUID->"69178c79-d6fa-4970-9725-\
+   3.8312006672222896`*^9, 3.8312007027747035`*^9}, 
+   3.8315680788133125`*^9},ExpressionUUID->"69178c79-d6fa-4970-9725-\
 49030dd6b182"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"ShowExercise1", "[", "]"}]], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.830230758544998*^9, 3.8302307634602566`*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"8db506b7-f942-45ce-83aa-a85086155a20"],
-
-Cell[BoxData[
- DynamicModuleBox[{ColorTheory`Private`risposta$$ = "", 
-  ColorTheory`Private`coloreRandom$$ = RGBColor[0.25, 0, 0.75], 
-  ColorTheory`Private`messaggioUtente$$ = "", 
-  ColorTheory`Private`buttonPrimarioColor$$ = Null, 
-  ColorTheory`Private`buttonSecondarioColor$$ = Null, 
-  ColorTheory`Private`buttonTerziarioColor$$ = Null, 
-  ColorTheory`Private`showhide$$ = {
-  "Nascondi il cerchio di Itten", "Mostra il cerchio di Itten"}, 
-  ColorTheory`Private`i$$ = 1, ColorTheory`Private`toshow$$ = Graphics[
-  ImageSize -> {300, 400}], ColorTheory`Private`listaOggetti$$ = {
-   Graphics[ImageSize -> {300, 400}], 
-   Graphics[{{{
-       Style[
-        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {0, 
-           Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}}], 
-        RGBColor[1, 1, 0]], 
-       Style[
-        Text[
-        1, {0, 16 
-          3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
-           Rational[3, 256] 3^Rational[1, 2])}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 
-           Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}], 
-        RGBColor[1, 0.5, 0]], 
-       Style[
-        Text[3, {Rational[1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}], 
-        RGBColor[1, 0, 0]], 
-       Style[
-        Text[5, {Rational[5, 16] 3^Rational[-1, 2], 
-          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 2]}}], 
-        RGBColor[0.5, 0, 0.5]], 
-       Style[
-        Text[7, {0, 
-          Rational[-1, 3]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}], 
-        RGBColor[0, 0, 1]], 
-       Style[
-        Text[9, {Rational[-5, 16] 3^Rational[-1, 2], 
-          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 
-           Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}], 
-        RGBColor[0, 
-         Rational[2, 3], 0]], 
-       Style[
-        Text[11, {Rational[-1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}], Bold, FontSize -> 14]}}, {{
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 12] Pi, Rational[7, 12] Pi}], 
-        RGBColor[1, 1, 0]], 
-       Style[
-        Text[1, {0., 0.6540074610309363}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 12] Pi, Rational[3, 4] Pi}], 
-        RGBColor[
-         Rational[1, 2], 
-         Rational[5, 6], 0]], 
-       Style[
-        Text[12, {-0.32700373051546816`, 0.5663870755173521}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[3, 4] Pi, Rational[11, 12] Pi}], 
-        RGBColor[0, 
-         Rational[2, 3], 0]], 
-       Style[
-        Text[11, {-0.5663870755173521, 0.32700373051546816`}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[11, 12] Pi, Rational[13, 12] Pi}], 
-        RGBColor[0, 
-         Rational[1, 3], 
-         Rational[1, 2]]], 
-       Style[
-        Text[10, {-0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[13, 12] Pi, Rational[5, 4] Pi}], 
-        RGBColor[0, 0, 1]], 
-       Style[
-        Text[9, {-0.5663870755173521, -0.32700373051546816`}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 4] Pi, Rational[17, 12] Pi}], 
-        RGBColor[0.25, 0, 0.75]], 
-       Style[
-        Text[8, {-0.32700373051546816`, -0.5663870755173521}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[17, 12] Pi, Rational[19, 12] Pi}], 
-        RGBColor[0.5, 0, 0.5]], 
-       Style[
-        Text[7, {0., -0.6540074610309363}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[19, 12] Pi, Rational[7, 4] Pi}], 
-        RGBColor[0.75, 0, 0.25]], 
-       Style[
-        Text[6, {0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
-        Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 4] Pi, Rational[23, 12] Pi}], 
-        RGBColor[1, 0, 0]], 
-       Style[
-        Text[5, {0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
-        Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[23, 12] Pi, Rational[25, 12] Pi}], 
-        RGBColor[1, 0.25, 0]], 
-       Style[
-        Text[4, {0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[25, 12] Pi, Rational[9, 4] Pi}], 
-        RGBColor[1, 0.5, 0]], 
-       Style[
-        Text[3, {0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
-        Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[9, 4] Pi, Rational[29, 12] Pi}], 
-        RGBColor[1, 0.75, 0]], 
-       Style[
-        Text[2, {0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
-        Bold]}}}, {
-    ImageSize -> {300, 400}, ImageMargins -> {{40, 400}, {2, 2}}, ImageSize -> 
-     Medium}]}}, 
-  TemplateBox[{
-    TemplateBox[{
-      TemplateBox[{
-        TagBox[
-         GridBox[{{
-            DynamicBox[
-             ToBoxes[
-              Which[ColorTheory`Private`risposta$$ == "", 
-               Style[
-               ColorTheory`Private`messaggioUtente$$, FontSize -> 40, White], 
-               ColorTheory`Private`CheckAnswer[
-               ColorTheory`Private`risposta$$, 
-                ColorTheory`Private`coloreRandom$$], 
-               Style["Corretto!", FontSize -> 40, White], True, 
-               Style["Sbagliato", FontSize -> 40, White]], StandardForm]]}, {
-            TemplateBox[{
-              ButtonBox[
-              "\"Primario\"", 
-               ButtonFunction :> (ColorTheory`Private`risposta$$ = 
-                "Primario"), Background -> Null, Appearance -> Automatic, 
-               Evaluator -> Automatic, Method -> "Preemptive"], 
-              ButtonBox[
-              "\"Secondario\"", 
-               ButtonFunction :> (ColorTheory`Private`risposta$$ = 
-                "Secondario"), Background -> Null, Appearance -> Automatic, 
-               Evaluator -> Automatic, Method -> "Preemptive"], 
-              ButtonBox[
-              "\"Terziario\"", 
-               ButtonFunction :> (ColorTheory`Private`risposta$$ = 
-                "Terziario"), Background -> Null, Appearance -> Automatic, 
-               Evaluator -> Automatic, Method -> "Preemptive"]}, 
-             "RowDefault"]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-          DefaultBaseStyle -> "Column", 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          GridBoxSpacings -> {"Columns" -> {{Automatic}}, "Rows" -> {{10}}}], 
-         "Column"]}, "Row", DisplayFunction -> (PaneBox[
-         FrameBox[#, Background -> 
-          Dynamic[ColorTheory`Private`coloreRandom$$], FrameMargins -> 80, 
-          FrameStyle -> Automatic], Alignment -> Center, 
-         ImageSize -> {450, 450}]& ), 
-       InterpretationFunction -> (RowBox[{"Row", "[", 
-          RowBox[{
-            RowBox[{"{", #, "}"}], ",", 
-            RowBox[{"Background", "\[Rule]", 
-              DynamicBox[
-               ToBoxes[ColorTheory`Private`coloreRandom$$, StandardForm]]}], 
-            ",", 
-            RowBox[{"ImageSize", "\[Rule]", 
-              RowBox[{"{", 
-                RowBox[{"450", ",", "450"}], "}"}]}], ",", 
-            RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
-            RowBox[{"Frame", "\[Rule]", "True"}], ",", 
-            RowBox[{"FrameMargins", "\[Rule]", "80"}]}], "]"}]& )], 
-      TagBox[
-       GridBox[{{
-          ButtonBox[
-           GraphicsBox[
-            TagBox[
-             RasterBox[CompressedData["
-1:eJy1V01oXFUUnszLvJlGgk1m3r3v/3cmWcSCy25U6kbcaFstCIKYpmmotWlJ
-KxpFa7UiiAuLCzcKFldCRRB0oVC7aDf+7JQggmRTxSLYWmtqk8z4nfvum768
-efMmUVycvHk/93znO+c7594E+4/uPVgulUrHa/izd/rZXQsL04uPbMfNvvnj
-h+bmZw88OH9idm52Yed+BQ99mAsbho2NbS8zppU1rfF/mgIbHh8fU23DvBD6
-/geEaRh8WNcLrTLgfV+TvmuwUisMz0xGzQ6wlyie+BtWZMqA90VW5ZyVfM99
-qBWE7dD1bjKtMTkAFzyZqnO2Dd9U5f1WMFWsUwydm4Hj/tz0g07k+69SHEW4
-XGclMte2j9C3ZFvD5dVGo16ydP1TcO0gz9+YpqGitpU+uKKewLGjIDiJNSue
-47xuGLonOW+CN68xrlHMz0wEUQd8/9IajbsFF86KcMksrHseNbkReN4r0IhD
-awbj8iphoqY7oaO/I9fvWIaxGOeL1ziP+6cwz1gProd0PcnzQA2KuJDP0dDz
-lyLP70yE0SXcK1hP9a7Ap9Kfb5e3yplWkxqh5wp4D8GwjpVz88s01NR4j3SE
-mt5wbGsK/IfIl6xfDq7ouYw/rqTiGEIcU5ZpPN3VewZTZ+xxwiTjmnZMPBM9
-HPvv5UvxsAp0v0P+TvsU+UNMdzqm+Q60dh087oVPRWpBhb8hx7GaqOlVyq9n
-2+fBTfK8zWsjLldIC9BsCXU5h+/Lsm+UNDY9wzcGav4w1VzGRs9VqiHyeol0
-BOzrrmO3YlyWh0v1opyP2pa5AzG+RbH6jvO2aejEezRHOyLGdH4pBts0T9Na
-6lXPdZ7iPJ3ffFzc6+iZY1j3K9UF/XbFd90FzCpD1iHTO7yS9AzloFGv70K/
-rRMmNPUZzQs547K6y+qqTBzA0Qf2Mq6RzHOOZru41bjmehNrLiPeNWD/Hs8X
-oU01H3eDrioyvrJjWU9IDav5M0LEjDrzEmkVdXwAmCs0l6LAf1LGW+sTbzfP
-mf4lnJH+M0nkVQWWNRGGFxHjyzzW4yTq8prUWsE8S3DryQyqyn2yFvPu/pZG
-8Qs9i3pAfy8kPRq43nnguhprJPoumqECF3m6g/bkZL/pa3JOWpbhm7o+E3re
-d8BcRV1vif3NC/5AP9xPcW3s13xdeZb9PXx8i775yHPsM7QPIHeHYTPwM4Pr
-ETw7hX49C15fAefPluRJPYNrm/BJx/j+nt5+zeeLfeL0BNY0Yx+DDd8Bbw22
-LrHbwFzDjHssznMR11SetcYIzgCXs/6j2P9qxgiv3czwpWfou7vgdwDX27gN
-6Irygzy/69nO+8jnh4HrfoxYliSntowhwUnHJbjTvWWae+Q+mTMrcvtI7LM0
-l7HHPIpaLiKGz5G7qxlubVnLLP4qXaGDA8V92zOv6NxFPTLiO+5ZUete32sp
-jrfS75N3iPdEcp7YJN+ymHmciRmEXL+R+JM1XW/Je+T/E1yvSd5t+c1KjGu9
-9C9wkzml0lrE/lzCFWeUjmvZF6D73RNRdDHRm8AOgq+hg2WZ51Obz3PPOUfM
-epp7GIN74OtN27Luw/nCAP4XTU/wXqdaEz5iOYl94JeWHxLui/8BN7FqMqNw
-9qS95hr5xvVm0kvQ3Y/Q/u5Ea4jz6BZ11e88Sf1Qg+bGwGUavJbS/W1wPodc
-zCe1xp6/T+Juqo8Y655z+pk87/BRcDqMM9APwPkJZ5pxXJeTOHA/xcVeFJ8Z
-i4zOZPX6GO3PCsWw0dLPSG8a/b9K5+ltpqmPY841of0vkfPfHNM6R/9X4t1w
-79qN/uJzICv/A/PtEGo=
-              "], {{0, 32.}, {30., 0}}, {0, 255}, ColorFunction -> RGBColor], 
-             BoxForm`ImageTag[
-             "Byte", ColorSpace -> "RGB", Interleaving -> True], Selectable -> 
-             False], DefaultBaseStyle -> "ImageGraphics", 
-            ImageSizeRaw -> {30., 32.}, PlotRange -> {{0, 30.}, {0, 32.}}], 
-           ButtonFunction :> (ColorTheory`Private`risposta$$ = ""; 
-            ColorTheory`Private`messaggioUtente$$ = ""), Appearance -> 
-           Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
-          ButtonBox[
-          "\"Nuovo esercizio\"", 
-           ButtonFunction :> (
-            ColorTheory`Private`coloreRandom$$ = 
-             RandomChoice[ColorTheory`Private`coloriGiusti]; 
-            ColorTheory`Private`risposta$$ = ""; 
-            ColorTheory`Private`messaggioUtente$$ = ""), Appearance -> 
-           Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
-          ButtonBox[
-          "\"Mostra risposta\"", 
-           ButtonFunction :> (ColorTheory`Private`risposta$$ = ""; 
-            ColorTheory`Private`messaggioUtente$$ = 
-             ColorTheory`Private`ShowAnswer[
-              ColorTheory`Private`coloreRandom$$]), Appearance -> Automatic, 
-           Evaluator -> Automatic, Method -> "Preemptive"]}}, 
-        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-        "Column", 
-        GridBoxItemSize -> {
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
-     "Row", DisplayFunction -> (PaneBox[
-       StyleBox[
-        RowBox[{
-          TemplateSlotSequence[1, "\[InvisibleSpace]"]}], Background -> 
-        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], Alignment -> 
-       Right, ImageSize -> {550, 600}]& ), 
-     InterpretationFunction -> (RowBox[{"Row", "[", 
-        RowBox[{
-          RowBox[{"{", 
-            TemplateSlotSequence[1, ","], "}"}], ",", 
-          RowBox[{"Alignment", "\[Rule]", "Right"}], ",", 
-          RowBox[{"ImageSize", "\[Rule]", 
-            RowBox[{"{", 
-              RowBox[{"550", ",", "600"}], "}"}]}], ",", 
-          RowBox[{"Background", "\[Rule]", 
-            InterpretationBox[
-             ButtonBox[
-              TooltipBox[
-               GraphicsBox[{{
-                  GrayLevel[0], 
-                  RectangleBox[{0, 0}]}, {
-                  GrayLevel[0], 
-                  RectangleBox[{1, -1}]}, {
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
-                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
-                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
-                FrameStyle -> 
-                RGBColor[
-                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
-                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                Dynamic[{
-                  Automatic, 
-                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                    Magnification])}]], 
-               StyleBox[
-                RowBox[{"RGBColor", "[", 
-                  
-                  RowBox[{
-                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
-                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
-              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
-              DefaultBaseStyle -> {}, ButtonFunction :> 
-              With[{Typeset`box$ = EvaluationBox[]}, 
-                If[
-                 Not[
-                  AbsoluteCurrentValue["Deployed"]], 
-                 SelectionMove[Typeset`box$, All, Expression]; 
-                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
-                 FrontEnd`Private`$ColorSelectorInitialColor = 
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
-                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
-                 MathLink`CallFrontEnd[
-                   FrontEnd`AttachCell[Typeset`box$, 
-                    FrontEndResource["RGBColorValueSelector"], {
-                    0, {Left, Bottom}}, {Left, Top}, 
-                    "ClosingActions" -> {
-                    "SelectionDeparture", "ParentChanged", 
-                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
-              Automatic, Method -> "Preemptive"], 
-             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
-             False, Selectable -> False]}]}], "]"}]& )], 
-    TemplateBox[{
-      TagBox[
-       GridBox[{{
-          ButtonBox[
-           DynamicBox[
-            ToBoxes[
-             ToString[
-              Part[
-              ColorTheory`Private`showhide$$, 1 + 
-               Mod[ColorTheory`Private`i$$, 2]]], StandardForm]], 
-           ButtonFunction :> (ColorTheory`Private`toshow$$ = 
-            Part[ColorTheory`Private`listaOggetti$$, 1 + Mod[
-                Increment[ColorTheory`Private`i$$], 2]]), ImageSize -> 150, 
-           ImageMargins -> {{100, 100}, {2, 2}}, FrameMargins -> Large, 
-           Alignment -> Center, Appearance -> Automatic, Evaluator -> 
-           Automatic, Method -> "Preemptive"]}, {
-          DynamicBox[
-           ToBoxes[
-            Show[ColorTheory`Private`toshow$$], StandardForm]]}}, 
-        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-        "Column", 
-        GridBoxItemSize -> {
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
-     "Row", DisplayFunction -> (PaneBox[
-       StyleBox[#, Background -> 
-        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], 
-       ImageSize -> {400, 600}]& ), 
-     InterpretationFunction -> (RowBox[{"Row", "[", 
-        RowBox[{
-          RowBox[{"{", #, "}"}], ",", 
-          RowBox[{"ImageSize", "\[Rule]", 
-            RowBox[{"{", 
-              RowBox[{"400", ",", "600"}], "}"}]}], ",", 
-          RowBox[{"Background", "\[Rule]", 
-            InterpretationBox[
-             ButtonBox[
-              TooltipBox[
-               GraphicsBox[{{
-                  GrayLevel[0], 
-                  RectangleBox[{0, 0}]}, {
-                  GrayLevel[0], 
-                  RectangleBox[{1, -1}]}, {
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
-                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
-                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
-                FrameStyle -> 
-                RGBColor[
-                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
-                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                Dynamic[{
-                  Automatic, 
-                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                    Magnification])}]], 
-               StyleBox[
-                RowBox[{"RGBColor", "[", 
-                  
-                  RowBox[{
-                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
-                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
-              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
-              DefaultBaseStyle -> {}, ButtonFunction :> 
-              With[{Typeset`box$ = EvaluationBox[]}, 
-                If[
-                 Not[
-                  AbsoluteCurrentValue["Deployed"]], 
-                 SelectionMove[Typeset`box$, All, Expression]; 
-                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
-                 FrontEnd`Private`$ColorSelectorInitialColor = 
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
-                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
-                 MathLink`CallFrontEnd[
-                   FrontEnd`AttachCell[Typeset`box$, 
-                    FrontEndResource["RGBColorValueSelector"], {
-                    0, {Left, Bottom}}, {Left, Top}, 
-                    "ClosingActions" -> {
-                    "SelectionDeparture", "ParentChanged", 
-                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
-              Automatic, Method -> "Preemptive"], 
-             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
-             False, Selectable -> False]}]}], "]"}]& )]},
-   "RowDefault"],
-  DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{3.831293581071328*^9, 3.8313760917923937`*^9},
- CellLabel->"Out[7]=",ExpressionUUID->"53824c3a-0e30-48b0-aca5-fb23c792d51a"]
-}, Open  ]]
+ CellLabel->"In[34]:=",ExpressionUUID->"8db506b7-f942-45ce-83aa-a85086155a20"]
 }, Open  ]]
 }, Open  ]],
 
@@ -19017,532 +17466,11 @@ Cell["Esercizio 2: Composizione dei colori", "Section",
    3.8312896858530874`*^9}, {3.831289855678521*^9, 3.831289870043651*^9}},
  CellTags->"06_es2",ExpressionUUID->"2e4449aa-19fb-46b9-9c0d-78a6f48fd265"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"ShowExercise2", "[", "]"}]], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.830531988586041*^9, 3.83053199485297*^9}},
- CellLabel->"In[8]:=",ExpressionUUID->"f7fd7c28-52b9-454a-aed3-a1013fde784d"],
-
-Cell[BoxData[
- DynamicModuleBox[{ColorTheory`Private`risposta1$$ = Null, 
-  ColorTheory`Private`risposta2$$ = Null, ColorTheory`Private`indicazione$$ = 
-  "Quali sono i colori che compongono questo colore? ", 
-  ColorTheory`Private`tuplaRandom$$ = {5, 1, 
-   RGBColor[1, 0.5, 0]}, ColorTheory`Private`coloreRandom$$ = RGBColor[
-  1, 0.5, 0], ColorTheory`Private`showhide$$ = {
-  "Nascondi il cerchio di Itten", "Mostra il cerchio di Itten"}, 
-  ColorTheory`Private`i$$ = 2, ColorTheory`Private`toshow$$ = Graphics[{{{
-      Style[
-       Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-          Rational[1, 8]}, {0, 
-          Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
-          Rational[1, 8]}}], 
-       RGBColor[1, 1, 0]], 
-      Style[
-       Text[
-       1, {0, 16 
-         3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
-          Rational[3, 256] 3^Rational[1, 2])}], Bold, FontSize -> 14]}, {
-      Style[
-       Polygon[{{0, 
-          Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
-          Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-          Rational[-1, 4]}}], 
-       RGBColor[1, 0.5, 0]], 
-      Style[
-       Text[3, {Rational[1, 2] 3^Rational[-1, 2], 
-         Rational[1, 6]}], Bold, FontSize -> 14]}, {
-      Style[
-       Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-          Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
-          Rational[-1, 4]}, {0, 
-          Rational[-1, 4]}}], 
-       RGBColor[1, 0, 0]], 
-      Style[
-       Text[5, {Rational[5, 16] 3^Rational[-1, 2], 
-         Rational[-5, 48]}], Bold, FontSize -> 14]}, {
-      Style[
-       Polygon[{{Rational[-1, 4] 3^Rational[1, 2], 
-          Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-          Rational[-1, 4]}, {0, 
-          Rational[-1, 2]}}], 
-       RGBColor[0.5, 0, 0.5]], 
-      Style[
-       Text[7, {0, 
-         Rational[-1, 3]}], Bold, FontSize -> 14]}, {
-      Style[
-       Polygon[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
-          Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
-          Rational[-1, 4]}, {0, 
-          Rational[-1, 4]}}], 
-       RGBColor[0, 0, 1]], 
-      Style[
-       Text[9, {Rational[-5, 16] 3^Rational[-1, 2], 
-         Rational[-5, 48]}], Bold, FontSize -> 14]}, {
-      Style[
-       Polygon[{{0, 
-          Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
-          Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
-          Rational[-1, 4]}}], 
-       RGBColor[0, 
-        Rational[2, 3], 0]], 
-      Style[
-       Text[11, {Rational[-1, 2] 3^Rational[-1, 2], 
-         Rational[1, 6]}], Bold, FontSize -> 14]}}, {{
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 12] Pi, Rational[7, 12] Pi}], 
-       RGBColor[1, 1, 0]], 
-      Style[
-       Text[1, {0., 0.6540074610309363}], FontSize -> 14, Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 12] Pi, Rational[3, 4] Pi}], 
-       RGBColor[
-        Rational[1, 2], 
-        Rational[5, 6], 0]], 
-      Style[
-       Text[12, {-0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
-       Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[3, 4] Pi, Rational[11, 12] Pi}], 
-       RGBColor[0, 
-        Rational[2, 3], 0]], 
-      Style[
-       Text[11, {-0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
-       Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {
-        Rational[11, 12] Pi, Rational[13, 12] Pi}], 
-       RGBColor[0, 
-        Rational[1, 3], 
-        Rational[1, 2]]], 
-      Style[
-       Text[10, {-0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[13, 12] Pi, Rational[5, 4] Pi}], 
-       RGBColor[0, 0, 1]], 
-      Style[
-       Text[9, {-0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
-       Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 4] Pi, Rational[17, 12] Pi}], 
-       RGBColor[0.25, 0, 0.75]], 
-      Style[
-       Text[8, {-0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
-       Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {
-        Rational[17, 12] Pi, Rational[19, 12] Pi}], 
-       RGBColor[0.5, 0, 0.5]], 
-      Style[
-       Text[7, {0., -0.6540074610309363}], FontSize -> 14, Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[19, 12] Pi, Rational[7, 4] Pi}], 
-       RGBColor[0.75, 0, 0.25]], 
-      Style[
-       Text[6, {0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
-       Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 4] Pi, Rational[23, 12] Pi}], 
-       RGBColor[1, 0, 0]], 
-      Style[
-       Text[5, {0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
-       Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {
-        Rational[23, 12] Pi, Rational[25, 12] Pi}], 
-       RGBColor[1, 0.25, 0]], 
-      Style[
-       Text[4, {0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[25, 12] Pi, Rational[9, 4] Pi}], 
-       RGBColor[1, 0.5, 0]], 
-      Style[
-       Text[3, {0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
-       Bold]}, {
-      Style[
-       Annulus[{0, 0}, {0.5, 0.8}, {Rational[9, 4] Pi, Rational[29, 12] Pi}], 
-       RGBColor[1, 0.75, 0]], 
-      Style[
-       Text[2, {0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
-       Bold]}}}, {
-   ImageSize -> {300, 400}, ImageMargins -> {{40, 400}, {2, 2}}, ImageSize -> 
-    Medium}], ColorTheory`Private`listaOggetti$$ = {
-   Graphics[ImageSize -> {300, 400}], 
-   Graphics[{{{
-       Style[
-        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {0, 
-           Rational[1, 2]}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}}], 
-        RGBColor[1, 1, 0]], 
-       Style[
-        Text[
-        1, {0, 16 
-          3^Rational[-1, 2] (Rational[1, 256] 3^Rational[-1, 2] + 
-           Rational[3, 256] 3^Rational[1, 2])}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 
-           Rational[1, 2]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}], 
-        RGBColor[1, 0.5, 0]], 
-       Style[
-        Text[3, {Rational[1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 0}, {Rational[1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}], 
-        RGBColor[1, 0, 0]], 
-       Style[
-        Text[5, {Rational[5, 16] 3^Rational[-1, 2], 
-          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {Rational[1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 2]}}], 
-        RGBColor[0.5, 0, 0.5]], 
-       Style[
-        Text[7, {0, 
-          Rational[-1, 3]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 0}, {Rational[-1, 8] 3^Rational[1, 2], 
-           Rational[1, 8]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}, {0, 
-           Rational[-1, 4]}}], 
-        RGBColor[0, 0, 1]], 
-       Style[
-        Text[9, {Rational[-5, 16] 3^Rational[-1, 2], 
-          Rational[-5, 48]}], Bold, FontSize -> 14]}, {
-       Style[
-        Polygon[{{0, 
-           Rational[1, 2]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[1, 4]}, {Rational[-1, 4] 3^Rational[1, 2], 
-           Rational[-1, 4]}}], 
-        RGBColor[0, 
-         Rational[2, 3], 0]], 
-       Style[
-        Text[11, {Rational[-1, 2] 3^Rational[-1, 2], 
-          Rational[1, 6]}], Bold, FontSize -> 14]}}, {{
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 12] Pi, Rational[7, 12] Pi}], 
-        RGBColor[1, 1, 0]], 
-       Style[
-        Text[1, {0., 0.6540074610309363}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 12] Pi, Rational[3, 4] Pi}], 
-        RGBColor[
-         Rational[1, 2], 
-         Rational[5, 6], 0]], 
-       Style[
-        Text[12, {-0.32700373051546816`, 0.5663870755173521}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[3, 4] Pi, Rational[11, 12] Pi}], 
-        RGBColor[0, 
-         Rational[2, 3], 0]], 
-       Style[
-        Text[11, {-0.5663870755173521, 0.32700373051546816`}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[11, 12] Pi, Rational[13, 12] Pi}], 
-        RGBColor[0, 
-         Rational[1, 3], 
-         Rational[1, 2]]], 
-       Style[
-        Text[10, {-0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[13, 12] Pi, Rational[5, 4] Pi}], 
-        RGBColor[0, 0, 1]], 
-       Style[
-        Text[9, {-0.5663870755173521, -0.32700373051546816`}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[5, 4] Pi, Rational[17, 12] Pi}], 
-        RGBColor[0.25, 0, 0.75]], 
-       Style[
-        Text[8, {-0.32700373051546816`, -0.5663870755173521}], FontSize -> 14,
-         Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[17, 12] Pi, Rational[19, 12] Pi}], 
-        RGBColor[0.5, 0, 0.5]], 
-       Style[
-        Text[7, {0., -0.6540074610309363}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[19, 12] Pi, Rational[7, 4] Pi}], 
-        RGBColor[0.75, 0, 0.25]], 
-       Style[
-        Text[6, {0.32700373051546816`, -0.5663870755173521}], FontSize -> 14, 
-        Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[7, 4] Pi, Rational[23, 12] Pi}], 
-        RGBColor[1, 0, 0]], 
-       Style[
-        Text[5, {0.5663870755173521, -0.32700373051546816`}], FontSize -> 14, 
-        Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {
-         Rational[23, 12] Pi, Rational[25, 12] Pi}], 
-        RGBColor[1, 0.25, 0]], 
-       Style[
-        Text[4, {0.6540074610309363, 0.}], FontSize -> 14, Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[25, 12] Pi, Rational[9, 4] Pi}], 
-        RGBColor[1, 0.5, 0]], 
-       Style[
-        Text[3, {0.5663870755173521, 0.32700373051546816`}], FontSize -> 14, 
-        Bold]}, {
-       Style[
-        Annulus[{0, 0}, {0.5, 0.8}, {Rational[9, 4] Pi, Rational[29, 12] Pi}], 
-        RGBColor[1, 0.75, 0]], 
-       Style[
-        Text[2, {0.32700373051546816`, 0.5663870755173521}], FontSize -> 14, 
-        Bold]}}}, {
-    ImageSize -> {300, 400}, ImageMargins -> {{40, 400}, {2, 2}}, ImageSize -> 
-     Medium}]}}, 
-  TemplateBox[{
-    TemplateBox[{
-      TemplateBox[{
-        TagBox[
-         GridBox[{{
-            DynamicBox[
-             ToBoxes[
-              If[
-               Or[
-               ColorTheory`Private`risposta1$$ == Null, 
-                ColorTheory`Private`risposta2$$ == Null], 
-               Style[
-               ColorTheory`Private`indicazione$$ = 
-                "Quali sono i colori che compongono questo colore? ", 
-                FontSize -> 25, White], 
-               Style["Corretto!", FontSize -> 40, White], 
-               Style[
-               ColorTheory`Private`indicazione$$ = 
-                ColorTheory`Private`CheckAnswer2[
-                 ColorTheory`Private`risposta1$$, 
-                  ColorTheory`Private`risposta2$$, 
-                  ColorTheory`Private`tuplaRandom$$], FontSize -> 40, White]],
-               StandardForm], ImageSizeCache -> {168., {0., 25.}}]}, {
-            TemplateBox[{
-              InputFieldBox[
-               Dynamic[ColorTheory`Private`risposta1$$], FieldSize -> 10], 
-              InputFieldBox[
-               Dynamic[ColorTheory`Private`risposta2$$], FieldSize -> 10]}, 
-             "Row", DisplayFunction -> (PaneBox[
-               RowBox[{
-                 TemplateSlotSequence[1, "\[InvisibleSpace]"]}], Alignment -> 
-               Center]& ), InterpretationFunction -> (RowBox[{"Row", "[", 
-                RowBox[{
-                  RowBox[{"{", 
-                    TemplateSlotSequence[1, ","], "}"}], ",", 
-                  RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]& )]}}, 
-          DefaultBaseStyle -> "Column", 
-          GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          GridBoxSpacings -> {"Columns" -> {{Automatic}}, "Rows" -> {{15}}}], 
-         "Column"]}, "Row", DisplayFunction -> (PaneBox[
-         FrameBox[#, Background -> 
-          Dynamic[ColorTheory`Private`coloreRandom$$], FrameMargins -> 80, 
-          FrameStyle -> Automatic], Alignment -> Center, 
-         ImageSize -> {450, 450}]& ), 
-       InterpretationFunction -> (RowBox[{"Row", "[", 
-          RowBox[{
-            RowBox[{"{", #, "}"}], ",", 
-            RowBox[{"Background", "\[Rule]", 
-              DynamicBox[
-               ToBoxes[ColorTheory`Private`coloreRandom$$, StandardForm]]}], 
-            ",", 
-            RowBox[{"ImageSize", "\[Rule]", 
-              RowBox[{"{", 
-                RowBox[{"450", ",", "450"}], "}"}]}], ",", 
-            RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
-            RowBox[{"Frame", "\[Rule]", "True"}], ",", 
-            RowBox[{"FrameMargins", "\[Rule]", "80"}]}], "]"}]& )], 
-      TagBox[
-       GridBox[{{
-          ButtonBox[
-          "\"Nuovo esercizio\"", 
-           ButtonFunction :> (
-            ColorTheory`Private`tuplaRandom$$ = 
-             RandomChoice[ColorTheory`Private`coloriComposti]; 
-            ColorTheory`Private`coloreRandom$$ = 
-             Last[ColorTheory`Private`tuplaRandom$$]; 
-            ColorTheory`Private`risposta1$$ = Null; 
-            ColorTheory`Private`risposta2$$ = Null; 
-            ColorTheory`Private`indicazione$$ = 
-             "Quali sono i colori che compongono questo colore?"), Appearance -> 
-           Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
-          ButtonBox[
-          "\"Mostra risposta\"", 
-           ButtonFunction :> (ColorTheory`Private`risposta1$$ = Part[
-               ColorTheory`Private`GetAnswer2[
-               ColorTheory`Private`tuplaRandom$$], 1]; 
-            ColorTheory`Private`risposta2$$ = Part[
-               ColorTheory`Private`GetAnswer2[
-               ColorTheory`Private`tuplaRandom$$], 2]), Appearance -> 
-           Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
-          ButtonBox[
-          "\"Pulisci caselle\"", 
-           ButtonFunction :> (ColorTheory`Private`risposta1$$ = Null; 
-            ColorTheory`Private`risposta2$$ = Null), Appearance -> Automatic, 
-           Evaluator -> Automatic, Method -> "Preemptive"]}}, 
-        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-        "Column", 
-        GridBoxItemSize -> {
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
-     "Row", DisplayFunction -> (PaneBox[
-       StyleBox[
-        RowBox[{
-          TemplateSlotSequence[1, "\[InvisibleSpace]"]}], Background -> 
-        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], Alignment -> 
-       Right, ImageSize -> {550, 600}]& ), 
-     InterpretationFunction -> (RowBox[{"Row", "[", 
-        RowBox[{
-          RowBox[{"{", 
-            TemplateSlotSequence[1, ","], "}"}], ",", 
-          RowBox[{"Alignment", "\[Rule]", "Right"}], ",", 
-          RowBox[{"ImageSize", "\[Rule]", 
-            RowBox[{"{", 
-              RowBox[{"550", ",", "600"}], "}"}]}], ",", 
-          RowBox[{"Background", "\[Rule]", 
-            InterpretationBox[
-             ButtonBox[
-              TooltipBox[
-               GraphicsBox[{{
-                  GrayLevel[0], 
-                  RectangleBox[{0, 0}]}, {
-                  GrayLevel[0], 
-                  RectangleBox[{1, -1}]}, {
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
-                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
-                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
-                FrameStyle -> 
-                RGBColor[
-                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
-                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                Dynamic[{
-                  Automatic, 
-                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                    Magnification])}]], 
-               StyleBox[
-                RowBox[{"RGBColor", "[", 
-                  
-                  RowBox[{
-                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
-                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
-              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
-              DefaultBaseStyle -> {}, ButtonFunction :> 
-              With[{Typeset`box$ = EvaluationBox[]}, 
-                If[
-                 Not[
-                  AbsoluteCurrentValue["Deployed"]], 
-                 SelectionMove[Typeset`box$, All, Expression]; 
-                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
-                 FrontEnd`Private`$ColorSelectorInitialColor = 
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
-                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
-                 MathLink`CallFrontEnd[
-                   FrontEnd`AttachCell[Typeset`box$, 
-                    FrontEndResource["RGBColorValueSelector"], {
-                    0, {Left, Bottom}}, {Left, Top}, 
-                    "ClosingActions" -> {
-                    "SelectionDeparture", "ParentChanged", 
-                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
-              Automatic, Method -> "Preemptive"], 
-             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
-             False, Selectable -> False]}]}], "]"}]& )], 
-    TemplateBox[{
-      TagBox[
-       GridBox[{{
-          ButtonBox[
-           DynamicBox[
-            ToBoxes[
-             ToString[
-              Part[
-              ColorTheory`Private`showhide$$, 1 + 
-               Mod[ColorTheory`Private`i$$, 2]]], StandardForm]], 
-           ButtonFunction :> (ColorTheory`Private`toshow$$ = 
-            Part[ColorTheory`Private`listaOggetti$$, 1 + Mod[
-                Increment[ColorTheory`Private`i$$], 2]]), ImageSize -> 150, 
-           ImageMargins -> {{100, 100}, {2, 2}}, FrameMargins -> Large, 
-           Alignment -> Center, Appearance -> Automatic, Evaluator -> 
-           Automatic, Method -> "Preemptive"]}, {
-          DynamicBox[
-           ToBoxes[
-            Show[ColorTheory`Private`toshow$$], StandardForm]]}}, 
-        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-        "Column", 
-        GridBoxItemSize -> {
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
-     "Row", DisplayFunction -> (PaneBox[
-       StyleBox[#, Background -> 
-        RGBColor[0.9490196078431372, 0.9686274509803922, 1.]], 
-       ImageSize -> {400, 600}]& ), 
-     InterpretationFunction -> (RowBox[{"Row", "[", 
-        RowBox[{
-          RowBox[{"{", #, "}"}], ",", 
-          RowBox[{"ImageSize", "\[Rule]", 
-            RowBox[{"{", 
-              RowBox[{"400", ",", "600"}], "}"}]}], ",", 
-          RowBox[{"Background", "\[Rule]", 
-            InterpretationBox[
-             ButtonBox[
-              TooltipBox[
-               GraphicsBox[{{
-                  GrayLevel[0], 
-                  RectangleBox[{0, 0}]}, {
-                  GrayLevel[0], 
-                  RectangleBox[{1, -1}]}, {
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.], 
-                  RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
-                "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
-                FrameStyle -> 
-                RGBColor[
-                 0.6326797385620915, 0.6457516339869281, 0.6666666666666667], 
-                FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
-                Dynamic[{
-                  Automatic, 
-                   1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                    Magnification])}]], 
-               StyleBox[
-                RowBox[{"RGBColor", "[", 
-                  
-                  RowBox[{
-                   "0.9490196078431372`", ",", "0.9686274509803922`", ",", 
-                    "1.`"}], "]"}], NumberMarks -> False]], Appearance -> 
-              None, BaseStyle -> {}, BaselinePosition -> Baseline, 
-              DefaultBaseStyle -> {}, ButtonFunction :> 
-              With[{Typeset`box$ = EvaluationBox[]}, 
-                If[
-                 Not[
-                  AbsoluteCurrentValue["Deployed"]], 
-                 SelectionMove[Typeset`box$, All, Expression]; 
-                 FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
-                 FrontEnd`Private`$ColorSelectorInitialColor = 
-                  RGBColor[0.9490196078431372, 0.9686274509803922, 1.]; 
-                 FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
-                 MathLink`CallFrontEnd[
-                   FrontEnd`AttachCell[Typeset`box$, 
-                    FrontEndResource["RGBColorValueSelector"], {
-                    0, {Left, Bottom}}, {Left, Top}, 
-                    "ClosingActions" -> {
-                    "SelectionDeparture", "ParentChanged", 
-                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
-              Automatic, Method -> "Preemptive"], 
-             RGBColor[0.9490196078431372, 0.9686274509803922, 1.], Editable -> 
-             False, Selectable -> False]}]}], "]"}]& )]},
-   "RowDefault"],
-  DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{3.831293581356532*^9, 3.8313760919395742`*^9},
- CellLabel->"Out[8]=",ExpressionUUID->"5fcdad73-d489-4b87-a17f-26f2c151610d"]
-}, Open  ]]
+ CellLabel->"In[35]:=",ExpressionUUID->"f7fd7c28-52b9-454a-aed3-a1013fde784d"]
 }, Open  ]]
 }, Open  ]],
 
@@ -19560,248 +17488,47 @@ Cell["Esercizio 3: Riordina l\[CloseCurlyQuote]arcobaleno", "Section",
   3.8312896828894696`*^9}, {3.8312898624592094`*^9, 3.8312898640111666`*^9}},
  CellTags->"07_es3",ExpressionUUID->"235401bd-10d2-487c-b9f7-ce75f981da97"],
 
-Cell["\<\
-Questi dischi colorati sono i colori primari e secondari. Riordinali in modo \
-che formino un arcobaleno: scrivi il numero dei colori nelle celle vuote e \
-invia l\[CloseCurlyQuote]esercizio per controllare la correttezza.\
-\>", "Text",
- CellChangeTimes->{{3.831290066058418*^9, 
-  3.831290164188526*^9}},ExpressionUUID->"610d4e96-90f5-439c-a945-\
+Cell[TextData[{
+ "Questi dischi colorati sono i colori ",
+ StyleBox["primari",
+  FontWeight->"Bold"],
+ " e ",
+ StyleBox["secondari",
+  FontWeight->"Bold"],
+ ". Riordinali in modo che formino un ",
+ StyleBox["arcobaleno",
+  FontWeight->"Bold"],
+ " da ",
+ StyleBox["sei",
+  FontWeight->"Bold"],
+ " colori: scrivi il ",
+ StyleBox["numero",
+  FontWeight->"Bold"],
+ " dei colori nelle ",
+ StyleBox["celle vuote",
+  FontVariations->{"Underline"->True}],
+ " e invia l\[CloseCurlyQuote]esercizio tramite il bottone ",
+ StyleBox["\[OpenCurlyDoubleQuote]Invia\[CloseCurlyDoubleQuote]",
+  FontVariations->{"Underline"->True}],
+ " per controllare la correttezza.\nIl secondo bottone permette di pulire \
+tutte le celle di testo. Puoi creare nuovi esercizi con il bottone ",
+ StyleBox["\[OpenCurlyDoubleQuote]Nuovo esercizio\[CloseCurlyDoubleQuote] ",
+  FontVariations->{"Underline"->True}],
+ "e ottenere la soluzione dell\[CloseCurlyQuote]esercizio tramite il bottone ",
+ StyleBox["\[OpenCurlyDoubleQuote]Mostra soluzione\[CloseCurlyDoubleQuote]",
+  FontVariations->{"Underline"->True}],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.831290066058418*^9, 3.831290164188526*^9}, {
+  3.831568106306675*^9, 
+  3.8315682131524053`*^9}},ExpressionUUID->"610d4e96-90f5-439c-a945-\
 ae73b5f6771a"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"ShowExercise3", "[", "]"}]], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.8312898911310577`*^9, 3.8312899031894336`*^9}},
- CellLabel->"In[9]:=",ExpressionUUID->"44c32593-0a72-4b1f-aa9c-805a3d430761"],
-
-Cell[BoxData[
- DynamicModuleBox[{ColorTheory`Private`rainbowCol$$ = {
-   RGBColor[1, 0, 0], 
-   RGBColor[1, 0.5, 0], 
-   RGBColor[1, 1, 0], 
-   RGBColor[0, 
-    Rational[2, 3], 0], 
-   RGBColor[0, 0, 1], 
-   RGBColor[0.5, 0, 0.5]}, ColorTheory`Private`randCol$$ = {
-   RGBColor[1, 0, 0], 
-   RGBColor[1, 0.5, 0], 
-   RGBColor[1, 1, 0], 
-   RGBColor[0, 
-    Rational[2, 3], 0], 
-   RGBColor[0, 0, 1], 
-   RGBColor[0.5, 0, 0.5]}, ColorTheory`Private`palette$$ = Graphics[{{}, {{
-      Inset[
-       Graphics[{
-         Style[
-          Disk[{0, 0}], 
-          RGBColor[1, 0, 0]], 
-         Style[
-          Text[1], Bold, FontSize -> 14, 
-          GrayLevel[1]]}, {
-        DisplayFunction -> Identity, 
-         ImagePadding -> {{2.842170943040401*^-14, 1.}, {1., 0.}}}], {
-       54.2857142857143, -52.5}, 
-       ImageScaled[{0.5, 0.5}], {100.00000000000003`, 100.}], 
-      Inset[
-       Graphics[{
-         Style[
-          Disk[{0, 0}], 
-          RGBColor[1, 0.5, 0]], 
-         Style[
-          Text[2], Bold, FontSize -> 14, 
-          GrayLevel[1]]}, {
-        DisplayFunction -> Identity, 
-         ImagePadding -> {{2.842170943040401*^-14, 1.}, {1., 0.}}}], {
-       162.8571428571429, -52.5}, 
-       ImageScaled[{0.5, 0.5}], {100.00000000000003`, 100.}], 
-      Inset[
-       Graphics[{
-         Style[
-          Disk[{0, 0}], 
-          RGBColor[1, 1, 0]], 
-         Style[
-          Text[3], Bold, FontSize -> 14, 
-          GrayLevel[1]]}, {
-        DisplayFunction -> Identity, 
-         ImagePadding -> {{2.842170943040401*^-14, 1.}, {1., 0.}}}], {
-       271.4285714285715, -52.5}, 
-       ImageScaled[{0.5, 0.5}], {100.00000000000003`, 100.}], 
-      Inset[
-       Graphics[{
-         Style[
-          Disk[{0, 0}], 
-          RGBColor[0, 
-           Rational[2, 3], 0]], 
-         Style[
-          Text[4], Bold, FontSize -> 14, 
-          GrayLevel[1]]}, {
-        DisplayFunction -> Identity, 
-         ImagePadding -> {{2.842170943040401*^-14, 1.}, {1., 0.}}}], {
-       380.0000000000001, -52.5}, 
-       ImageScaled[{0.5, 0.5}], {100.00000000000003`, 100.}], 
-      Inset[
-       Graphics[{
-         Style[
-          Disk[{0, 0}], 
-          RGBColor[0, 0, 1]], 
-         Style[
-          Text[5], Bold, FontSize -> 14, 
-          GrayLevel[1]]}, {
-        DisplayFunction -> Identity, 
-         ImagePadding -> {{2.842170943040401*^-14, 1.}, {1., 0.}}}], {
-       488.57142857142867`, -52.5}, 
-       ImageScaled[{0.5, 0.5}], {100.00000000000003`, 100.}], 
-      Inset[
-       Graphics[{
-         Style[
-          Disk[{0, 0}], 
-          RGBColor[0.5, 0, 0.5]], 
-         Style[
-          Text[6], Bold, FontSize -> 14, 
-          GrayLevel[1]]}, {
-        DisplayFunction -> Identity, 
-         ImagePadding -> {{2.842170943040401*^-14, 1.}, {1., 0.}}}], {
-       597.1428571428573, -52.5}, 
-       ImageScaled[{0.5, 0.5}], {100.00000000000003`, 100.}]}}, {}}, 
-   ImageSize -> {
-     UpTo[600], 
-     UpTo[360]}, {
-   PlotRangePadding -> {6, 5}, 
-    PlotRange -> {{0, 651.4285714285716}, {-105., 0}}}], 
-  ColorTheory`Private`animazione$$ = "", ColorTheory`Private`primo$$ = "", 
-  ColorTheory`Private`secondo$$ = "", ColorTheory`Private`terzo$$ = "", 
-  ColorTheory`Private`quarto$$ = "", ColorTheory`Private`quinto$$ = "", 
-  ColorTheory`Private`sesto$$ = "", ColorTheory`Private`risposta$$ = ""}, 
-  TemplateBox[{
-    TagBox[
-     GridBox[{{
-        DynamicBox[
-         ToBoxes[ColorTheory`Private`palette$$, StandardForm]]}, {
-        TemplateBox[{
-          InputFieldBox[
-           Dynamic[ColorTheory`Private`primo$$], Number, 
-           ImageSize -> {90, 30}], 
-          InputFieldBox[
-           Dynamic[ColorTheory`Private`secondo$$], Number, 
-           ImageSize -> {90, 30}], 
-          InputFieldBox[
-           Dynamic[ColorTheory`Private`terzo$$], Number, 
-           ImageSize -> {90, 30}], 
-          InputFieldBox[
-           Dynamic[ColorTheory`Private`quarto$$], Number, 
-           ImageSize -> {90, 30}], 
-          InputFieldBox[
-           Dynamic[ColorTheory`Private`quinto$$], Number, 
-           ImageSize -> {90, 30}], 
-          InputFieldBox[
-           Dynamic[ColorTheory`Private`sesto$$], Number, 
-           ImageSize -> {90, 30}]}, "RowDefault"]}, {
-        DynamicBox[
-         ToBoxes[ColorTheory`Private`animazione$$, StandardForm]]}}, 
-      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-      "Column", 
-      GridBoxItemSize -> {
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
-    TagBox[
-     GridBox[{{
-        ButtonBox[
-         StyleBox["\"Invia\"", FontSize -> 12, StripOnInput -> False], 
-         ButtonFunction :> (
-          ColorTheory`Private`risposta$$ = 
-           ColorTheory`Private`CheckEs3[{
-             ColorTheory`Private`primo$$, ColorTheory`Private`secondo$$, 
-              ColorTheory`Private`terzo$$, ColorTheory`Private`quarto$$, 
-              ColorTheory`Private`quinto$$, ColorTheory`Private`sesto$$}, 
-             ColorTheory`Private`randCol$$]; 
-          ColorTheory`Private`animazione$$ = 
-           ColorTheory`Arcobaleno[ColorTheory`Private`risposta$$]), 
-         Appearance -> Automatic, Evaluator -> Automatic, Method -> 
-         "Preemptive"]}, {
-        ButtonBox[
-         GraphicsBox[
-          TagBox[
-           RasterBox[CompressedData["
-1:eJy1V01oXFUUnszLvJlGgk1m3r3v/3cmWcSCy25U6kbcaFstCIKYpmmotWlJ
-KxpFa7UiiAuLCzcKFldCRRB0oVC7aDf+7JQggmRTxSLYWmtqk8z4nfvum768
-efMmUVycvHk/93znO+c7594E+4/uPVgulUrHa/izd/rZXQsL04uPbMfNvvnj
-h+bmZw88OH9idm52Yed+BQ99mAsbho2NbS8zppU1rfF/mgIbHh8fU23DvBD6
-/geEaRh8WNcLrTLgfV+TvmuwUisMz0xGzQ6wlyie+BtWZMqA90VW5ZyVfM99
-qBWE7dD1bjKtMTkAFzyZqnO2Dd9U5f1WMFWsUwydm4Hj/tz0g07k+69SHEW4
-XGclMte2j9C3ZFvD5dVGo16ydP1TcO0gz9+YpqGitpU+uKKewLGjIDiJNSue
-47xuGLonOW+CN68xrlHMz0wEUQd8/9IajbsFF86KcMksrHseNbkReN4r0IhD
-awbj8iphoqY7oaO/I9fvWIaxGOeL1ziP+6cwz1gProd0PcnzQA2KuJDP0dDz
-lyLP70yE0SXcK1hP9a7Ap9Kfb5e3yplWkxqh5wp4D8GwjpVz88s01NR4j3SE
-mt5wbGsK/IfIl6xfDq7ouYw/rqTiGEIcU5ZpPN3VewZTZ+xxwiTjmnZMPBM9
-HPvv5UvxsAp0v0P+TvsU+UNMdzqm+Q60dh087oVPRWpBhb8hx7GaqOlVyq9n
-2+fBTfK8zWsjLldIC9BsCXU5h+/Lsm+UNDY9wzcGav4w1VzGRs9VqiHyeol0
-BOzrrmO3YlyWh0v1opyP2pa5AzG+RbH6jvO2aejEezRHOyLGdH4pBts0T9Na
-6lXPdZ7iPJ3ffFzc6+iZY1j3K9UF/XbFd90FzCpD1iHTO7yS9AzloFGv70K/
-rRMmNPUZzQs547K6y+qqTBzA0Qf2Mq6RzHOOZru41bjmehNrLiPeNWD/Hs8X
-oU01H3eDrioyvrJjWU9IDav5M0LEjDrzEmkVdXwAmCs0l6LAf1LGW+sTbzfP
-mf4lnJH+M0nkVQWWNRGGFxHjyzzW4yTq8prUWsE8S3DryQyqyn2yFvPu/pZG
-8Qs9i3pAfy8kPRq43nnguhprJPoumqECF3m6g/bkZL/pa3JOWpbhm7o+E3re
-d8BcRV1vif3NC/5AP9xPcW3s13xdeZb9PXx8i775yHPsM7QPIHeHYTPwM4Pr
-ETw7hX49C15fAefPluRJPYNrm/BJx/j+nt5+zeeLfeL0BNY0Yx+DDd8Bbw22
-LrHbwFzDjHssznMR11SetcYIzgCXs/6j2P9qxgiv3czwpWfou7vgdwDX27gN
-6Irygzy/69nO+8jnh4HrfoxYliSntowhwUnHJbjTvWWae+Q+mTMrcvtI7LM0
-l7HHPIpaLiKGz5G7qxlubVnLLP4qXaGDA8V92zOv6NxFPTLiO+5ZUete32sp
-jrfS75N3iPdEcp7YJN+ymHmciRmEXL+R+JM1XW/Je+T/E1yvSd5t+c1KjGu9
-9C9wkzml0lrE/lzCFWeUjmvZF6D73RNRdDHRm8AOgq+hg2WZ51Obz3PPOUfM
-epp7GIN74OtN27Luw/nCAP4XTU/wXqdaEz5iOYl94JeWHxLui/8BN7FqMqNw
-9qS95hr5xvVm0kvQ3Y/Q/u5Ea4jz6BZ11e88Sf1Qg+bGwGUavJbS/W1wPodc
-zCe1xp6/T+Juqo8Y655z+pk87/BRcDqMM9APwPkJZ5pxXJeTOHA/xcVeFJ8Z
-i4zOZPX6GO3PCsWw0dLPSG8a/b9K5+ltpqmPY841of0vkfPfHNM6R/9X4t1w
-79qN/uJzICv/A/PtEGo=
-            "], {{0, 32.}, {30., 0}}, {0, 255}, ColorFunction -> RGBColor], 
-           BoxForm`ImageTag[
-           "Byte", ColorSpace -> "RGB", Interleaving -> True], Selectable -> 
-           False], DefaultBaseStyle -> "ImageGraphics", 
-          ImageSizeRaw -> {30., 32.}, PlotRange -> {{0, 30.}, {0, 32.}}], 
-         ButtonFunction :> (ColorTheory`Private`primo$$ = ""; 
-          ColorTheory`Private`secondo$$ = ""; 
-          ColorTheory`Private`terzo$$ = ""; ColorTheory`Private`quarto$$ = ""; 
-          ColorTheory`Private`quinto$$ = ""; ColorTheory`Private`sesto$$ = ""; 
-          ColorTheory`Private`risposta$$ = ""; 
-          ColorTheory`Private`animazione$$ = ""), Appearance -> Automatic, 
-         Evaluator -> Automatic, Method -> "Preemptive"]}, {
-        ButtonBox[
-         StyleBox[
-         "\"Nuovo esercizio\"", FontSize -> 12, StripOnInput -> False], 
-         ButtonFunction :> (
-          ColorTheory`Private`randCol$$ = 
-           RandomSample[ColorTheory`Private`rainbowCol$$]; 
-          ColorTheory`Private`primo$$ = ""; 
-          ColorTheory`Private`secondo$$ = ""; 
-          ColorTheory`Private`terzo$$ = ""; ColorTheory`Private`quarto$$ = ""; 
-          ColorTheory`Private`quinto$$ = ""; ColorTheory`Private`sesto$$ = ""; 
-          ColorTheory`Private`risposta$$ = ""; 
-          ColorTheory`Private`palette$$ = 
-           ColorTheory`Private`CreatePaletteEs3[
-            ColorTheory`Private`randCol$$]; 
-          ColorTheory`Private`animazione$$ = ""), Appearance -> Automatic, 
-         Evaluator -> Automatic, Method -> "Preemptive"]}, {
-        ButtonBox[
-         StyleBox[
-         "\"Mostra soluzione\"", FontSize -> 12, StripOnInput -> False], 
-         ButtonFunction :> ({
-            ColorTheory`Private`primo$$, ColorTheory`Private`secondo$$, 
-             ColorTheory`Private`terzo$$, ColorTheory`Private`quarto$$, 
-             ColorTheory`Private`quinto$$, ColorTheory`Private`sesto$$} = 
-           ColorTheory`Private`ShowSolutionEs3[ColorTheory`Private`randCol$$]; 
-          ColorTheory`Private`animazione$$ = ""), Appearance -> Automatic, 
-         Evaluator -> Automatic, Method -> "Preemptive"]}}, 
-      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-      "Column", 
-      GridBoxItemSize -> {
-       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]},
-   "RowDefault"],
-  DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{3.8312935824031734`*^9, 3.8313760928263144`*^9},
- CellLabel->"Out[9]=",ExpressionUUID->"c071a935-c51c-4ccb-b750-8a6dce78d26a"]
-}, Open  ]]
+ CellLabel->"In[36]:=",ExpressionUUID->"44c32593-0a72-4b1f-aa9c-805a3d430761"]
 }, Open  ]]
 }, Open  ]],
 
@@ -20161,11 +17888,11 @@ manualmente tramite la built-in ",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1904, 989},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 TaggingRules->{
  "SlideShow" -> True, "SlideshowSettings" -> {"Toolbar" -> True}},
-Magnification:>1.05 Inherited,
 FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
 StyleDefinitions->Notebook[{
    Cell[
@@ -20181,256 +17908,235 @@ ExpressionUUID->"86a54e8f-29a4-4288-a738-bf82cd9a9a31"
 (*CellTagsOutline
 CellTagsIndex->{
  "SlideShowHeader"->{
-  Cell[580, 22, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"ac5ac27c-0a4e-49e4-b043-f0fde519dca0",
+  Cell[580, 22, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"ac5ac27c-0a4e-49e4-b043-f0fde519dca0",
    CellTags->"SlideShowHeader"],
-  Cell[1190, 38, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"c3bd86c2-89f2-47bb-bacf-a53b9f78e36b",
+  Cell[1190, 38, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"c3bd86c2-89f2-47bb-bacf-a53b9f78e36b",
    CellTags->"SlideShowHeader"],
-  Cell[5964, 143, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"5a309b3a-ec72-4201-9bdf-9f5a9e231830",
+  Cell[6162, 147, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"5a309b3a-ec72-4201-9bdf-9f5a9e231830",
    CellTags->"SlideShowHeader"],
-  Cell[11472, 280, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"2d38caae-66f6-4534-b030-298ad6dd0797",
+  Cell[11513, 276, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"2d38caae-66f6-4534-b030-298ad6dd0797",
    CellTags->"SlideShowHeader"],
-  Cell[1071463, 18094, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"d412be65-16fa-471e-8026-32ad93b51ab3",
+  Cell[1028924, 17120, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"d412be65-16fa-471e-8026-32ad93b51ab3",
    CellTags->"SlideShowHeader"],
-  Cell[1082721, 18384, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"90a89fc8-0eea-449c-a3d4-8b81fb6f0ee0",
+  Cell[1032437, 17235, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"90a89fc8-0eea-449c-a3d4-8b81fb6f0ee0",
    CellTags->"SlideShowHeader"],
-  Cell[1088968, 18549, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"d457c870-1804-47d1-bbc4-154c1df2ab5e",
+  Cell[1038232, 17413, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"d457c870-1804-47d1-bbc4-154c1df2ab5e",
    CellTags->"SlideShowHeader"],
-  Cell[1109373, 19006, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"e206f011-f1bc-478d-98ba-bc3d178f753a",
+  Cell[1039840, 17455, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"e206f011-f1bc-478d-98ba-bc3d178f753a",
    CellTags->"SlideShowHeader"],
-  Cell[1132256, 19550, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"41daa5af-157e-43b6-b0bd-456314d6a274",
+  Cell[1040681, 17478, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"41daa5af-157e-43b6-b0bd-456314d6a274",
    CellTags->"SlideShowHeader"],
-  Cell[1143186, 19809, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"23a94b69-94e9-4b57-87a4-dc172d06847c",
+  Cell[1042746, 17536, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"23a94b69-94e9-4b57-87a4-dc172d06847c",
    CellTags->"SlideShowHeader"],
-  Cell[1144806, 19853, 122, 2, 75, "SlideShowNavigationBar",ExpressionUUID->"68a02323-5125-4eb0-bd4c-1579753d0ad6",
+  Cell[1044366, 17580, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"68a02323-5125-4eb0-bd4c-1579753d0ad6",
    CellTags->"SlideShowHeader"]},
  "01_caricamento"->{
-  Cell[6111, 149, 250, 4, 70, "Section",ExpressionUUID->"3806e7d1-0213-4421-8137-a29830446dd4",
+  Cell[6309, 153, 250, 4, 67, "Section",ExpressionUUID->"3806e7d1-0213-4421-8137-a29830446dd4",
    CellTags->"01_caricamento"]},
  "02_cerchio_itten"->{
-  Cell[11619, 286, 182, 3, 70, "Section",ExpressionUUID->"ba09bddd-71b3-4e4a-a874-e4834ca82d27",
+  Cell[11660, 282, 182, 3, 67, "Section",ExpressionUUID->"ba09bddd-71b3-4e4a-a874-e4834ca82d27",
    CellTags->"02_cerchio_itten"]},
  "03_colori_arte"->{
-  Cell[1071610, 18100, 283, 4, 70, "Section",ExpressionUUID->"8fcb165d-a9f3-406a-9c1a-1dfa21a28417",
+  Cell[1029071, 17126, 283, 4, 67, "Section",ExpressionUUID->"8fcb165d-a9f3-406a-9c1a-1dfa21a28417",
    CellTags->"03_colori_arte"]},
  "04_arcobaleno"->{
-  Cell[1082868, 18390, 196, 3, 70, "Section",ExpressionUUID->"e30a1c29-8f09-4640-afe3-6bd3520511bd",
+  Cell[1032584, 17241, 196, 3, 67, "Section",ExpressionUUID->"e30a1c29-8f09-4640-afe3-6bd3520511bd",
    CellTags->"04_arcobaleno"]},
  "05_es1"->{
-  Cell[1089115, 18555, 263, 3, 70, "Section",ExpressionUUID->"b51aed89-e199-48f2-bc21-e3512c4e8456",
+  Cell[1038379, 17419, 263, 3, 67, "Section",ExpressionUUID->"b51aed89-e199-48f2-bc21-e3512c4e8456",
    CellTags->"05_es1"]},
  "06_es2"->{
-  Cell[1109520, 19012, 419, 5, 70, "Section",ExpressionUUID->"2e4449aa-19fb-46b9-9c0d-78a6f48fd265",
+  Cell[1039987, 17461, 419, 5, 67, "Section",ExpressionUUID->"2e4449aa-19fb-46b9-9c0d-78a6f48fd265",
    CellTags->"06_es2"]},
  "07_es3"->{
-  Cell[1132403, 19556, 366, 4, 70, "Section",ExpressionUUID->"235401bd-10d2-487c-b9f7-ce75f981da97",
+  Cell[1040828, 17484, 366, 4, 67, "Section",ExpressionUUID->"235401bd-10d2-487c-b9f7-ce75f981da97",
    CellTags->"07_es3"]},
  "08_biblio"->{
-  Cell[1143333, 19815, 191, 2, 70, "Section",ExpressionUUID->"75b4452d-30fc-494e-9ad6-00965e81c33b",
+  Cell[1042893, 17542, 191, 2, 67, "Section",ExpressionUUID->"75b4452d-30fc-494e-9ad6-00965e81c33b",
    CellTags->"08_biblio"]},
  "09_note"->{
-  Cell[1144953, 19859, 194, 2, 69, "Section",ExpressionUUID->"6131905d-55bf-46b9-9cef-e27f649ad976",
+  Cell[1044513, 17586, 194, 2, 67, "Section",ExpressionUUID->"6131905d-55bf-46b9-9cef-e27f649ad976",
    CellTags->"09_note"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"SlideShowHeader", 1158044, 20182},
- {"01_caricamento", 1159683, 20205},
- {"02_cerchio_itten", 1159835, 20208},
- {"03_colori_arte", 1159988, 20211},
- {"04_arcobaleno", 1160142, 20214},
- {"05_es1", 1160288, 20217},
- {"06_es2", 1160427, 20220},
- {"07_es3", 1160566, 20223},
- {"08_biblio", 1160708, 20226},
- {"09_note", 1160851, 20229}
+ {"SlideShowHeader", 1057613, 17909},
+ {"01_caricamento", 1059252, 17932},
+ {"02_cerchio_itten", 1059404, 17935},
+ {"03_colori_arte", 1059557, 17938},
+ {"04_arcobaleno", 1059711, 17941},
+ {"05_es1", 1059857, 17944},
+ {"06_es2", 1059996, 17947},
+ {"07_es3", 1060135, 17950},
+ {"08_biblio", 1060277, 17953},
+ {"09_note", 1060420, 17956}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"ac5ac27c-0a4e-49e4-b043-f0fde519dca0",
+Cell[580, 22, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"ac5ac27c-0a4e-49e4-b043-f0fde519dca0",
  CellTags->"SlideShowHeader"],
-Cell[705, 26, 218, 3, 102, "Title",ExpressionUUID->"f0a1d4a2-f008-4326-807d-fe9fcc462dfc"],
-Cell[926, 31, 227, 2, 55, "Subtitle",ExpressionUUID->"5a5176dd-be86-4028-b050-daabbf11cd1c"]
+Cell[705, 26, 218, 3, 97, "Title",ExpressionUUID->"f0a1d4a2-f008-4326-807d-fe9fcc462dfc"],
+Cell[926, 31, 227, 2, 53, "Subtitle",ExpressionUUID->"5a5176dd-be86-4028-b050-daabbf11cd1c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1190, 38, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"c3bd86c2-89f2-47bb-bacf-a53b9f78e36b",
+Cell[1190, 38, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"c3bd86c2-89f2-47bb-bacf-a53b9f78e36b",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1337, 44, 153, 3, 70, "Section",ExpressionUUID->"72cddac1-2b13-411d-997b-c3ff66419950"],
-Cell[1493, 49, 562, 9, 33, "ItemNumbered",ExpressionUUID->"f3270ac8-102a-491e-a339-7ab8add8d1ee"],
-Cell[2058, 60, 618, 10, 33, "ItemNumbered",ExpressionUUID->"cd3c28fe-d2e4-43c0-a4bb-75cdc6320f34"],
-Cell[2679, 72, 521, 8, 33, "ItemNumbered",ExpressionUUID->"1c5494bc-8c89-49ba-bfc7-0c265f222ab0"],
-Cell[3203, 82, 504, 8, 33, "ItemNumbered",ExpressionUUID->"b5eda19a-a31b-4bb0-bd06-1584a79bdf35"],
-Cell[3710, 92, 508, 8, 33, "ItemNumbered",ExpressionUUID->"bf64a49a-9fb6-42b5-b348-3702663b9741"],
-Cell[4221, 102, 519, 8, 33, "ItemNumbered",ExpressionUUID->"287a839d-8a5c-4ecb-b21d-b78b51eaa03e"],
-Cell[4743, 112, 559, 9, 33, "ItemNumbered",ExpressionUUID->"6de62829-8e83-4f4a-b4aa-0f985a8e5128"],
-Cell[5305, 123, 304, 6, 33, "ItemNumbered",ExpressionUUID->"4e00c169-6150-45fe-8716-0896eb3d46f6"],
-Cell[5612, 131, 303, 6, 33, "ItemNumbered",ExpressionUUID->"4048d440-9132-41e5-bc8e-996f40bc885f"]
+Cell[1337, 44, 153, 3, 67, "Section",ExpressionUUID->"72cddac1-2b13-411d-997b-c3ff66419950"],
+Cell[1493, 49, 562, 9, 32, "ItemNumbered",ExpressionUUID->"f3270ac8-102a-491e-a339-7ab8add8d1ee"],
+Cell[2058, 60, 618, 10, 32, "ItemNumbered",ExpressionUUID->"cd3c28fe-d2e4-43c0-a4bb-75cdc6320f34"],
+Cell[2679, 72, 521, 8, 32, "ItemNumbered",ExpressionUUID->"1c5494bc-8c89-49ba-bfc7-0c265f222ab0"],
+Cell[3203, 82, 504, 8, 32, "ItemNumbered",ExpressionUUID->"b5eda19a-a31b-4bb0-bd06-1584a79bdf35"],
+Cell[3710, 92, 610, 10, 32, "ItemNumbered",ExpressionUUID->"dad61a3e-8feb-4ce1-954a-61beafb95c70"],
+Cell[4323, 104, 615, 10, 32, "ItemNumbered",ExpressionUUID->"c6dbf60c-fbde-4e52-ad90-ae981afbb718"],
+Cell[4941, 116, 559, 9, 32, "ItemNumbered",ExpressionUUID->"6de62829-8e83-4f4a-b4aa-0f985a8e5128"],
+Cell[5503, 127, 304, 6, 32, "ItemNumbered",ExpressionUUID->"4e00c169-6150-45fe-8716-0896eb3d46f6"],
+Cell[5810, 135, 303, 6, 32, "ItemNumbered",ExpressionUUID->"4048d440-9132-41e5-bc8e-996f40bc885f"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5964, 143, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"5a309b3a-ec72-4201-9bdf-9f5a9e231830",
+Cell[6162, 147, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"5a309b3a-ec72-4201-9bdf-9f5a9e231830",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[6111, 149, 250, 4, 70, "Section",ExpressionUUID->"3806e7d1-0213-4421-8137-a29830446dd4",
+Cell[6309, 153, 250, 4, 67, "Section",ExpressionUUID->"3806e7d1-0213-4421-8137-a29830446dd4",
  CellTags->"01_caricamento"],
-Cell[6364, 155, 250, 7, 36, "Text",ExpressionUUID->"a78cb78e-ffee-413a-aec4-cf3ec6572f70"],
+Cell[6562, 159, 250, 7, 35, "Text",ExpressionUUID->"a78cb78e-ffee-413a-aec4-cf3ec6572f70"],
 Cell[CellGroupData[{
-Cell[6639, 166, 1901, 38, 19, "Input",ExpressionUUID->"3088d4e7-cb85-42f0-b730-14292d8a5aed",
+Cell[6837, 170, 1901, 38, 19, "Input",ExpressionUUID->"3088d4e7-cb85-42f0-b730-14292d8a5aed",
  Evaluatable->False,
  CellOpen->False],
-Cell[8543, 206, 1729, 36, 67, "Output",ExpressionUUID->"cc50886b-39c8-451b-80d9-d31bc9209c8a"]
+Cell[8741, 210, 1729, 36, 63, "Output",ExpressionUUID->"cc50886b-39c8-451b-80d9-d31bc9209c8a"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[10309, 247, 591, 11, 19, "Input",ExpressionUUID->"a66d78b4-d66a-44a8-9ec7-466e3abc6f51",
+Cell[10485, 249, 592, 11, 19, "Input",ExpressionUUID->"a66d78b4-d66a-44a8-9ec7-466e3abc6f51",
  CellOpen->False],
-Cell[10903, 260, 221, 4, 23, "Print",ExpressionUUID->"03491140-572a-4fd7-91ab-e9c12ca768b6"]
-}, Open  ]],
-Cell[11139, 267, 284, 7, 36, "Text",ExpressionUUID->"d2d49775-681f-4298-a6e8-634487ce5564"]
+Cell[11080, 262, 384, 8, 35, "Text",ExpressionUUID->"d2d49775-681f-4298-a6e8-634487ce5564"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11472, 280, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"2d38caae-66f6-4534-b030-298ad6dd0797",
+Cell[11513, 276, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"2d38caae-66f6-4534-b030-298ad6dd0797",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[11619, 286, 182, 3, 70, "Section",ExpressionUUID->"ba09bddd-71b3-4e4a-a874-e4834ca82d27",
+Cell[11660, 282, 182, 3, 67, "Section",ExpressionUUID->"ba09bddd-71b3-4e4a-a874-e4834ca82d27",
  CellTags->"02_cerchio_itten"],
-Cell[11804, 291, 1009436, 16575, 249, "SideCaptionArray",ExpressionUUID->"7e1d3956-f495-450e-adc4-07f13ebc1d18"],
-Cell[1021243, 16868, 312, 10, 36, "Text",ExpressionUUID->"50999a1c-be23-4daf-86de-f91452d119ef"],
-Cell[1021558, 16880, 1317, 42, 33, "Item",ExpressionUUID->"e529f617-c21f-4207-aca2-75c268da74b7"],
+Cell[11845, 287, 1009436, 16575, 237, "SideCaptionArray",ExpressionUUID->"7e1d3956-f495-450e-adc4-07f13ebc1d18"],
+Cell[1021284, 16864, 312, 10, 35, "Text",ExpressionUUID->"50999a1c-be23-4daf-86de-f91452d119ef"],
+Cell[1021599, 16876, 1317, 42, 53, "Item",ExpressionUUID->"e529f617-c21f-4207-aca2-75c268da74b7"],
 Cell[CellGroupData[{
-Cell[1022900, 16926, 619, 16, 33, "Item",ExpressionUUID->"6993a1ca-9d3e-4e3f-b2e7-c2f884d1a6c3"],
-Cell[1023522, 16944, 709, 24, 27, "Subitem",ExpressionUUID->"ba3af1a8-a37e-445a-b42c-cedf210b14a3"],
-Cell[1024234, 16970, 1281, 43, 27, "Subitem",ExpressionUUID->"2cd52a20-70be-48e9-b10e-dc81a3f5903c"],
-Cell[1025518, 17015, 1333, 44, 27, "Subitem",ExpressionUUID->"b9dfaf53-2643-459a-a29a-2d061f502ae8"]
+Cell[1022941, 16922, 619, 16, 32, "Item",ExpressionUUID->"6993a1ca-9d3e-4e3f-b2e7-c2f884d1a6c3"],
+Cell[1023563, 16940, 839, 30, 26, "Subitem",ExpressionUUID->"ba3af1a8-a37e-445a-b42c-cedf210b14a3"],
+Cell[1024405, 16972, 1297, 43, 26, "Subitem",ExpressionUUID->"2cd52a20-70be-48e9-b10e-dc81a3f5903c"],
+Cell[1025705, 17017, 1333, 44, 26, "Subitem",ExpressionUUID->"b9dfaf53-2643-459a-a29a-2d061f502ae8"]
 }, Open  ]],
-Cell[1026866, 17062, 686, 23, 54, "Item",ExpressionUUID->"46105daa-acff-4f50-b4d4-e2e2069b8616"],
+Cell[1027053, 17064, 686, 23, 53, "Item",ExpressionUUID->"46105daa-acff-4f50-b4d4-e2e2069b8616"],
 Cell[CellGroupData[{
-Cell[1027577, 17089, 320, 8, 74, "Subsubsection",ExpressionUUID->"7c1aae8a-350c-48dc-8941-d9d781674e87"],
-Cell[CellGroupData[{
-Cell[1027922, 17101, 775, 12, 19, "Input",ExpressionUUID->"3445a310-f8da-4714-aae1-2e0cae01c67c",
- CellOpen->False],
-Cell[1028700, 17115, 42690, 971, 621, "Output",ExpressionUUID->"a17c38b6-37c5-4182-b52f-b24e62d008ca"]
-}, Open  ]]
+Cell[1027764, 17091, 320, 8, 71, "Subsubsection",ExpressionUUID->"7c1aae8a-350c-48dc-8941-d9d781674e87"],
+Cell[1028087, 17101, 776, 12, 19, "Input",ExpressionUUID->"3445a310-f8da-4714-aae1-2e0cae01c67c",
+ CellOpen->False]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1071463, 18094, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"d412be65-16fa-471e-8026-32ad93b51ab3",
+Cell[1028924, 17120, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"d412be65-16fa-471e-8026-32ad93b51ab3",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1071610, 18100, 283, 4, 70, "Section",ExpressionUUID->"8fcb165d-a9f3-406a-9c1a-1dfa21a28417",
+Cell[1029071, 17126, 283, 4, 67, "Section",ExpressionUUID->"8fcb165d-a9f3-406a-9c1a-1dfa21a28417",
  CellTags->"03_colori_arte"],
-Cell[1071896, 18106, 267, 8, 36, "Text",ExpressionUUID->"6d53c2bf-4ab3-4f88-a815-b8b6a47ec1ce"],
-Cell[1072166, 18116, 767, 26, 27, "Subitem",ExpressionUUID->"14181197-6073-49a7-bf56-185022758139"],
-Cell[1072936, 18144, 746, 25, 27, "Subitem",ExpressionUUID->"7c64b0fa-4d68-45f7-94a9-b999950dbd77"],
-Cell[1073685, 18171, 427, 8, 36, "Text",ExpressionUUID->"053216ea-121e-4415-908e-e8c6863c3dcf"],
+Cell[1029357, 17132, 285, 9, 35, "Text",ExpressionUUID->"6d53c2bf-4ab3-4f88-a815-b8b6a47ec1ce"],
+Cell[1029645, 17143, 785, 27, 26, "Subitem",ExpressionUUID->"14181197-6073-49a7-bf56-185022758139"],
+Cell[1030433, 17172, 764, 26, 26, "Subitem",ExpressionUUID->"7c64b0fa-4d68-45f7-94a9-b999950dbd77"],
+Cell[1031200, 17200, 445, 9, 35, "Text",ExpressionUUID->"053216ea-121e-4415-908e-e8c6863c3dcf"],
 Cell[CellGroupData[{
-Cell[1074137, 18183, 481, 9, 56, "Subsection",ExpressionUUID->"8aa606c5-5726-42e1-8615-cca9dc8156e7"],
-Cell[CellGroupData[{
-Cell[1074643, 18196, 221, 4, 19, "Input",ExpressionUUID->"f213a623-fd67-4e6d-aa2e-d4bf073507ce",
- CellOpen->False],
-Cell[1074867, 18202, 7781, 174, 385, "Output",ExpressionUUID->"59335427-fe98-4f8c-97e3-7cd132b13fc3"]
-}, Open  ]]
+Cell[1031670, 17213, 481, 9, 81, "Subsection",ExpressionUUID->"8aa606c5-5726-42e1-8615-cca9dc8156e7"],
+Cell[1032154, 17224, 222, 4, 19, "Input",ExpressionUUID->"f213a623-fd67-4e6d-aa2e-d4bf073507ce",
+ CellOpen->False]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1082721, 18384, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"90a89fc8-0eea-449c-a3d4-8b81fb6f0ee0",
+Cell[1032437, 17235, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"90a89fc8-0eea-449c-a3d4-8b81fb6f0ee0",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1082868, 18390, 196, 3, 70, "Section",ExpressionUUID->"e30a1c29-8f09-4640-afe3-6bd3520511bd",
+Cell[1032584, 17241, 196, 3, 67, "Section",ExpressionUUID->"e30a1c29-8f09-4640-afe3-6bd3520511bd",
  CellTags->"04_arcobaleno"],
-Cell[1083067, 18395, 2957, 85, 175, "Text",ExpressionUUID->"88f67d95-8d96-42a0-9ce7-10f0695b7b5b"],
-Cell[CellGroupData[{
-Cell[1086049, 18484, 283, 5, 19, "Input",ExpressionUUID->"4f96956b-0f4d-4f15-aa79-695612b9770c",
- CellOpen->False],
-Cell[1086335, 18491, 2572, 51, 298, "Output",ExpressionUUID->"7e19f84e-cdbb-47b8-a2b7-96909830b460"]
-}, Open  ]]
+Cell[1032783, 17246, 5113, 154, 288, "Text",ExpressionUUID->"88f67d95-8d96-42a0-9ce7-10f0695b7b5b"],
+Cell[1037899, 17402, 284, 5, 19, "Input",ExpressionUUID->"4f96956b-0f4d-4f15-aa79-695612b9770c",
+ CellOpen->False]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1088968, 18549, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"d457c870-1804-47d1-bbc4-154c1df2ab5e",
+Cell[1038232, 17413, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"d457c870-1804-47d1-bbc4-154c1df2ab5e",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1089115, 18555, 263, 3, 70, "Section",ExpressionUUID->"b51aed89-e199-48f2-bc21-e3512c4e8456",
+Cell[1038379, 17419, 263, 3, 67, "Section",ExpressionUUID->"b51aed89-e199-48f2-bc21-e3512c4e8456",
  CellTags->"05_es1"],
-Cell[1089381, 18560, 889, 19, 59, "Text",ExpressionUUID->"69178c79-d6fa-4970-9725-49030dd6b182"],
-Cell[CellGroupData[{
-Cell[1090295, 18583, 225, 4, 19, "Input",ExpressionUUID->"8db506b7-f942-45ce-83aa-a85086155a20",
- CellOpen->False],
-Cell[1090523, 18589, 18789, 410, 649, "Output",ExpressionUUID->"53824c3a-0e30-48b0-aca5-fb23c792d51a"]
-}, Open  ]]
+Cell[1038645, 17424, 917, 19, 104, "Text",ExpressionUUID->"69178c79-d6fa-4970-9725-49030dd6b182"],
+Cell[1039565, 17445, 226, 4, 19, "Input",ExpressionUUID->"8db506b7-f942-45ce-83aa-a85086155a20",
+ CellOpen->False]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1109373, 19006, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"e206f011-f1bc-478d-98ba-bc3d178f753a",
+Cell[1039840, 17455, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"e206f011-f1bc-478d-98ba-bc3d178f753a",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1109520, 19012, 419, 5, 70, "Section",ExpressionUUID->"2e4449aa-19fb-46b9-9c0d-78a6f48fd265",
+Cell[1039987, 17461, 419, 5, 67, "Section",ExpressionUUID->"2e4449aa-19fb-46b9-9c0d-78a6f48fd265",
  CellTags->"06_es2"],
-Cell[CellGroupData[{
-Cell[1109964, 19021, 222, 4, 19, "Input",ExpressionUUID->"f7fd7c28-52b9-454a-aed3-a1013fde784d",
- CellOpen->False],
-Cell[1110189, 19027, 22006, 516, 649, "Output",ExpressionUUID->"5fcdad73-d489-4b87-a17f-26f2c151610d"]
-}, Open  ]]
+Cell[1040409, 17468, 223, 4, 19, "Input",ExpressionUUID->"f7fd7c28-52b9-454a-aed3-a1013fde784d",
+ CellOpen->False]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1132256, 19550, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"41daa5af-157e-43b6-b0bd-456314d6a274",
+Cell[1040681, 17478, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"41daa5af-157e-43b6-b0bd-456314d6a274",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1132403, 19556, 366, 4, 70, "Section",ExpressionUUID->"235401bd-10d2-487c-b9f7-ce75f981da97",
+Cell[1040828, 17484, 366, 4, 67, "Section",ExpressionUUID->"235401bd-10d2-487c-b9f7-ce75f981da97",
  CellTags->"07_es3"],
-Cell[1132772, 19562, 372, 7, 36, "Text",ExpressionUUID->"610d4e96-90f5-439c-a945-ae73b5f6771a"],
-Cell[CellGroupData[{
-Cell[1133169, 19573, 227, 4, 19, "Input",ExpressionUUID->"44c32593-0a72-4b1f-aa9c-805a3d430761",
- CellOpen->False],
-Cell[1133399, 19579, 9726, 223, 185, "Output",ExpressionUUID->"c071a935-c51c-4ccb-b750-8a6dce78d26a"]
-}, Open  ]]
+Cell[1041197, 17490, 1269, 34, 104, "Text",ExpressionUUID->"610d4e96-90f5-439c-a945-ae73b5f6771a"],
+Cell[1042469, 17526, 228, 4, 19, "Input",ExpressionUUID->"44c32593-0a72-4b1f-aa9c-805a3d430761",
+ CellOpen->False]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1143186, 19809, 122, 2, 82, "SlideShowNavigationBar",ExpressionUUID->"23a94b69-94e9-4b57-87a4-dc172d06847c",
+Cell[1042746, 17536, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"23a94b69-94e9-4b57-87a4-dc172d06847c",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1143333, 19815, 191, 2, 70, "Section",ExpressionUUID->"75b4452d-30fc-494e-9ad6-00965e81c33b",
+Cell[1042893, 17542, 191, 2, 67, "Section",ExpressionUUID->"75b4452d-30fc-494e-9ad6-00965e81c33b",
  CellTags->"08_biblio"],
-Cell[1143527, 19819, 409, 8, 33, "Item",ExpressionUUID->"ca82c0f4-4f8d-4bd2-b24d-6c132f06d475"],
-Cell[1143939, 19829, 408, 8, 33, "Item",ExpressionUUID->"b72f18ef-826d-4daf-901b-8896e936c729"],
-Cell[1144350, 19839, 407, 8, 33, "Item",ExpressionUUID->"afaa1348-aaf6-4c75-905b-b565ce10eb04"]
+Cell[1043087, 17546, 409, 8, 32, "Item",ExpressionUUID->"ca82c0f4-4f8d-4bd2-b24d-6c132f06d475"],
+Cell[1043499, 17556, 408, 8, 32, "Item",ExpressionUUID->"b72f18ef-826d-4daf-901b-8896e936c729"],
+Cell[1043910, 17566, 407, 8, 32, "Item",ExpressionUUID->"afaa1348-aaf6-4c75-905b-b565ce10eb04"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1144806, 19853, 122, 2, 75, "SlideShowNavigationBar",ExpressionUUID->"68a02323-5125-4eb0-bd4c-1579753d0ad6",
+Cell[1044366, 17580, 122, 2, 74, "SlideShowNavigationBar",ExpressionUUID->"68a02323-5125-4eb0-bd4c-1579753d0ad6",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1144953, 19859, 194, 2, 69, "Section",ExpressionUUID->"6131905d-55bf-46b9-9cef-e27f649ad976",
+Cell[1044513, 17586, 194, 2, 67, "Section",ExpressionUUID->"6131905d-55bf-46b9-9cef-e27f649ad976",
  CellTags->"09_note"],
 Cell[CellGroupData[{
-Cell[1145172, 19865, 169, 3, 56, "Subsection",ExpressionUUID->"14dea71a-c2ff-4197-88a6-d7926ad48322"],
-Cell[1145344, 19870, 816, 13, 59, "Text",ExpressionUUID->"1ee8f826-cb73-41db-8c90-c86c526e7015"]
+Cell[1044732, 17592, 169, 3, 54, "Subsection",ExpressionUUID->"14dea71a-c2ff-4197-88a6-d7926ad48322"],
+Cell[1044904, 17597, 816, 13, 58, "Text",ExpressionUUID->"1ee8f826-cb73-41db-8c90-c86c526e7015"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1146197, 19888, 233, 4, 56, "Subsection",ExpressionUUID->"9fdc5362-b469-4a46-8144-6a560f14024a"],
-Cell[1146433, 19894, 600, 16, 32, "Item",ExpressionUUID->"310b2ac8-8651-4818-8a60-1253568e6832"],
-Cell[1147036, 19912, 693, 19, 32, "Item",ExpressionUUID->"8b127c49-f9fe-4ba0-8267-a98c056bb28a"],
-Cell[1147732, 19933, 672, 13, 32, "Item",ExpressionUUID->"bc696d78-d6c5-45ab-9cdf-3e586e3754f5"],
-Cell[1148407, 19948, 844, 22, 32, "Item",ExpressionUUID->"bf3b1778-f8a1-4b79-8f2d-e746b01f9730"],
-Cell[1149254, 19972, 865, 16, 54, "Item",ExpressionUUID->"a2e44014-ef9c-4d65-be75-f94a4d13dd1b"],
-Cell[1150122, 19990, 762, 14, 32, "Item",ExpressionUUID->"60f5c072-d8c8-4a2f-8670-d0ffc227925b"],
-Cell[1150887, 20006, 859, 16, 32, "Item",ExpressionUUID->"fba2f947-481d-4fe1-9d01-c20c00b24942"],
-Cell[1151749, 20024, 953, 19, 32, "Item",ExpressionUUID->"3cf0047b-9933-4db9-be01-64f8d4d3d033"],
-Cell[1152705, 20045, 1274, 26, 54, "Item",ExpressionUUID->"ba10aff9-b724-4c49-a205-af3d2caf97ca"],
-Cell[1153982, 20073, 1090, 27, 32, "Item",ExpressionUUID->"15a1fee6-ba4b-4021-b860-884b3330c0a0"],
-Cell[1155075, 20102, 769, 16, 32, "Item",ExpressionUUID->"01e56586-cb29-4c05-9fa8-e003c08859c4"],
-Cell[1155847, 20120, 662, 16, 32, "Item",ExpressionUUID->"82b333b2-a880-42bc-aa55-86590704af0d"]
+Cell[1045757, 17615, 233, 4, 54, "Subsection",ExpressionUUID->"9fdc5362-b469-4a46-8144-6a560f14024a"],
+Cell[1045993, 17621, 600, 16, 32, "Item",ExpressionUUID->"310b2ac8-8651-4818-8a60-1253568e6832"],
+Cell[1046596, 17639, 693, 19, 32, "Item",ExpressionUUID->"8b127c49-f9fe-4ba0-8267-a98c056bb28a"],
+Cell[1047292, 17660, 672, 13, 53, "Item",ExpressionUUID->"bc696d78-d6c5-45ab-9cdf-3e586e3754f5"],
+Cell[1047967, 17675, 844, 22, 32, "Item",ExpressionUUID->"bf3b1778-f8a1-4b79-8f2d-e746b01f9730"],
+Cell[1048814, 17699, 865, 16, 53, "Item",ExpressionUUID->"a2e44014-ef9c-4d65-be75-f94a4d13dd1b"],
+Cell[1049682, 17717, 762, 14, 53, "Item",ExpressionUUID->"60f5c072-d8c8-4a2f-8670-d0ffc227925b"],
+Cell[1050447, 17733, 859, 16, 53, "Item",ExpressionUUID->"fba2f947-481d-4fe1-9d01-c20c00b24942"],
+Cell[1051309, 17751, 953, 19, 32, "Item",ExpressionUUID->"3cf0047b-9933-4db9-be01-64f8d4d3d033"],
+Cell[1052265, 17772, 1274, 26, 95, "Item",ExpressionUUID->"ba10aff9-b724-4c49-a205-af3d2caf97ca"],
+Cell[1053542, 17800, 1090, 27, 32, "Item",ExpressionUUID->"15a1fee6-ba4b-4021-b860-884b3330c0a0"],
+Cell[1054635, 17829, 769, 16, 53, "Item",ExpressionUUID->"01e56586-cb29-4c05-9fa8-e003c08859c4"],
+Cell[1055407, 17847, 662, 16, 32, "Item",ExpressionUUID->"82b333b2-a880-42bc-aa55-86590704af0d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1156546, 20141, 180, 3, 56, "Subsection",ExpressionUUID->"5682908a-d69d-4972-a9f9-f6c08d418727"],
-Cell[1156729, 20146, 586, 12, 59, "Text",ExpressionUUID->"831fd25b-9eb9-44ef-bb7d-3e1a19f24e77"]
+Cell[1056106, 17868, 180, 3, 54, "Subsection",ExpressionUUID->"5682908a-d69d-4972-a9f9-f6c08d418727"],
+Cell[1056289, 17873, 586, 12, 58, "Text",ExpressionUUID->"831fd25b-9eb9-44ef-bb7d-3e1a19f24e77"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
