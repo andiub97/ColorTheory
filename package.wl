@@ -82,11 +82,12 @@ lblsOver = Flatten[ConstantArray[{"Primario", "Terziario","Secondario","Terziari
 cleanImage = Import[FileNameJoin[{NotebookDirectory[],"clean.png"}], ImageSize -> 30];
 
 (*valori per le aree grafiche*)
-bigFontsize = FontSize->40;
+bigFontsize = FontSize->36;
 smallFontsize = FontSize->14;
 mediumFontsize = FontSize->20;
 squareSize = {350, 350};
 marginSize = 70;
+bigmarginSize = 90;
 externalSquaresize = {450, 500};
 rightSquaresize = {350,500};
 bgcolor = RGBColor["#f2f7ff"];
@@ -94,7 +95,7 @@ btnMargins={{100,100},{2,2}};
 btnSize=150;
 ittenSize = ImageSize->{300,300};
 ittenMargins= ImageMargins->{{40,350},{2,2}};
-spacingSize = 6;
+spacingSize = 4;
 
 
 (*Controlla la correttezza della risposta del primo esercizio*)
@@ -238,7 +239,7 @@ GetAnswer2[tuplaColore_] :=
            }, 
            (*Il colore di cui bisogna indicare i colori che lo compongono \[EGrave] il colore di sfondo.*)
            Background -> Dynamic@coloreRandom, 
-           ImageSize -> squareSize, Alignment -> Center, Frame -> True, FrameMargins -> marginSize],
+           ImageSize -> squareSize, Alignment -> Center, Frame -> True, FrameMargins -> bigmarginSize],
            (*Colonna con i bottoni da premere per richiedere un nuovo esercizio, che sceglie una nuova tupla di colori da indovinare e il colore dell'esercizio, cancella eventuali stringhe o numeri presenti e riporta il valore dell'indicazione 
                a quello di consegna; il bottone per mostrare la risposta all'utente assegnando i due colori presenti nella tupla precedentemente scelta a caso; il bottone per cancellare il contenute delle caselle di testo. *)
        		Column[{
@@ -574,18 +575,18 @@ ShowExercise3[] := DynamicModule[
 	animazione="";
 	risposta="";
 	szField= {90,30};
-	primo=secondo=terzo=quarto=quinto=sesto="";
+	primo=secondo=terzo=quarto=quinto=sesto=Null;
 	Row[{
 		Column[{
 			 Dynamic@palette,
 			 (*creazione riga di input field per l'utente*)
 			Row[{
-				InputField[Dynamic@primo,Number, ImageSize->szField],
-				InputField[Dynamic@secondo,Number, ImageSize->szField],
-				InputField[Dynamic@terzo,Number, ImageSize->szField],
-				InputField[Dynamic@quarto,Number, ImageSize->szField],
-				InputField[Dynamic@quinto,Number, ImageSize->szField],
-				InputField[Dynamic@sesto,Number, ImageSize->szField]
+				InputField[Dynamic@primo, ImageSize->szField],
+				InputField[Dynamic@secondo, ImageSize->szField],
+				InputField[Dynamic@terzo, ImageSize->szField],
+				InputField[Dynamic@quarto, ImageSize->szField],
+				InputField[Dynamic@quinto, ImageSize->szField],
+				InputField[Dynamic@sesto,ImageSize->szField]
 			}],
 			Dynamic@animazione
 		}],
@@ -596,10 +597,10 @@ ShowExercise3[] := DynamicModule[
 					(*controllo la correttezza della risposta, creo l'animazione*)
 					risposta=CheckEs3[{primo,secondo,terzo,quarto,quinto,sesto}, randCol]; animazione=Arcobaleno[risposta]],
 					(*bottone di pulizia: cancello le celle di input, il risultato della risposta e l'animazione*)
-			Button[cleanImage, primo = ""; secondo=""; terzo=""; quarto=""; quinto=""; sesto=""; risposta=""; animazione=""],
+			Button[cleanImage, primo = Null; secondo=Null; terzo=Null; quarto=Null; quinto=Null; sesto=Null; risposta=Null; animazione=""],
 			(*creazione di un nuovo esercizio: pulizia delle variabili, nuovo riordinamento dei colori*)
 			Button["Nuovo esercizio", randCol = RandomSample[rainbowCol]; 
-					primo = ""; secondo=""; terzo=""; quarto=""; quinto=""; sesto="";risposta="";palette=CreatePaletteEs3[randCol];animazione=""],
+					primo = Null; secondo=Null; terzo=Null; quarto=Null; quinto=Null; sesto=Null;risposta=Null;palette=CreatePaletteEs3[randCol];animazione=""],
 					(*mostra soluzione dell'esercizio corrente*)
 			Button["Mostra soluzione",{primo,secondo,terzo,quarto,quinto,sesto}= ShowSolutionEs3[randCol]; animazione=""]
 		}]	
@@ -611,5 +612,5 @@ ShowExercise3[] := DynamicModule[
 
 
 End[]
-(* inserire protect *)
+
 EndPackage[]
